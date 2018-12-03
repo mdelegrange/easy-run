@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
 
   # Objective creation
-  resources :marathons, only[:index] do
+  resources :marathons, only: [:index] do
     resources :objectives, only: [:create]
   end
   resources :races, only: [:index] do
@@ -12,9 +12,9 @@ Rails.application.routes.draw do
 
   # Dashboard
   resources :objectives, only: [:index, :show] do
-    resources :runs, only [:index] do
+    resources :runs, only: [:index]
   end
-  resources :runs, only [:show, :edit, :update, :destroy] do
+  resources :runs, only: [:show, :edit, :update, :destroy] do
     member do
       patch :register
     end
