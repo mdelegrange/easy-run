@@ -7,7 +7,7 @@ class RunsController < ApplicationController
   	@run.objective = current_user.pending_objective
   	@run.status = 'pending'
   	if @run.save
-  		race_runs_path(@race)
+  	  race_runs_path(@race)
   	else
   	  render :new
   	end
