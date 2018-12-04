@@ -1,0 +1,23 @@
+<div class="main-container">
+  <div class="card-container">
+    <div class="row text-center">
+      <h2>All marathons</h2>
+    </div>
+    <div class="row">
+      <% @marathons.each do |marathon| %>
+        <div class="col-xs-12 col-sm-4">
+          <%= link_to '#' do %>
+            <div class="card">
+              <div class="card-category"><%= marathon.name%></div>
+              <div class="card-description">
+                <h2><%= marathon.date %></h2>
+                <h5><%= marathon.city %></h5>
+                <p><strong><%= marathon.address %></strong></p> 
+              </div>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
