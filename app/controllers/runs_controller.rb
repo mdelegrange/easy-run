@@ -1,5 +1,9 @@
 class RunsController < ApplicationController
 
+  def show
+    @run = Run.find(params[:id])
+  end
+
   def create
   	@run = Run.new(run_params)
   	@race = Race.find(params[:race_id])
