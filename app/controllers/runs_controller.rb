@@ -11,7 +11,6 @@ class RunsController < ApplicationController
   	else
   	  render :new
   	end
-
   end
 
   private
