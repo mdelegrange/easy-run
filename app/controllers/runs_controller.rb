@@ -13,6 +13,12 @@ class RunsController < ApplicationController
   	end
   end
 
+  def update
+    @run = Run.find(params[:id])
+    @run.update(run_params)
+    redirect_to run_path(@run)
+  end
+
   private
 
   def run_params
