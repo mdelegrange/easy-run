@@ -3,8 +3,9 @@
 
 
   <!-- Logo -->
-  <%= link_to root_path, class: "navbar-wagon-brand" do %>
-    <%= image_tag "logo.png", height: 50 %>
+  <%= link_to root_path, class: "navbar-wagon-brand logo-navbar" do %>
+    <%#= image_tag "logo.png", height: 30 unless @is_home%>
+    <%= "EASY RUN" unless @is_home%>
   <% end %>
 
   <!-- Right Navigation -->
@@ -13,14 +14,13 @@
     <% if user_signed_in? %>
 
       <!-- Links when logged in -->
-      <%= link_to "Host", "#", class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to "Trips", "#", class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to "Messages", "#", class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "Races", "#", class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "Trainings", "#", class: "navbar-wagon-item navbar-wagon-link" %>
 
       <!-- Avatar with dropdown menu -->
       <div class="navbar-wagon-item">
         <div class="dropdown">
-          <%= image_tag "http://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+          <%= image_tag "user.png", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
           <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
             <li>
               <%= link_to "#" do %>
@@ -41,9 +41,15 @@
         </div>
       </div>
     <% else %>
+
       <!-- Login link (when logged out) -->
-      <%= link_to t(".sign_in", default: "sign in"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link navbar-white-link" %>
-      <%= link_to t(".sign_in", default: "sign up"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link navbar-white-link" %>
+      <% if  @is_home %>
+        <%= link_to t(".sign_in", default: "sign in"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link navbar-white-link" %>
+        <%= link_to t(".sign_in", default: "sign up"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link navbar-white-link" %>
+      <% else %>
+        <%= link_to t(".sign_in", default: "sign in"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
+        <%= link_to t(".sign_in", default: "sign up"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <% end %>
     <% end %>
   </div>
 
@@ -52,9 +58,9 @@
     <div class="dropdown">
       <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
       <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-        <li><a href="#">Some mobile link</a></li>
-        <li><a href="#">Other one</a></li>
-        <li><a href="#">Other one</a></li>
+        <li><a href="#">TO DO</a></li>
+        <li><a href="#">TO DO</a></li>
+        <li><a href="#">TO DO</a></li>
       </ul>
     </div>
   </div>
