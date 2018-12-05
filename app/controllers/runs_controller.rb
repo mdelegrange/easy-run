@@ -17,6 +17,10 @@ class RunsController < ApplicationController
     end
   end
 
+  def edit
+    @run = Run.find(params[:id])
+  end
+
   def update
     @run = Run.find(params[:id])
     @run.update(run_params)
