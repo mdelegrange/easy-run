@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   resources :runs, only: [:show, :edit, :update, :destroy] do
     member do
       patch :subscribe
+      patch :skip
     end
   end
 

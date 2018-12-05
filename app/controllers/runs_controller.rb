@@ -22,6 +22,11 @@ class RunsController < ApplicationController
     redirect_to objective_runs_path(@run.objective)
   end
 
+  def skip
+    @run.update(status: 'skipped')
+    redirect_to objective_runs_path(@run.objective)
+  end
+
   def edit
   end
 
