@@ -1,4 +1,7 @@
-<div class="navbar-wagon">
+<div class="navbar-wagon  <%= "navbar-wagon-home" if @is_home %>">
+  <!-- Logo -->
+
+
   <!-- Logo -->
   <%= link_to root_path, class: "navbar-wagon-brand" do %>
     <%= image_tag "logo.png", height: 50 %>
@@ -39,7 +42,8 @@
       </div>
     <% else %>
       <!-- Login link (when logged out) -->
-      <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to t(".sign_in", default: "sign in"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link navbar-white-link" %>
+      <%= link_to t(".sign_in", default: "sign up"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link navbar-white-link" %>
     <% end %>
   </div>
 
