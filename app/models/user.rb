@@ -6,4 +6,7 @@ class User < ApplicationRecord
   has_many :trainings
   has_many :objectives
   has_many :runs, through: :objectives
+
+
+  has_one :pending_training, -> { where(status: 'pending') }, class_name: 'Training'
 end

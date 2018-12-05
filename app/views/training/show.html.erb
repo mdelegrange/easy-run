@@ -1,0 +1,20 @@
+<div class="main-container">
+  <div class="card-container">
+    <div class="row text-center">
+      <h2>My Training</h2>
+    </div>
+    <div class="row">
+      <% @current_training %>
+        <div class="col-xs-12 col-sm-4">
+          <%= link_to '#' do %>
+            <div class="card">
+              <div class="card-category"><%= @current_training.status %></div>
+              <div class="card-description">
+                <h2><%= @current_training.begin_date %></h2>
+              </div>
+            </div>
+          <% end %>
+        </div>
+    </div>
+  </div>
+</div>
