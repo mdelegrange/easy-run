@@ -8,5 +8,5 @@ class User < ApplicationRecord
   has_many :runs, through: :objectives
 
 
-  has_one :pending_training, -> { where(status: 'pending') }, class_name: 'Training'
+  has_one :pending_training, -> { where(status: 'current') }, class_name: 'Training'
 end

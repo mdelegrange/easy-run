@@ -166,7 +166,7 @@ puts "Training Sessions Created"
 
 #Trainings
 
-training = Training.create!(user: user1, training_plan: training_plan1, begin_date: '2019-01-06', status:'pending')
+training = Training.create!(user: user1, training_plan: training_plan1, begin_date: '2019-01-06', status:'current')
 
 puts "Training Created"
 
