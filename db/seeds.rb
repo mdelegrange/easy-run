@@ -74,15 +74,15 @@ race12 = Race.create!(name: 'Courir pour le plaisir', date:'2019-02-24' , distan
 puts "Races Created"
 
 #Objective
-objective1 = Objective.create!(user: user1, race: race1, kind: 'Marathon' , duration: nil, distance: 42195, status: 'pending'  )
+objective1 = Objective.create!(user: user1, race: race1, kind: 'Marathon' , duration: nil, distance: 42195, status: 'current'  )
 
 puts "Objectives Created"
 
 #Runs
-run1 = Run.create!(objective: objective1, race: race4, targeted_time: 3300, status: 'pending')
-run2 = Run.create!(objective: objective1, race: race3, targeted_time: 3000, status: 'pending')
-run3 = Run.create!(objective: objective1, race: race2, targeted_time: 7620, status: 'pending')
-run4 = Run.create!(objective: objective1, race: race1, targeted_time: 14400, status: 'pending')
+run1 = Run.create!(objective: objective1, race: race4, targeted_time: 3300, status: 'pending_subscription')
+run2 = Run.create!(objective: objective1, race: race3, targeted_time: 3000, status: 'pending_subscription')
+run3 = Run.create!(objective: objective1, race: race2, targeted_time: 7620, status: 'pending_subscription')
+run4 = Run.create!(objective: objective1, race: race1, targeted_time: 14400, status: 'pending_subscription')
 
 puts "Runs Created"
 
@@ -158,7 +158,7 @@ puts "Training Sessions Created"
 
 #Trainings
 
-training = Training.create!(user: user1, training_plan: training_plan1, begin_date: '2019-01-06')
+training = Training.create!(user: user1, training_plan: training_plan1, status: 'current', begin_date: '2019-01-06')
 
 puts "Training Created"
 
