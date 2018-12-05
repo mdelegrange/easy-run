@@ -1,14 +1,8 @@
 /* Main navbar */
-.navbar-wagon-home {
- background: rgba(239, 201, 200, 0);
- position: fixed;
- width: 100vw;
- text-align: right;
-}
 
 .navbar-wagon {
   // box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
-
+  background: rgba(255, 255, 255, 1);
   transition: all 0.3s ease;
   height: 70px;
   padding: 0px 30px;
@@ -17,10 +11,16 @@
   justify-content: space-between;
 }
 
-/* Logo */
-.navbar-wagon-brand img {
-  height: 50px;
+.navbar-wagon-home {
+  background: transparent;
+  position: fixed;
+  width: 100vw;
+  text-align: right;
 }
+/* Logo */
+// .navbar-wagon-brand img {
+//   height: 50px;
+// }
 
 /* User Avatar */
 .navbar-wagon .avatar {
@@ -93,3 +93,16 @@
   transition-duration: 0.4s;
 
 }
+
+.logo-navbar {
+  font-family: 'Fredoka One';
+  font-size: 40px;
+  text-transform: uppercase;
+  background: linear-gradient(to right, #0acffe 0%, #495aff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-decoration: none;
+}
+
+
+// background-image: linear-gradient(to right, #0acffe 0%, #495aff 100%);
