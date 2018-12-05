@@ -9,7 +9,7 @@ class RunsController < ApplicationController
     @race = Race.find(params[:race_id])
     @run.race = @race
     @run.objective = current_user.current_objective
-    @run.status = 'pending'
+    @run.status = 'pending_subscription'
     if @run.save
       race_runs_path(@race)
     else
