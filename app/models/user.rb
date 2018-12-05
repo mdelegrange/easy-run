@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   
   has_one :current_objective, -> { where(status: 'current') }, class_name: 'Objective'
+  has_one :current_training, -> { where(status: 'current') }, class_name: 'Training'
   has_many :objectives
   has_many :trainings
   has_many :runs, through: :objectives

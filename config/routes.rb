@@ -22,7 +22,7 @@ Rails.application.routes.draw do
   end
 
   resource :training, only: [:show] do
-    resource :sessions, only: [:show], module: :trainings
+    resources :sessions, only: [:show], module: :trainings
   end
 
   resource :profile, only: [:show, :edit, :update]
