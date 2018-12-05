@@ -18,6 +18,7 @@ Rails.application.routes.draw do
     member do
       patch :subscribe
       patch :skip
+      patch :mark_as_done
     end
   end
 
