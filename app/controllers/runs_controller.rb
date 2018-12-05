@@ -13,9 +13,15 @@ class RunsController < ApplicationController
   	end
   end
 
+  def destroy
+    @run = Run.find(params[:id])
+    @run.destroy
+    redirect_to runs_path
+  end
+  
   private
 
   def run_params
-  	params.require(:run).permit(:targeted_time)
+    params.require(:run).permit(:targeted_time)
   end
 end
