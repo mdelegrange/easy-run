@@ -1,0 +1,20 @@
+<div class="main-container">
+  <h1><%= current_user.first_name%> <%=current_user.last_name%> </h1>
+  <div class="card-container">
+    <div class="row text-center">
+      <h2>Your Run</h2>
+    </div>
+    <div class="row">
+      <div class="col-xs-12 col-sm-4">
+          <div class="card">
+            <div class="card-category"><%= @run.race.name%></div>
+            <div class="card-description">
+              <h2>Type: <%= @run.objective.kind %></h2>
+              <h5> Targeted Time: <%= @run.targeted_time %></h5>
+              <p><strong>Status: <%= @run.status %></strong></p> 
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
