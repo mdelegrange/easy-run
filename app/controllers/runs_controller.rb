@@ -1,10 +1,5 @@
 class RunsController < ApplicationController
   before_action :set_run, only: [:show, :edit, :register, :update, :destroy]
-  
-  def index
-    @objective = current_user.objectives.find(params[:objective_id])
-    @runs = @objective.runs
-  end
 
   def show
   end
