@@ -17,5 +17,7 @@
       </div>
     </div>
   </div>
+  <% unless @run.status == 'registered' %>
   <%= link_to 'register', register_run_path(@run), method: :patch, class: 'btn btn-primary' %>
+  <% end %>
 </div>
