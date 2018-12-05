@@ -1,0 +1,80 @@
+.banner {
+  color: white;
+  height: calc(100vh);
+  /* if you have a 70px navbar => height: calc(100vh - 70px); */
+  background-size: cover !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.banner h1 h2 {
+  color: white;
+}
+
+.banner p {
+  font-size: 25px;
+  font-weight: lighter;
+  color: rgb(255, 255, 255);
+  opacity: 0.6;
+  margin-bottom: 30px;
+}
+
+.btn-home {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.btn-home-design {
+  background-color:#7BE0AD ;
+  width: 135px;
+  margin-bottom: 16px;
+  border-radius: 4px;
+  margin-left: 15px;
+  font-weight: bolder;
+}
+
+.btn-home-design:hover {
+  color: white;
+  transition-duration: 0.4s;
+
+
+  background-color: #49D49D;
+}
+
+.btn-padding {
+  padding: 10px 50px;
+}
+
+.home-subtitle {
+  text-align: left;
+  font-family: 'Montserrat';
+  font-weight: lighter;
+  font-size: 60px;
+}
+
+.home-title {
+  text-align: left;
+  font-family: 'Fredoka One';
+  font-size: 90px;
+}
+
+.form-control-home {
+  border-radius: 4px;
+  width: 730px;
+  height: 52px;
+  box-shadow: inset 0.1em 0.1em
+rgba(0, 0, 255, .2);
+  border-width: 0px;
+  color:rgba(0, 0, 0, .7);
+}
+
+.search-btn{
+  display: flex;
+  align-items: center;
+}
+
+.banner-content {
+  // margin-bottom: 500px;
+}
