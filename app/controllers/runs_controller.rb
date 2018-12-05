@@ -22,7 +22,7 @@ class RunsController < ApplicationController
     end
   end
 
-  def subcribe
+  def subscribe
     @run.update(status: 'subscribed')
     redirect_to objective_runs_path(@run.objective)
   end
