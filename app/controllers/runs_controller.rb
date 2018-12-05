@@ -1,6 +1,11 @@
 class RunsController < ApplicationController
   before_action :set_run, only: [:show, :edit, :register, :update, :destroy]
 
+  def index
+    @objective = current_user.objectives.find(params[:objective_id])
+    @runs = @objective.runs
+  end
+
   def show
   end
 
@@ -24,8 +29,7 @@ class RunsController < ApplicationController
 
   def mark_as_done
     @run.update(status: 'done')
-    redirect_to objective_runs_path(@run.objective)
-  end
+
 
   def edit
   end
