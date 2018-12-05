@@ -1,5 +1,8 @@
 class ObjectivesController < ApplicationController
- 
+  def index
+    @objective = Objective.all
+  end
+
   def create
     @objective = Objective.new(kind: 'marathon', distance: 42195, status: 'pending')
     @objective.user = current_user
