@@ -51,7 +51,7 @@ class ScrapeMarathonsService
           unless list.search('td:nth-child(3) b').text == ""
           races << {
             race_name: list.search('td:nth-child(3) b').text,
-            race_distance: list.search('td:nth-child(5)').text,
+            race_distance: list.search('td:nth-child(5)').text.gsub(' m', '').to_i,
           }
           end
         end
