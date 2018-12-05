@@ -17,8 +17,8 @@ class RunsController < ApplicationController
     end
   end
 
-  def register
-    @run.update(status: 'registered')
+  def subscribe
+    @run.update(status: 'subscribed')
     redirect_to objective_runs_path(@run.objective)
   end
 
