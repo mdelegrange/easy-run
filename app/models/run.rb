@@ -4,5 +4,5 @@ class Run < ApplicationRecord
 
   validates :targeted_time, presence: true, numericality: { greater_than: 0 }
   validates :final_time, presence: true, numericality: { greater_than: 0 }
-  validates :status, inclusion: { in: ['pending', 'accomplished', 'aborted'] }, presence: true
+  validates :status, inclusion: { in: ['pending_subscription', 'subscribed', 'done', 'skipped'] }, presence: true
 end
