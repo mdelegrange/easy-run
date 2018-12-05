@@ -1,6 +1,6 @@
 class ObjectivesController < ApplicationController
   def index
-    @objective = Objective.all
+    @objectives = current_user.objectives
   end
 
   def create
