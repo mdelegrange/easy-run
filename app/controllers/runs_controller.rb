@@ -8,8 +8,8 @@ class RunsController < ApplicationController
     @run = Run.new(run_params)
     @race = Race.find(params[:race_id])
     @run.race = @race
-    @run.objective = current_user.pending_objective
-    @run.status = 'pending'
+    @run.objective = current_user.current_objective
+    @run.status = 'pending_subscription'
     if @run.save
       race_runs_path(@race)
     else
@@ -17,8 +17,8 @@ class RunsController < ApplicationController
     end
   end
 
-  def register
-    @run.update(status: 'registered')
+  def subscribe
+    @run.update(status: 'subscribed')
     redirect_to objective_runs_path(@run.objective)
   end
 
