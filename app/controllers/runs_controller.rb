@@ -22,10 +22,14 @@ class RunsController < ApplicationController
     end
   end
 
-  def subscribe
+  def subcribe
     @run.update(status: 'subscribed')
     redirect_to objective_runs_path(@run.objective)
   end
+
+  def mark_as_done
+    @run.update(status: 'done')
+
 
   def edit
   end
