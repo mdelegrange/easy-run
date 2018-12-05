@@ -4,7 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   
-  has_one :pending_subscription_objective, -> { where(status: 'pending_subscription') }, class_name: 'Objective'
+  has_one :current_objective, -> { where(status: 'current') }, class_name: 'Objective'
   has_many :objectives
   has_many :trainings
   has_many :runs, through: :objectives
