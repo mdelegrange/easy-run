@@ -4,13 +4,14 @@
     <h2 class="home-subtitle">Find your Marathon and run it.</h2>
     <br>
         <div class="input-group input-group-lg search-btn">
-
-  <input type="text" class="form-control-home" placeholder=" Marathon by city" aria-describedby="sizing-addon2">
-
-        <span><div class="btn-home">
-          <%= submit_tag "RUN", :class => "btn btn-primary btn-lg btn-home-design" %>
-        </div></span>
-      </div>
-    </div>
+          <%= form_tag races_path, method: :get do %>
+          <%= select_tag "department" , options_for_select(@departments_options), class: 'form-control-home' %>
+          <span><div class="btn-home">
+          <%= submit_tag "RUN", :class => "btn btn-home-design
+          btn-lg" %></div></span>
+        </div>
+        <%end%>
   </div>
 </div>
+
+      

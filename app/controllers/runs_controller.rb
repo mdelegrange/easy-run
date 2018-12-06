@@ -59,3 +59,4 @@ class RunsController < ApplicationController
     @run = current_user.runs.find(params[:id])
   end
 end
+end
