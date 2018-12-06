@@ -17,6 +17,14 @@ class ProfilesController < ApplicationController
     end
   end
 
+  def quiz_form
+    @user = current_user
+  end
+
+  def quiz
+    @user = current_user
+    redirect_to profile_path
+  end
   private
 
   def user_params
