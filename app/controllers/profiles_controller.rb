@@ -24,6 +24,8 @@ class ProfilesController < ApplicationController
       ["Je cours de temps en temps (environ 1 fois par semaine)", "intermediate"],
       ["Je cours régulièrement (plus de 2 fois par semaine", "advanced"]
    ]
+
+   @targeted_distance = [["Finir un marathon", 42195]]
   end
 
   def quiz
@@ -38,6 +40,6 @@ class ProfilesController < ApplicationController
   end
 
   def quiz_params
-    params.require(:user).permit(:level)
+    params.require(:user).permit(:level, :targeted_distance)
   end
 end
