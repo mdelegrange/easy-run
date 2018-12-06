@@ -1,6 +1,6 @@
 // Card pour timeline
 .card-race {
-  height: 300px;
+  height: 305px;
   width: 230px;
   margin: 10px;
   text-align:center;
@@ -93,6 +93,86 @@
     bottom: -25px;
     left: 97px;
     color: inherit;
+  }
+}
+
+.card-back {
+  height: 300px;
+  width: 230px;
+  margin: 10px;
+  margin-bottom: 24px;
+  text-align:center;
+  padding: 8px 8px 50px 8px;
+  border-radius:8px;
+  background: $grey;
+  color: white;
+  position: relative;
+  box-shadow: 1px 1px 2px $grey;
+  a {
+    text-decoration: none;
+    color:white;
+  }
+
+  p {
+    margin: 12.5px 0 12.5px;
+    font-size: 18px;
+  }
+  &::after {
+    content: '◢';
+    font-size: 36px;
+    position: absolute;
+    transform: rotate(45deg);
+    bottom: -25px;
+    left: 97px;
+    color: $grey;
+  }
+}
+
+.card-back-10000 {
+  background: $blue-dark;
+  &::after {
+    color: $blue-dark;
+  }
+}
+
+.card-back-21100, .card-back-21097 {
+  background: $green-dark;
+  &::after {
+    color: $green-dark;
+  }
+}
+
+.card-back-42195 {
+  background: $orange-dark;
+  &::after {
+    color: $orange-dark;
+  }
+}
+
+.card-date {
+  height: 230px;
+  width: 230px;
+  margin: 10px;
+  margin-top: 24px;
+  text-align:center;
+  padding: 8px 8px 50px 8px;
+  border-radius:8px;
+  color: $grey;
+  background: white;
+  position: relative;
+
+  p {
+    margin: 12.5px 0 12.5px;
+    font-size: 18px;
+  }
+  &::before {
+    content: '◢';
+    font-size: 36px;
+    position: absolute;
+    transform: rotate(225deg);
+    top: -24px;
+    left: 97px;
+    color: white;
   }
 }
 

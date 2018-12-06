@@ -12,7 +12,7 @@ class ScrapeSemisService
         race_info = {
           race_name: race.search("td a[title='cliquez pour le détail']").text,
           race_url: url,
-          race_date: race.search("a[title='Toutes les compétitions de ce jour']").text + '/19',
+          # race_date: race.search("a[title='Toutes les compétitions de ce jour']").text + '/2019',
           race_dpt: race.search("a[title='Toutes les compétitions de ce département pour 15 jours avant et 15 jours après']").text.to_i
         }
         details = scrape_semi_details(url)
@@ -29,6 +29,8 @@ class ScrapeSemisService
     races = []
 
     doc = Nokogiri::HTML(open(url).read)
+    race_details[:race_date] = doc.search("span[style='color:#A00014']").text
+
     list_items = doc.search('tr')
     list_items.each do |list_item|
       if list_item.search('td').first.text == 'Organisateur'
