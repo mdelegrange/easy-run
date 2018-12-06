@@ -1,52 +1,54 @@
-<!-- <div class="main-container">
+<div class="container">
   <div class="card-container">
     <div class="row text-center">
       <h2>Test</h2>
     </div>
     <div class="row">
-      <%# @races.each do |race| %>
-        <div class="col-xs-12 col-sm-4">
-          <div class="card-race card-race-<%=race.distance%>">
-            <div class="card-race-detail card-race-detail-<%=race.distance%>">
-              <h3><%=race.event_name  %></h3>
-              <h4><%#=race.name%></h4>
+      <% @runs.each do |run| %>
+        <div class="col-xs-12 col-sm-3">
+          <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+            <div class="flipper">
+              <div class="front">
+                <!-- front content -->
+                <div class="card-race card-race-<%=run.race.distance%>">
+                  <div class="card-race-detail card-race-detail-<%=run.race.distance%>">
+                    <h3><%=run.race.event_name  %></h3>
+                    <h4><%=run.race.name%></h4>
+                  </div>
+                  <p><%=run.race.distance%></p>
+                </div>
+              </div>
+              <div class="back">
+                <!-- back content -->
+                <div class="card-back card-back-<%=run.race.distance%>">
+                  <%= link_to "" do  %>
+                    <p><i class="fas fa-eye"></i></p>
+                    <p>See race details</p>
+                  <% end %>
+                  <%= link_to "" do  %>
+                    <p><i class="fas fa-exchange-alt"></i></p>
+                    <p>Switch race</p>
+                  <% end %>
+                </div>
+              </div>
             </div>
-            <p><%=race.distance%></p>
           </div>
         </div>
-      <%# end %>
+      <%end %>
 
     </div>
-  </div>
-</div> -->
+    <div class="timeline">
 
-
-
-
-
-
-
-<div class="main-container">
-  <h1><%= current_user.first_name%> <%=current_user.last_name%> </h1>
-    <h2>Your Run</h2>
-  <% @runs.each do |run| %>
-  <div class="card-container">
-    <div class="row text-center">
     </div>
     <div class="row">
-      <div class="col-xs-12 col-sm-4">
-        <%= link_to run_path(run) do %>
-          <div class="card">
-            <div class="card-category"><%= run.race.name%></div>
-            <div class="card-description">
-              <h2>Type: <%= run.objective.kind %></h2>
-              <h5> Targeted Time: <%= run.targeted_time %></h5>
-              <p><strong>Status: <%= run.status %></strong></p>
-            </div>
+      <% @runs.each do |run| %>
+        <div class="col-xs-12 col-sm-3">
+          <div class="card-date">
+              <h4><%=run.race.date%></h4>
           </div>
-          <% end %>
-      </div>
+        </div>
+      <%end %>
+
     </div>
   </div>
-  <% end %>
 </div>
