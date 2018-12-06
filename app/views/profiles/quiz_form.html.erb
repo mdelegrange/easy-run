@@ -1,0 +1,16 @@
+<div class="container">  
+<h2><%= @user.first_name %><%= @user.last_name %></h2>
+
+<%= simple_form_for @user, url: quiz_profile_path, method: :patch do |f| %> 
+  <%= f.label "Quel est votre niveau ?" %>
+  <%= f.input_field :level, collection: @levels_options, class: "form-control" %>
+  <%= simple_fields_for :other do |o| %>
+    <%= o.label "Quel est votre objectif ?" %>
+    <%= o.input :objective, label: false, collection: ["Finir un marathon"]%>
+    <%= o.label "Avez-vous déjà participé à une course ?" %>
+    <%= o.input :already_run_in_official_run, label: false, as: :boolean %>
+  <% end %>
+  <%= f.submit "Create", :class => "btn btn-primary" %>
+  <% end %>
+</div>
+
