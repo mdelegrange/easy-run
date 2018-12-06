@@ -1,3 +1,31 @@
+<!-- <div class="main-container">
+  <div class="card-container">
+    <div class="row text-center">
+      <h2>Test</h2>
+    </div>
+    <div class="row">
+      <%# @races.each do |race| %>
+        <div class="col-xs-12 col-sm-4">
+          <div class="card-race card-race-<%=race.distance%>">
+            <div class="card-race-detail card-race-detail-<%=race.distance%>">
+              <h3><%=race.event_name  %></h3>
+              <h4><%#=race.name%></h4>
+            </div>
+            <p><%=race.distance%></p>
+          </div>
+        </div>
+      <%# end %>
+
+    </div>
+  </div>
+</div> -->
+
+
+
+
+
+
+
 <div class="main-container">
   <h1><%= current_user.first_name%> <%=current_user.last_name%> </h1>
     <h2>Your Run</h2>
@@ -13,7 +41,7 @@
             <div class="card-description">
               <h2>Type: <%= run.objective.kind %></h2>
               <h5> Targeted Time: <%= run.targeted_time %></h5>
-              <p><strong>Status: <%= run.status %></strong></p> 
+              <p><strong>Status: <%= run.status %></strong></p>
             </div>
           </div>
           <% end %>

@@ -1,53 +1,260 @@
-.card {
-  height: 175px;
-  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
-  background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://picsum.photos/200/300/?random');
-  background-size: cover !important;
-  background-position: center;
+// Card pour timeline
+.card-race {
+  height: 300px;
+  width: 230px;
+  margin: 10px;
+  text-align:center;
+  padding: 8px 8px 50px 8px;
+  border-radius:8px;
+  background: $grey;
   color: white;
   position: relative;
+  box-shadow: 1px 1px 2px $grey;
+
+  p {
+    margin: 12.5px 0 12.5px;
+    font-size: 18px;
+  }
+}
+
+.card-race-detail {
+  padding: 0 4px;
+  display:flex;
+  flex-direction:column;
+  height: 100%;
+  width: 100%;
+  background: white;
+  justify-content:space-between;
+  align-items:center;
+  border-radius:8px;
+  color: $grey;
+  &::after {
+    content: '◢';
+    font-size: 36px;
+    position: absolute;
+    transform: rotate(45deg);
+    bottom: -25px;
+    left: 97px;
+    color: inherit;
+  }
+  h3 {
+    font-size: 26px;
+  }
+  h4 {
+    font-size: 16px;
+  }
+}
+
+.card-race-10000 {
+  background: $blue-dark;
+}
+
+.card-race-detail-10000 {
+  color: $blue-dark;
+  &::after {
+    content: '◢';
+    font-size: 36px;
+    position: absolute;
+    transform: rotate(45deg);
+    bottom: -25px;
+    left: 97px;
+    color: inherit;
+  }
+}
+
+.card-race-21100, .card-race-21097 {
+  background: $green-dark;
+}
+
+.card-race-detail-21100, .card-race-detail-21097 {
+  color: $green-dark;
+  &::after {
+    content: '◢';
+    font-size: 36px;
+    position: absolute;
+    transform: rotate(45deg);
+    bottom: -25px;
+    left: 97px;
+    color: inherit;
+  }
+}
+
+.card-race-42195 {
+  background: $orange-dark;
+}
+
+.card-race-detail-42195 {
+  color: $orange-dark;
+  &::after {
+    content: '◢';
+    font-size: 36px;
+    position: absolute;
+    transform: rotate(45deg);
+    bottom: -25px;
+    left: 97px;
+    color: inherit;
+  }
+}
+
+//Cards pour resultats de recherche
+.card-race-results {
+  height: 60vh;
+  width: 100%;
   margin: 10px;
+  text-align:center;
+  padding: 12px 12px 80px 12px;
+  border-radius:8px;
+  background: $grey;
+  color: white;
+  position: relative;
+  box-shadow: 1px 1px 2px $grey;
+
+  p {
+    margin: 12.5px 0 12.5px;
+    font-size: 24px;
+  }
 }
-.card-user {
-  position: absolute;
-  right: 10px;
-  top: 10px;
-  width: 40px;
-  border-radius: 50%;
-}
-.card-category {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  font-size: 15px;
-  text-transform: uppercase;
-}
-.card-description {
-  position: absolute;
-  bottom: 10px;
-  left: 10px;
-}
-.card-description h2 {
-  font-size: 24px;
-}
-.card-description p {
-  font-size: 14px;
-  opacity: 0.7;
-  font-weight: lighter;
-}
-.card-link {
+
+.overlay {
   position: absolute;
   top: 0;
   bottom: 0;
+  left: 0;
   right: 0;
+  height: 100%;
   width: 100%;
-  z-index: 2;
-  background: black;
   opacity: 0;
+  transition: .5s ease;
+  background-color: $grey;
 }
-.card-link:hover {
-  opacity: 0.1;
+
+.overlay-10000 {
+  background-color: $blue-dark;
 }
+
+.overlay-21100, .overlay-21097 {
+  background-color: $green-dark;
+}
+
+.overlay-42195 {
+  background-color: $orange-dark;
+}
+
+.overlay:hover {
+  opacity: 0.7;
+}
+
+.text {
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.card-race-results-detail {
+  padding: 0 30px;
+  display:flex;
+  flex-direction:column;
+  height: 100%;
+  width: 100%;
+  background: white;
+  justify-content:space-around;
+  align-items:center;
+  border-radius:8px;
+  color: $grey;
+
+  h3 {
+    font-size: 30px;
+  }
+  h4 {
+    font-size: 20px;
+  }
+
+
+}
+.card-race-results-10000 {
+  background: $blue-dark;
+}
+
+.card-race-results-detail-10000 {
+  color: $blue-dark;
+}
+
+.card-race-results-21100, .card-race-results-21097{
+  background: $green-dark;
+}
+
+.card-race-results-detail-21100, .card-race-results-detail-21097 {
+  color: $green-dark;
+}
+
+.card-race-results-42195 {
+  background: $orange-dark;
+}
+
+.card-race-results-detail-42195 {
+  color: $orange-dark;
+}
+
+
+//
+
+
+// .card {
+//   height: 175px;
+//   text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+//   background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://picsum.photos/200/300/?random');
+//   background-size: cover !important;
+//   background-position: center;
+//   color: white;
+//   position: relative;
+//   margin: 10px;
+// }
+// .card-user {
+//   position: absolute;
+//   right: 10px;
+//   top: 10px;
+//   width: 40px;
+//   border-radius: 50%;
+// }
+// .card-category {
+//   position: absolute;
+//   top: 10px;
+//   left: 10px;
+//   font-size: 15px;
+//   text-transform: uppercase;
+// }
+// .card-description {
+//   position: absolute;
+//   bottom: 10px;
+//   left: 10px;
+// }
+// .card-description h2 {
+//   font-size: 24px;
+// }
+// .card-description p {
+//   font-size: 14px;
+//   opacity: 0.7;
+//   font-weight: lighter;
+// }
+// .card-link {
+//   position: absolute;
+//   top: 0;
+//   bottom: 0;
+//   right: 0;
+//   width: 100%;
+//   z-index: 2;
+//   background: black;
+//   opacity: 0;
+// }
+// .card-link:hover {
+//   opacity: 0.1;
+// }
 
 
 

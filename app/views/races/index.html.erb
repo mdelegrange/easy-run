@@ -1,23 +1,30 @@
-<div class="main-container">
-  <div class="card-container">
-    <div class="row text-center">
+<div class="container">
+  <div class="row text-center">
       <h2>All races</h2>
     </div>
     <div class="row">
       <% @races.each do |race| %>
-        <div class="col-xs-12 col-sm-4">
-          <%= link_to '#' do %>
-            <div class="card">
-              <div class="card-category"><%= race.name%></div>
-              <div class="card-description">
-                <h2><%= race.date %></h2>
-                <h5><%= race.city %></h5>
-                <p><strong><%= race.address %></strong></p> 
+        <%= link_to root_path  do %>
+          <div class="col-xs-12 col-sm-4">
+            <div class="card-race-results card-race-results-<%=race.distance%>">
+              <div class="card-race-results-detail card-race-results-detail-<%=race.distance%>">
+                <h3><%=race.event_name  %></h3>
+                <h4><%=race.name%></h4>
+              </div>
+              <p><%=race.distance%> m</p>
+              <div class="overlay overlay-<%=race.distance%>">
+
+              <div class="text">
+                <p>Sélectionner cette course</p>
+                <p style="font-size: 40px"><i class="far fa-hand-point-up"></i></p>
+              </div>
               </div>
             </div>
-          <% end %>
-        </div>
+          </div>
+        <% end %>
       <% end %>
-    </div>
   </div>
 </div>
+
+
+
