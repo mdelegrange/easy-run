@@ -8,7 +8,7 @@ class AddRacesToDBService
         race_info[:races_list].each do |race|
           Race.create({
             name: race[:race_name],
-            date: race_info[:race_date],
+            date: Date.strptime(race_info[:race_date], "%d/%m/%Y"),
             distance: race[:race_distance],
             event_name: race_info[:race_name],
             department: race_info[:race_dpt],
@@ -26,7 +26,7 @@ class AddRacesToDBService
         race_info[:races_list].each do |race|
           Race.create({
             name: race[:race_name],
-            date: race_info[:race_date],
+            date: Date.strptime(race_info[:race_date], "%d/%m/%Y"),
             distance: race[:race_distance],
             event_name: race_info[:race_name],
             department: race_info[:race_dpt],
