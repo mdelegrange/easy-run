@@ -34,6 +34,7 @@ class RunsController < ApplicationController
 
   def mark_as_done
     @run.update(status: 'done')
+  end
 
   def edit
   end
