@@ -1,4 +1,4 @@
 class Race < ApplicationRecord
-  has_many :runs
-  has_many :objectives
+  has_many :runs, dependent: :destroy
+  has_many :objectives, dependent: :destroy
 end
