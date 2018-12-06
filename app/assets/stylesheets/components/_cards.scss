@@ -1,3 +1,167 @@
+// Card pour timeline
+.card-race {
+  height: 300px;
+  width: 230px;
+  margin: 10px;
+  text-align:center;
+  padding: 8px 8px 50px 8px;
+  border-radius:8px;
+  background: $grey;
+  color: white;
+  position: relative;
+  box-shadow: 1px 1px 2px $grey;
+
+  p {
+    margin: 12.5px 0 12.5px;
+    font-size: 18px;
+  }
+}
+
+.card-race-detail {
+  padding: 0 4px;
+  display:flex;
+  flex-direction:column;
+  height: 100%;
+  width: 100%;
+  background: white;
+  justify-content:space-between;
+  align-items:center;
+  border-radius:8px;
+  color: $grey;
+  &::after {
+    content: '◢';
+    font-size: 36px;
+    position: absolute;
+    transform: rotate(45deg);
+    bottom: -25px;
+    left: 97px;
+    color: inherit;
+  }
+  h3 {
+    font-size: 26px;
+  }
+  h4 {
+    font-size: 16px;
+  }
+}
+
+.card-race-10000 {
+  background: $blue-dark;
+}
+
+.card-race-detail-10000 {
+  color: $blue-dark;
+  &::after {
+    content: '◢';
+    font-size: 36px;
+    position: absolute;
+    transform: rotate(45deg);
+    bottom: -25px;
+    left: 97px;
+    color: inherit;
+  }
+}
+
+.card-race-21100 {
+  background: $green-dark;
+}
+
+.card-race-detail-21100 {
+  color: $green-dark;
+  &::after {
+    content: '◢';
+    font-size: 36px;
+    position: absolute;
+    transform: rotate(45deg);
+    bottom: -25px;
+    left: 97px;
+    color: inherit;
+  }
+}
+
+.card-race-42195 {
+  background: $orange-dark;
+}
+
+.card-race-detail-42195 {
+  color: $orange-dark;
+  &::after {
+    content: '◢';
+    font-size: 36px;
+    position: absolute;
+    transform: rotate(45deg);
+    bottom: -25px;
+    left: 97px;
+    color: inherit;
+  }
+}
+
+//Cards pour resultats de recherche
+.card-race-results {
+  height: 60vh;
+  width: 80%;
+  margin: 10px;
+  text-align:center;
+  padding: 12px 12px 80px 12px;
+  border-radius:8px;
+  background: $grey;
+  color: white;
+  position: relative;
+  box-shadow: 1px 1px 2px $grey;
+
+  p {
+    margin: 12.5px 0 12.5px;
+    font-size: 24px;
+  }
+}
+
+.card-race-results-detail {
+  padding: 0 30px;
+  display:flex;
+  flex-direction:column;
+  height: 100%;
+  width: 100%;
+  background: white;
+  justify-content:space-around;
+  align-items:center;
+  border-radius:8px;
+  color: $grey;
+
+  h3 {
+    font-size: 30px;
+  }
+  h4 {
+    font-size: 20px;
+  }
+}
+.card-race-results-10000 {
+  background: $blue-dark;
+}
+
+.card-race-results-detail-10000 {
+  color: $blue-dark;
+}
+
+.card-race-results-21100 {
+  background: $green-dark;
+}
+
+.card-race-results-detail-21100 {
+  color: $green-dark;
+}
+
+.card-race-results-42195 {
+  background: $orange-dark;
+}
+
+.card-race-results-detail-42195 {
+  color: $orange-dark;
+}
+
+
+//
+
+
 .card {
   height: 175px;
   text-shadow: 0 1px 3px rgba(0,0,0,0.6);

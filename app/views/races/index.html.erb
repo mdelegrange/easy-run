@@ -1,6 +1,29 @@
 <div class="main-container">
   <div class="card-container">
     <div class="row text-center">
+      <h2>Test</h2>
+    </div>
+    <div class="row">
+      <% @races.each do |race| %>
+        <div class="col-xs-12 col-sm-4">
+          <div class="card-race-results card-race-results-<%=race.distance%>">
+            <div class="card-race-results-detail card-race-results-detail-<%=race.distance%>">
+              <h3><%=race.event_name  %></h3>
+              <h4><%=race.name%></h4>
+            </div>
+            <p><%=race.distance%> m</p>
+          </div>
+        </div>
+      <% end %>
+
+    </div>
+  </div>
+</div>
+
+
+<div class="main-container">
+  <div class="card-container">
+    <div class="row text-center">
       <h2>All races</h2>
     </div>
     <div class="row">
@@ -12,7 +35,7 @@
               <div class="card-description">
                 <h2><%= race.date %></h2>
                 <h5><%= race.city %></h5>
-                <p><strong><%= race.address %></strong></p> 
+                <p><strong><%= race.address %></strong></p>
               </div>
             </div>
           <% end %>
