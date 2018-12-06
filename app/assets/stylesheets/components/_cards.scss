@@ -62,11 +62,11 @@
   }
 }
 
-.card-race-21100 {
+.card-race-21100, .card-race-21097 {
   background: $green-dark;
 }
 
-.card-race-detail-21100 {
+.card-race-detail-21100, .card-race-detail-21097 {
   color: $green-dark;
   &::after {
     content: '◢';
@@ -99,7 +99,7 @@
 //Cards pour resultats de recherche
 .card-race-results {
   height: 60vh;
-  width: 80%;
+  width: 100%;
   margin: 10px;
   text-align:center;
   padding: 12px 12px 80px 12px;
@@ -112,6 +112,11 @@
   p {
     margin: 12.5px 0 12.5px;
     font-size: 24px;
+  }
+
+  &:hover {
+    content: "Pick";
+    filter: blur(5px);
   }
 }
 
@@ -133,6 +138,8 @@
   h4 {
     font-size: 20px;
   }
+
+
 }
 .card-race-results-10000 {
   background: $blue-dark;
@@ -142,11 +149,11 @@
   color: $blue-dark;
 }
 
-.card-race-results-21100 {
+.card-race-results-21100, .card-race-results-21097{
   background: $green-dark;
 }
 
-.card-race-results-detail-21100 {
+.card-race-results-detail-21100, .card-race-results-detail-21097 {
   color: $green-dark;
 }
 
@@ -162,56 +169,56 @@
 //
 
 
-.card {
-  height: 175px;
-  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
-  background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://picsum.photos/200/300/?random');
-  background-size: cover !important;
-  background-position: center;
-  color: white;
-  position: relative;
-  margin: 10px;
-}
-.card-user {
-  position: absolute;
-  right: 10px;
-  top: 10px;
-  width: 40px;
-  border-radius: 50%;
-}
-.card-category {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  font-size: 15px;
-  text-transform: uppercase;
-}
-.card-description {
-  position: absolute;
-  bottom: 10px;
-  left: 10px;
-}
-.card-description h2 {
-  font-size: 24px;
-}
-.card-description p {
-  font-size: 14px;
-  opacity: 0.7;
-  font-weight: lighter;
-}
-.card-link {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  width: 100%;
-  z-index: 2;
-  background: black;
-  opacity: 0;
-}
-.card-link:hover {
-  opacity: 0.1;
-}
+// .card {
+//   height: 175px;
+//   text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+//   background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://picsum.photos/200/300/?random');
+//   background-size: cover !important;
+//   background-position: center;
+//   color: white;
+//   position: relative;
+//   margin: 10px;
+// }
+// .card-user {
+//   position: absolute;
+//   right: 10px;
+//   top: 10px;
+//   width: 40px;
+//   border-radius: 50%;
+// }
+// .card-category {
+//   position: absolute;
+//   top: 10px;
+//   left: 10px;
+//   font-size: 15px;
+//   text-transform: uppercase;
+// }
+// .card-description {
+//   position: absolute;
+//   bottom: 10px;
+//   left: 10px;
+// }
+// .card-description h2 {
+//   font-size: 24px;
+// }
+// .card-description p {
+//   font-size: 14px;
+//   opacity: 0.7;
+//   font-weight: lighter;
+// }
+// .card-link {
+//   position: absolute;
+//   top: 0;
+//   bottom: 0;
+//   right: 0;
+//   width: 100%;
+//   z-index: 2;
+//   background: black;
+//   opacity: 0;
+// }
+// .card-link:hover {
+//   opacity: 0.1;
+// }
 
 
 

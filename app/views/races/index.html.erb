@@ -1,7 +1,6 @@
-<div class="main-container">
-  <div class="card-container">
-    <div class="row text-center">
-      <h2>Test</h2>
+<div class="container">
+  <div class="row text-center">
+      <h2>All races</h2>
     </div>
     <div class="row">
       <% @races.each do |race| %>
@@ -15,32 +14,8 @@
           </div>
         </div>
       <% end %>
-
-    </div>
   </div>
 </div>
 
 
-<div class="main-container">
-  <div class="card-container">
-    <div class="row text-center">
-      <h2>All races</h2>
-    </div>
-    <div class="row">
-      <% @races.each do |race| %>
-        <div class="col-xs-12 col-sm-4">
-          <%= link_to '#' do %>
-            <div class="card">
-              <div class="card-category"><%= race.name%></div>
-              <div class="card-description">
-                <h2><%= race.date %></h2>
-                <h5><%= race.city %></h5>
-                <p><strong><%= race.address %></strong></p>
-              </div>
-            </div>
-          <% end %>
-        </div>
-      <% end %>
-    </div>
-  </div>
-</div>
+
