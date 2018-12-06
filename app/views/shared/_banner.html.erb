@@ -4,14 +4,12 @@
     <h2 class="home-subtitle">Find your Marathon and run it.</h2>
     <br>
         <div class="input-group input-group-lg search-btn">
-          <%= form_tag races_path, method: :get do %>
-          <%= select_tag "department" , options_for_select(@departments_options), class: 'form-control-home' %>
-          <span><div class="btn-home">
-          <%= submit_tag "RUN", :class => "btn btn-home-design
-          btn-lg" %></div></span>
+          <%= form_tag races_path, method: :get, class: 'form-inline' do %>
+            <%= select_tag "department" , options_for_select(@departments_options), class: 'form-control-home' %>
+            <%= submit_tag "RUN", :class => "btn btn-primary btn-lg btn-home-design" %>
+          <%end%>
         </div>
-        <%end%>
   </div>
 </div>
 
-      
+
