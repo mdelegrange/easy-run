@@ -74,7 +74,7 @@ puts "Users Created"
 # puts "Races Created"
 
 #Objective
-objective1 = Objective.create!(user: user1, race: Race.first, kind: 'Marathon' , duration: nil, distance: 42195, status: 'pending'  )
+objective1 = Objective.create!(user: user1, race: Race.first, kind: 'Marathon' , duration: nil, distance: 42195, status: 'current'  )
 
 puts "Objectives Created"
 

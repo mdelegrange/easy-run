@@ -14,8 +14,12 @@
     <% if user_signed_in? %>
 
       <!-- Links when logged in -->
-      <%= link_to "Races", "#", class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to "Trainings", "#", class: "navbar-wagon-item navbar-wagon-link" %>
+      <% unless current_user.current_objective.nil? %>
+        <%= link_to "Races", objective_runs_path(current_user.current_objective) , class: "navbar-wagon-item navbar-wagon-link" %>
+        <%= link_to "Trainings", "#", class: "navbar-wagon-item navbar-wagon-link" %>
+      <% else %>
+        <p>coucou</p>
+      <% end %>
 
       <!-- Avatar with dropdown menu -->
       <div class="navbar-wagon-item">
@@ -23,7 +27,7 @@
           <%= image_tag "user.png", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
           <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
             <li>
-              <%= link_to "#" do %>
+              <%= link_to profile_path do %>
                 <i class="fa fa-user"></i> <%= t(".profile", default: "Profile") %>
               <% end %>
             </li>
