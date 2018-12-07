@@ -13,7 +13,26 @@ class ObjectivesController < ApplicationController
       status: "current"
       )
 
+
     if @objective.save
+      Run.create(
+      objective_id: @objective.id,
+      race_id:924
+      )
+      Run.create(
+      objective_id: @objective.id,
+      race_id: 1299
+      )
+      Run.create(
+      objective_id: @objective.id,
+      race_id:1060
+      )
+
+      @run = Run.new(
+      objective_id: @objective.id,
+      race_id: params[:race_id])
+      @run.save
+
       redirect_to objective_runs_path(@objective)
     else
       render :new

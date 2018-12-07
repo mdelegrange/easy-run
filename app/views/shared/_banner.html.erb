@@ -3,9 +3,14 @@
     <h1 class="home-title">EASY RUN</h1>
     <h2 class="home-subtitle">Trouvez votre course et atteignez votre objectif.</h2>
     <br>
-    <div>
-    <%= link_to "Courrez avec nous!" , quiz_form_profile_path, class: "btn btn-primary btn-lg btn-home-design" %>
-    </div>
+
+    <% if user_signed_in? %>
+      <%= link_to "Courez avec nous!" , objective_runs_path(current_user.objectives.last.id), class: "btn btn-primary btn-lg btn-home-design" %>
+    <% else %>
+
+      <%= link_to "Courez avec nous!" , new_user_session_path, class: "btn btn-primary btn-lg btn-home-design" %>
+    <% end %>
+
   </div>
 </div>
 
