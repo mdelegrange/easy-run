@@ -1,16 +1,23 @@
-<div class="container">  
-<h2><%= @user.first_name %><%= @user.last_name %></h2>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-md-6 col-md-offset-3">
+<h2>Quel coureur êtes-vous ?</h2>
 
-<%= simple_form_for @user, url: quiz_profile_path, method: :patch do |f| %> 
+<%= simple_form_for @user, url: quiz_profile_path, method: :patch do |f| %>
   <%= f.label "Quel est votre niveau ?" %>
   <%= f.input_field :level, collection: @levels_options, class: "form-control" %>
   <%= f.label "Quel est votre objectif ?" %>
-  <%= f.input :targeted_distance, label: false, collection: @targeted_distance%>
-  <%= simple_fields_for :other do |o| %>
-    <%= o.label "Avez-vous déjà participé à une course ?" %>
-    <%= o.input :already_run_in_official_run, label: false, as: :boolean %>
-  <% end %>
+  <%= f.input :targeted_distance, label: false, collection: @targeted_distance, class: "form-control" %>
+  <%= f.label "Avez-vous déjà participé à une course officielle ?" %>
+  <%= f.input :has_already_run, label: false, collection: ['oui', 'non'], class: "form-control" %>
+  <%= f.label "Dans quel département courez-vous ?" %>
+  <%= f.input :department , label: false, collection: @departments_options, class: 'form-control' %>
+
   <%= f.submit "Create", :class =>"btn btn-primary" %>
   <% end %>
 </div>
+
+    </div>
+  </div>
+
 
