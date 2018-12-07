@@ -3,11 +3,10 @@ Rails.application.routes.draw do
   root to: 'pages#home'
 
   # Objective creation
-  resources :marathons, only: [:index] do
-    resources :objectives, only: [:create]
-  end
+
   resources :races, only: [:index] do
     resources :runs, only: [:create]
+    resources :objectives, only: [:create]
   end
 
   # Dashboard
@@ -26,9 +25,9 @@ Rails.application.routes.draw do
     resources :sessions, only: [:show], module: :trainings
   end
 
-  resource :profile, only: [:show, :edit, :update] do 
-    member do 
-      get :quiz_form 
+  resource :profile, only: [:show, :edit, :update] do
+    member do
+      get :quiz_form
       patch :quiz
     end
   end

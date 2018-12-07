@@ -14,23 +14,12 @@
     <% if user_signed_in? %>
 
       <!-- Links when logged in -->
-<<<<<<< HEAD
       <% unless current_user.current_objective.nil? %>
         <%= link_to "Races", objective_runs_path(current_user.current_objective) , class: "navbar-wagon-item navbar-wagon-link" %>
         <%= link_to "Trainings", "#", class: "navbar-wagon-item navbar-wagon-link" %>
       <% else %>
-        <p>coucou</p>
+        <p>Welcome!</p>
       <% end %>
-=======
-      <% if  @is_home %>
-        <%= link_to "Races", "#", class: "navbar-wagon-item navbar-wagon-link navbar-white-link" %>
-        <%= link_to "Trainings", "#", class: "navbar-wagon-item navbar-wagon-link navbar-white-link" %>
-      <% else %>
-        <%= link_to "Races", "#", class: "navbar-wagon-item navbar-wagon-link" %>
-        <%= link_to "Trainings", "#", class: "navbar-wagon-item navbar-wagon-link" %>
-      <% end %>
-
->>>>>>> master
 
       <!-- Avatar with dropdown menu -->
       <div class="navbar-wagon-item">

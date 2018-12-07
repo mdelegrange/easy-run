@@ -4,7 +4,7 @@
     </div>
     <div class="row">
       <% @races.each do |race| %>
-        <%= link_to root_path  do %>
+        <%= link_to race_objectives_path([race, @objective]), method: :post  do %>
           <div class="col-xs-12 col-sm-4">
             <div class="card-race-results card-race-results-<%=race.distance%>">
               <div class="card-race-results-detail card-race-results-detail-<%=race.distance%>">
