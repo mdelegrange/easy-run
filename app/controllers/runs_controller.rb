@@ -3,7 +3,9 @@ class RunsController < ApplicationController
 
   def index
     @objective = current_user.objectives.find(params[:objective_id])
-    @runs = @objective.runs
+
+    @runs = current_user.objectives.last.runs
+    @race = @objective.race.date
   end
 
   def show
