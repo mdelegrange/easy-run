@@ -29,11 +29,12 @@ class ProfilesController < ApplicationController
   end
 
   def quiz
-    raise
-    current_user.update(quiz_params)
-    redirect_to profile_path
+    if current_user.update(quiz_params)
+      redirect_to races_path
+    else
+      render :new
   end
-
+end
   private
 
   def user_params
