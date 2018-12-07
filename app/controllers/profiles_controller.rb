@@ -3,7 +3,7 @@ class ProfilesController < ApplicationController
   def show
     @user = current_user
   end
-  
+
   def edit
     @user = current_user
   end
@@ -26,6 +26,7 @@ class ProfilesController < ApplicationController
    ]
 
    @targeted_distance = [["Finir un marathon", 42195]]
+   @departments_options = Race::DEPARTMENTS.map { |label, value| [label, value] }
   end
 
   def quiz
@@ -40,6 +41,6 @@ class ProfilesController < ApplicationController
   end
 
   def quiz_params
-    params.require(:user).permit(:level, :targeted_distance)
+    params.require(:user).permit(:level, :targeted_distance, :has_already_run, :department)
   end
 end
