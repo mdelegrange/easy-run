@@ -5,12 +5,16 @@ class ObjectivesController < ApplicationController
   end
 
   def create
-    @objective = Objective.new(kind: 'marathon', distance: 42195, status: 'pending')
-    @objective.user = current_user
-    @marathon = Race.find(params[:race_id])
-    @objective.race = @marathon
+    @objective = Objective.new(
+      user: current_user,
+      race_id: params[:race_id],
+      kind: "marathon",
+      distance: 42195,
+      status: "current"
+      )
+
     if @objective.save
-      redirect_to marathons_path
+      redirect_to objective_runs_path(@objective)
     else
       render :new
     end

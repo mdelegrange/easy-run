@@ -1,23 +1,52 @@
 <div class="container">
   <div class="row">
-    <div class="col-xs-12 col-md-6 col-md-offset-3">
-<h2>Quel coureur êtes-vous ?</h2>
+    <div class="col-xs-12 col-sm-8 col-sm-offset-2">
+      <div class="form-login">
+        <h2>Quel coureur êtes-vous ?</h2>
+        <%= simple_form_for @user, url: quiz_profile_path, method: :patch do |f| %>
+          <%= f.label "Quel est votre niveau ?" %>
+          <%= f.input :level, label: false, collection: @levels_options, as: :radio_buttons, wrapper_html: {class: 'hidden'} %>
+            <div class="category-choices">
+              <% @levels_options.each do |level_option| %>
+                <label class="category-choice_1" for="user_level_<%=level_option[1]%>">
+                  <%= level_option[0] %>
 
-<%= simple_form_for @user, url: quiz_profile_path, method: :patch do |f| %>
-  <%= f.label "Quel est votre niveau ?" %>
-  <%= f.input_field :level, collection: @levels_options, class: "form-control" %>
-  <%= f.label "Quel est votre objectif ?" %>
-  <%= f.input :targeted_distance, label: false, collection: @targeted_distance, class: "form-control" %>
-  <%= f.label "Avez-vous déjà participé à une course officielle ?" %>
-  <%= f.input :has_already_run, label: false, collection: ['oui', 'non'], class: "form-control" %>
-  <%= f.label "Dans quel département courez-vous ?" %>
-  <%= f.input :department , label: false, collection: @departments_options, class: 'form-control' %>
+                </label>
+              <% end %>
+            </div>
 
-  <%= f.submit "Create", :class =>"btn btn-primary" %>
-  <% end %>
-</div>
+          <%#= f.input_field :level, collection: @levels_options, as: :check_boxes %>
+          <%= f.label "Quel est votre objectif ?" %>
+          <%= f.input :targeted_distance, label: false, collection: @targeted_distances, as: :radio_buttons, wrapper_html: {class: 'hidden'} %>
+            <div class="category-choices">
+              <% @targeted_distances.each do |targeted_distance| %>
+                <label class="category-choice_2" for="user_targeted_distance_<%=targeted_distance[1]%>">
+                  <%= targeted_distance[0] %>
 
+                </label>
+              <% end %>
+            </div>
+
+          <%= f.label "Avez-vous déjà participé à une course officielle ?" %>
+          <%= f.input :has_already_run, label: false, collection: ['oui', 'non'], as: :radio_buttons, wrapper_html: {class: 'hidden'} %>
+            <div class="category-choices">
+              <% ['oui', 'non'].each do |choice| %>
+                <label class="category-choice_3" for="user_has_already_run_<%=choice%>">
+                  <%= choice %>
+
+                </label>
+              <% end %>
+            </div>
+          <%= f.label "Dans quel département courez-vous ?" %>
+
+
+          <%= f.input :department , label: false, collection: @departments_options, class: 'form-control full-width' %>
+
+          <%= f.submit "Create", :class =>"btn btn-primary" %>
+        <% end %>
+      </div>
     </div>
   </div>
+</div>
 
 

@@ -1,0 +1,28 @@
+.category-choices {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  flex-wrap: wrap;
+  margin: 20px 0;
+}
+
+.category-choice_1, .category-choice_2, .category-choice_3 {
+  background: $brand-primary;
+  color: black;
+  padding: 20px;
+  border-radius: 5px;
+  margin: 5px 5px;
+  opacity: .4;
+  flex: 1 0 30%;
+  text-align: center;
+  &:hover {
+    opacity: 1;
+    cursor: pointer;
+  }
+  &.active {
+  background: $brand-primary;
+  color: white;
+  opacity: 1;
+  }
+}
+
