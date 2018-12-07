@@ -142,7 +142,7 @@
   }
 }
 
-.card-back-42197 {
+.card-back-42195 {
   background: $orange-dark;
   &::after {
     color: $orange-dark;
@@ -206,6 +206,7 @@
   opacity: 0;
   transition: .5s ease;
   background-color: $grey;
+  border-radius: 8px;
 }
 
 .overlay-10000 {

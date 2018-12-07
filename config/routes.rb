@@ -26,5 +26,10 @@ Rails.application.routes.draw do
     resources :sessions, only: [:show], module: :trainings
   end
 
-  resource :profile, only: [:show, :edit, :update]
+  resource :profile, only: [:show, :edit, :update] do 
+    member do 
+      get :quiz_form 
+      patch :quiz
+    end
+  end
 end
