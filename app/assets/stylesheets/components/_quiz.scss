@@ -26,3 +26,22 @@
   }
 }
 
+.quiz-form-login {
+  background: rgba(250, 250, 250, 0.6);
+  color: black;
+  padding: 30px 50px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border-radius: 3px;
+  h2 {
+    font-size: 25px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+  .btn {
+    width: 100%;
+    margin-bottom: 20px
+  }
+}
+
