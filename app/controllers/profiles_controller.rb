@@ -30,6 +30,8 @@ class ProfilesController < ApplicationController
 
   def quiz
     if current_user.update(quiz_params)
+      current_user.quiz_completed = true
+      current_user.save
       redirect_to races_path
     else
       render :new
