@@ -21,11 +21,11 @@ class ObjectivesController < ApplicationController
       )
       Run.create(
       objective_id: @objective.id,
-      race_id: 1259
+      race_id: 1260
       )
       Run.create(
       objective_id: @objective.id,
-      race_id:1019
+      race_id:1021
       )
 
       @run = Run.new(
