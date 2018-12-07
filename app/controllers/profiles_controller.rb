@@ -1,5 +1,5 @@
 class ProfilesController < ApplicationController
-
+  skip_before_action :check_quizz_completion, only: [:quiz_form, :quiz]
   def show
     @user = current_user
   end
