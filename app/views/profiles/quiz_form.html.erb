@@ -1,7 +1,9 @@
+<div class="banner" style="background-image: linear-gradient(to right, rgba(10, 207, 254, 0.7) 0%, rgba(73, 90, 255, 0.7) 100%), url(<%= image_path 'quiz-run.jpg'%>);">
+
 <div class="container">
   <div class="row">
     <div class="col-xs-12 col-sm-8 col-sm-offset-2">
-      <div class="form-login">
+      <div class="quiz-form-login">
         <h2>Quel coureur êtes-vous ?</h2>
         <%= simple_form_for @user, url: quiz_profile_path, method: :patch do |f| %>
           <%= f.label "Quel est votre niveau ?" %>
@@ -47,6 +49,7 @@
       </div>
     </div>
   </div>
+</div>
 </div>
 
 

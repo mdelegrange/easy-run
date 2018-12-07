@@ -7,8 +7,8 @@
 }
 
 .category-choice_1, .category-choice_2, .category-choice_3 {
-  background: $brand-primary;
-  color: black;
+  background: #4964F6;
+  color: white;
   padding: 20px;
   border-radius: 5px;
   margin: 5px 5px;
@@ -20,7 +20,7 @@
     cursor: pointer;
   }
   &.active {
-  background: $brand-primary;
+  background: #4964F6;
   color: white;
   opacity: 1;
   }
