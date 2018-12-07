@@ -14,8 +14,14 @@
     <% if user_signed_in? %>
 
       <!-- Links when logged in -->
-      <%= link_to "Races", "#", class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to "Trainings", "#", class: "navbar-wagon-item navbar-wagon-link" %>
+      <% if  @is_home %>
+        <%= link_to "Races", "#", class: "navbar-wagon-item navbar-wagon-link navbar-white-link" %>
+        <%= link_to "Trainings", "#", class: "navbar-wagon-item navbar-wagon-link navbar-white-link" %>
+      <% else %>
+        <%= link_to "Races", "#", class: "navbar-wagon-item navbar-wagon-link" %>
+        <%= link_to "Trainings", "#", class: "navbar-wagon-item navbar-wagon-link" %>
+      <% end %>
+
 
       <!-- Avatar with dropdown menu -->
       <div class="navbar-wagon-item">
