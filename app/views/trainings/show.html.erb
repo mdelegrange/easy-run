@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-md-6 col-md-offset-3">
+      <% if current_user.trainings.last.nil? %>
+        <h2>Ajouter un plan d'entrainement</h2>
+      <% else %>
+        <h2>Votre plan d'entrainement</h2>
+        <h3><%= @training_plan.name %></h3>
+        <ul>
+          <% @training_plan.training_sessions.each do |training_session| %>
+            <li>
+              <%= link_to training_session_path(training_session) do  %>
+                <%= training_session.position %>
+                <%= training_session.description %>
+              <% end %>
+            </li>
+          <% end %>
+        </ul>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+
+
