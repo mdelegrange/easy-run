@@ -12,7 +12,8 @@ class AddRacesToDBService
             distance: race[:race_distance],
             event_name: race_info[:race_name],
             department: race_info[:race_dpt],
-            url:race_info[:race_url]
+            url:race_info[:site_web],
+            price: race_info[:price]
           })
         end
       end
@@ -30,7 +31,8 @@ class AddRacesToDBService
             distance: race[:race_distance],
             event_name: race_info[:race_name],
             department: race_info[:race_dpt],
-            url:race_info[:race_url]
+            url:race_info[:site_web],
+            price: race_info[:price]
           })
         end
       end
