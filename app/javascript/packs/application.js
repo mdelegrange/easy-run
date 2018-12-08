@@ -35,6 +35,7 @@ $(document).ready(function(){
 $(document).ready(function(){
   $(".card-race-results-3").click(function(){
     $(".race-selector-3").addClass("hidden");
+    $(".race-selector-4").toggleClass("hidden");
   });
 });
 

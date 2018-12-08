@@ -10,13 +10,7 @@ class RacesController < ApplicationController
   def show
     @race = Race.find(params[:id])
 
-    @objective = Objective.create(
-      user: current_user,
-      race_id: params[@race],
-      kind: "marathon",
-      distance: 42195,
-      status: "current"
-      )
+    @objective = current_user.objectives.last
 
     @departments_options = Race::DEPARTMENTS.map { |label, value| [label, value] }
     @month = @race.date.month
