@@ -9,8 +9,16 @@
     </div>
     <div class="row">
       <% if params[:department].nil? %>
-        <% @races.each do |race| %>
-          <%= link_to race_objectives_path([race, @objective]), method: :post  do %>
+        <% races_to_display = @races %>
+      <% else %>
+        <% races_to_display = @races.where(department: params[:department].to_i) %>
+      <% end %>
+
+      <% if races_to_display.count.zero? %>
+        <h3 style="color: white" class="text-center">Il n'y a pas de course correspondant à votre recherche.</h3>
+      <% else %>
+        <% races_to_display.each do |race| %>
+          <%= link_to race_path(race)  do %>
             <div class="col-xs-12 col-sm-4">
               <div class="card-race-results card-race-results-<%=race.distance%>">
                 <div class="card-race-results-detail card-race-results-detail-<%=race.distance%>">
@@ -19,6 +27,7 @@
                 </div>
                 <p><%=race.distance%> m</p>
                 <div class="overlay overlay-<%=race.distance%>">
+
                 <div class="text">
                   <p>Sélectionner cette course</p>
                   <p style="font-size: 40px"><i class="far fa-hand-point-up"></i></p>
@@ -26,45 +35,13 @@
                 </div>
               </div>
               <div class="card-date-result">
-                <div>
-                <h4 class="date-details"><%=race.date.day%></h4>
-                <h4 class="date-details"><%=race.date.strftime("%B").first(3)%></h4>
-                <h4 class="date-details"><%=race.date.year%></h4>
-                </div>
+              <div>
+              <h4 class="date-details"><%=race.date.day%></h4>
+              <h4 class="date-details"><%=race.date.strftime("%B").first(3)%></h4>
+              <h4 class="date-details"><%=race.date.year%></h4>
               </div>
             </div>
-          <% end %>
-        <% end %>
-      <% else %>
-        <% if @races.where(department: params[:department].to_i).count.zero? %>
-          <h3 style="color: white" class="text-center">Il n'y a pas de course correspondant à votre recherche dans ce département.</h3>
-        <% else %>
-          <% @races.where(department: params[:department].to_i).each do |race| %>
-            <%= link_to race_objectives_path([race, @objective]), method: :post  do %>
-              <div class="col-xs-12 col-sm-4">
-                <div class="card-race-results card-race-results-<%=race.distance%>">
-                  <div class="card-race-results-detail card-race-results-detail-<%=race.distance%>">
-                    <h3><%=race.event_name  %></h3>
-                    <h4><%=race.name%></h4>
-                  </div>
-                  <p><%=race.distance%> m</p>
-                  <div class="overlay overlay-<%=race.distance%>">
-
-                  <div class="text">
-                    <p>Sélectionner cette course</p>
-                    <p style="font-size: 40px"><i class="far fa-hand-point-up"></i></p>
-                  </div>
-                  </div>
-                </div>
-                <div class="card-date-result">
-                <div>
-                <h4 class="date-details"><%=race.date.day%></h4>
-                <h4 class="date-details"><%=race.date.strftime("%B").first(3)%></h4>
-                <h4 class="date-details"><%=race.date.year%></h4>
-                </div>
-              </div>
-              </div>
-            <% end %>
+            </div>
           <% end %>
         <% end %>
       <% end %>
