@@ -12,12 +12,12 @@
             <%= submit_tag "RUN", :class => "btn" %>
           <%end%>
     </div>
-    <div class="row">
+    <div class="row race-selector-1">
       <h4>Sélectionnez un 10km en <%= @month - 4 %>/19</h4>
       <% @races.where('extract(month from date) = ?', (@month - 4)).where(distance: 10000).each do |race| %>
           <%= link_to '#'  do %>
             <div class="col-xs-12 col-sm-3">
-              <div class="card-race-results card-race-results-<%=race.distance%>">
+              <div class="card-race-results-1 card-race-results-<%=race.distance%>">
                 <div class="card-race-results-detail card-race-results-detail-<%=race.distance%>">
                   <h3><%=race.event_name  %></h3>
                   <h4><%=race.name%></h4>
@@ -41,12 +41,12 @@
           <% end %>
         <% end %>
     </div>
-    <div class="row">
+    <div class="row race-selector-2">
       <h4>Sélectionnez un 10km en <%= @month - 2 %>/19</h4>
       <% @races.where('extract(month from date) = ?', (@month - 2)).where(distance: 10000).each do |race| %>
           <%= link_to '#'  do %>
             <div class="col-xs-12 col-sm-3">
-              <div class="card-race-results card-race-results-<%=race.distance%>">
+              <div class="card-race-results-2 card-race-results-<%=race.distance%>">
                 <div class="card-race-results-detail card-race-results-detail-<%=race.distance%>">
                   <h3><%=race.event_name  %></h3>
                   <h4><%=race.name%></h4>
@@ -70,12 +70,12 @@
           <% end %>
         <% end %>
     </div>
-    <div class="row">
+    <div class="row race-selector-3">
       <h4>Sélectionnez un semi-marathon en <%= @month - 1 %>/19</h4>
       <% @races.where('extract(month from date) = ?', (@month - 1)).where(distance: 21100).each do |race| %>
           <%= link_to '#'  do %>
             <div class="col-xs-12 col-sm-3">
-              <div class="card-race-results card-race-results-<%=race.distance%>">
+              <div class="card-race-results-3 card-race-results-<%=race.distance%>">
                 <div class="card-race-results-detail card-race-results-detail-<%=race.distance%>">
                   <h3><%=race.event_name  %></h3>
                   <h4><%=race.name%></h4>
