@@ -1,7 +1,7 @@
 // Card pour timeline
 .card-race {
-  height: 305px;
-  width: 230px;
+  height: 230px;
+  width: 160px;
   margin: 10px;
   text-align:center;
   padding: 8px 8px 50px 8px;
@@ -38,10 +38,11 @@
     color: inherit;
   }
   h3 {
-    font-size: 26px;
+    font-size: 15px;
+    margin-top: 8px;
   }
   h4 {
-    font-size: 16px;
+    font-size: 12px;
   }
 }
 
@@ -97,12 +98,11 @@
 }
 
 .card-back {
-  height: 300px;
-  width: 230px;
-  margin: 10px;
+  height: 230px;
+  width: 160px;
+  padding-top: 40px;
   margin-bottom: 24px;
   text-align:center;
-  padding: 8px 8px 50px 8px;
   border-radius:8px;
   background: $grey;
   color: white;
@@ -114,8 +114,8 @@
   }
 
   p {
-    margin: 12.5px 0 12.5px;
-    font-size: 18px;
+    margin: 0;
+    font-size: 15px;
   }
   &::after {
     content: '◢';

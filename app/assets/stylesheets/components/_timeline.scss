@@ -15,15 +15,14 @@
   }
 
 .flip-container, .front, .back {
-  width: 320px;
-  height: 340px;
+  width: 160px;
+  height: 265px;
 }
 
 /* flip speed goes here */
 .flipper {
   transition: 0.6s;
   transform-style: preserve-3d;
-
   position: relative;
 }
 
