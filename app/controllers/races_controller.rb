@@ -6,4 +6,7 @@ class RacesController < ApplicationController
     @departments_options = Race::DEPARTMENTS.map { |label, value| [label, value] }
   	@races = Race.where(distance: @user.targeted_distance )
   end
+
+  def show
+  end
 end
