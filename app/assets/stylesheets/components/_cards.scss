@@ -177,7 +177,7 @@
 }
 
 //Cards pour resultats de recherche
-.card-race-results {
+.card-race-results, .card-race-results-1, .card-race-results-2, .card-race-results-3 {
   height: 40vh;
   width: 100%;
   margin: 40px 10px;
@@ -192,6 +192,9 @@
   p {
     margin: 12.5px 0 12.5px;
     font-size: 24px;
+  }
+  &.active {
+    background: black;
   }
 }
 
@@ -292,7 +295,7 @@
   top: 0;
   left: 0;
   border: 2px solid white;
-  background: $orange-dark;
+  background: $grey;
   border-radius: 50%;
   height: 100px;
   width:100px;
@@ -302,6 +305,19 @@
   justify-content: center;
 
 }
+
+.card-date-results-10000 {
+  background: $blue-dark;
+}
+
+.card-date-results-21100, .card-date-results-21097{
+  background: $green-dark;
+}
+
+.card-date-results-42195 {
+  background: $orange-dark;
+}
+
 
 .date-details {
   text-align: center;

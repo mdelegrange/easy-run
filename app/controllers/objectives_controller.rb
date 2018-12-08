@@ -5,6 +5,7 @@ class ObjectivesController < ApplicationController
   end
 
   def create
+    @race = Race.find(params[:race_id])
     @objective = Objective.new(
       user: current_user,
       race_id: params[:race_id],
@@ -12,7 +13,6 @@ class ObjectivesController < ApplicationController
       distance: 42195,
       status: "current"
       )
-
 
     if @objective.save
       Run.create(
@@ -33,9 +33,9 @@ class ObjectivesController < ApplicationController
       race_id: params[:race_id])
       @run.save
 
-      redirect_to objective_runs_path(@objective)
+      redirect_to race_path(@race)
     else
-      render :new
+      render 'races/show'
     end
   end
 end
