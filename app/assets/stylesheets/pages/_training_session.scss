@@ -1,0 +1,48 @@
+.training_week {
+  padding: 10px 30px 30px 30px;
+  background-color: white;
+  margin: 10px;
+  width: 200px;
+  border-radius: 4px;
+  box-shadow: 1px 1px 4px #E6E6E6;
+}
+
+.training_week a {
+  color: #4381C1;
+}
+
+.training_week a:hover {
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.contain {
+  display: flex;
+
+}
+
+.training-session-stick {
+  background-color: white;
+  width: 100vh;
+  height: 70vh;
+}
+
+.title-session h2 {
+  font-weight: lighter;
+  color: #4381C1;
+
+}
+
+.contain {
+  margin-top: 30px;
+}
+
+
+.title-session h3 {
+
+}
+
+.week {
+  padding-bottom: 10px;
+}

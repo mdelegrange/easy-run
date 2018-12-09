@@ -2,7 +2,9 @@
   <div class="row">
     <div class="col-xs-12 col-md-6 col-md-offset-3">
       <h2>Détails de la session</h2>
-      <h3><%= @session.position%></h3>
+      <hr></hr>
+
+      <h3> <%= @session.position%> - <%= @session.kind%></h3>
       <p><%= @session.description %></p>
       <hr>
       <%= link_to "Retour au plan d'entrainement",  training_path %>
