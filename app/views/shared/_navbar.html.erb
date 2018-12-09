@@ -17,14 +17,14 @@
       <% if  @is_home %>
         <% unless current_user.current_objective.nil? %>
           <%= link_to "Courses", objective_runs_path(current_user.current_objective) , class: "navbar-wagon-item navbar-wagon-link navbar-white-link" %>
-          <%= link_to "Entrainements", "#", class: "navbar-wagon-item navbar-wagon-link navbar-white-link" %>
+          <%= link_to "Entrainements", training_path, class: "navbar-wagon-item navbar-wagon-link navbar-white-link" %>
         <% else %>
           <%= link_to "Bienvenue !", "#", class: "navbar-wagon-item navbar-wagon-link navbar-white-link" %>
         <% end %>
       <% else %>
         <% unless current_user.current_objective.nil? %>
           <%= link_to "Courses", objective_runs_path(current_user.current_objective) , class: "navbar-wagon-item navbar-wagon-link" %>
-          <%= link_to "Entrainements", "#", class: "navbar-wagon-item navbar-wagon-link" %>
+          <%= link_to "Entrainements", training_path, class: "navbar-wagon-item navbar-wagon-link" %>
         <% else %>
           <%= link_to "Bienvenue !", root_path, class: "navbar-wagon-item navbar-wagon-link" %>
         <% end %>

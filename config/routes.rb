@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   # Objective creation
 
-  resources :races, only: [:index] do
+  resources :races, only: [:index, :show] do
     resources :runs, only: [:create]
     resources :objectives, only: [:create]
   end

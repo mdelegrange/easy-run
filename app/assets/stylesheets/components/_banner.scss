@@ -1,4 +1,4 @@
-.banner {
+.banner-home {
   color: white;
   height: calc(100vh);
   /* if you have a 70px navbar => height: calc(100vh - 70px); */
@@ -6,6 +6,15 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.banner {
+  height: calc(100vh - 70px);
+  /* if you have a 70px navbar => height: calc(100vh - 70px); */
+  background-size: cover !important;
+  display: flex;
+  justify-content: center;
+  background-attachment: fixed;
 }
 
 .banner h1 h2 {
@@ -27,10 +36,13 @@
 }
 
 .btn-home-design {
-  width: 100%;
+  width: 50%;
   // margin-bottom: 16px;
-  margin-left: 15px;
+  margin-left: 170px;
   font-weight: bolder;
+  border-radius: 5px;
+  margin-top: 60px;
+  padding: 10px;
 }
 
 
@@ -42,8 +54,8 @@
 .home-subtitle {
   text-align: left;
   font-family: 'Montserrat';
-  font-weight: lighter;
-  font-size: 60px;
+  font-weight: 100;
+  font-size: 30px;
 }
 
 .home-title {

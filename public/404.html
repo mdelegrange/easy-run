@@ -1,15 +1,20 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>The page you were looking for doesn't exist (404)</title>
+  <title>La page n'existe pas (404)</title>
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <style>
   .rails-default-error-page {
-    background-color: #EFEFEF;
+    background: linear-gradient(to right, rgba(10, 207, 254, 0.7) 0%, rgba(73, 90, 255, 0.7) 100%);
+    background-size: cover !important;
+    height:100vh;
     color: #2E2F30;
     text-align: center;
     font-family: arial, sans-serif;
     margin: 0;
+    display: flex;
+    justify-content: center;
   }
 
   .rails-default-error-page div.dialog {
@@ -56,12 +61,11 @@
 
 <body class="rails-default-error-page">
   <!-- This file lives in public/404.html -->
-  <div class="dialog">
+  <div class="container" style="width: 1100px">
     <div>
-      <h1>The page you were looking for doesn't exist.</h1>
-      <p>You may have mistyped the address or the page may have moved.</p>
+      <h1 style="font-family: 'Montserrat';font-size: 70px; color: white">La page n'existe pas</h1>
     </div>
-    <p>If you are the application owner check the logs for more information.</p>
+      <a href="/" style="font-family: 'Raleway';font-size: 20px; color: white">Retour</a>
   </div>
 </body>
 </html>

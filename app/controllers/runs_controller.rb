@@ -2,24 +2,25 @@ class RunsController < ApplicationController
   before_action :set_run, only: [:show, :edit, :register, :update, :destroy]
 
   def index
-    @objective = current_user.objectives.find(params[:objective_id])
-    @runs = @objective.runs
+    @objective = current_user.current_objective
+
+    @runs = current_user.objectives.last.runs.sort_by{ |run| run.race.date }
+    @race = @objective.race.date
   end
 
   def show
   end
 
   def create
-    @run = Run.new(run_params)
+    @objective = current_user.objectives.last
     @race = Race.find(params[:race_id])
+    @run = Run.new
     @run.race = @race
-    @run.objective = current_user.current_objective
+    @run.objective = @objective
     @run.status = 'pending_subscription'
-    if @run.save
-      race_runs_path(@race)
-    else
-      render :new
-    end
+    @run.save
+
+
   end
 
   def subscribe

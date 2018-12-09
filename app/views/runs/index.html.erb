@@ -1,7 +1,7 @@
 <div class="container">
   <div class="card-container">
     <div class="row text-center">
-      <h2>Test</h2>
+      <h2>Vos courses</h2>
     </div>
     <div class="row">
       <% @runs.each do |run| %>
@@ -15,13 +15,13 @@
                     <h3><%=run.race.event_name  %></h3>
                     <h4><%=run.race.name%></h4>
                   </div>
-                  <p><%=run.race.distance%></p>
+                  <p><%=run.race.date.strftime('%d/%m/%Y')%></p>
                 </div>
               </div>
               <div class="back">
                 <!-- back content -->
                 <div class="card-back card-back-<%=run.race.distance%>">
-                  <%= link_to "" do  %>
+                  <%= link_to run.race.url, target: "_blank" do  %>
                     <p><i class="fas fa-eye"></i></p>
                     <p>See race details</p>
                   <% end %>
