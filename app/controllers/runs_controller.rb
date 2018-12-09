@@ -4,7 +4,7 @@ class RunsController < ApplicationController
   def index
     @objective = current_user.current_objective
 
-    @runs = current_user.objectives.last.runs.sort_by{ |run| run.race.date }
+    @runs = current_user.objectives.last.runs.sort_by { |run| run.race.date }
     @race = @objective.race.date
   end
 

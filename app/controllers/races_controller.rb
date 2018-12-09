@@ -16,6 +16,11 @@ class RacesController < ApplicationController
     @month = @race.date.month
     @races = Race.all
 
-
+    # Race before 4 months of marathon (distance: 10 km)
+    @race1_10km = (@race.date - (4 * 30))
+    # Race before 2 months of marathon (distance: 10km)
+    @race2_10km = (@race.date - (2 * 30))
+    # Race before 1 month of marathon (distance: 21 km)
+    @race3_semi = (@race.date - (1 * 30))
   end
 end

@@ -10,8 +10,8 @@
 
     </div>
     <div class="row race-selector-1">
-      <h4>Sélectionnez un 10km en <%= @month - 4 %>/19</h4>
-      <% @races.where('extract(month from date) = ?', (@month - 4)).where(distance: 10000).each do |race| %>
+      <h4>Sélectionnez un 10km en <%= (@race1_10km.month) %>/<%= (@race1_10km).year.to_s.split('').last(2).join %></h4>
+      <% @races.where("extract( month from date) = ? and extract(year from date )= ? and distance = ?", @race1_10km.month,@race1_10km.year, 10000).each do |race| %>
           <%= link_to race_runs_path(race), method: :post  do %>
             <div class="col-xs-12 col-sm-3">
               <div class="card-race-results-1 card-race-results-<%=race.distance%>">
@@ -39,8 +39,8 @@
         <% end %>
     </div>
     <div class="row race-selector-2">
-      <h4>Sélectionnez un 10km en <%= @month - 2 %>/19</h4>
-      <% @races.where('extract(month from date) = ?', (@month - 2)).where(distance: 10000).each do |race| %>
+      <h4>Sélectionnez un 10km en <%=(@race2_10km.month) %>/<%=(@race2_10km).year.to_s.split('').last(2).join%></h4>
+      <% @races.where("extract( month from date) = ? and extract(year from date )= ? and distance = ?", @race2_10km.month,@race2_10km.year, 10000).each do |race| %>
           <%= link_to race_runs_path(race), method: :post  do %>
             <div class="col-xs-12 col-sm-3">
               <div class="card-race-results-2 card-race-results-<%=race.distance%>">
@@ -68,8 +68,8 @@
         <% end %>
     </div>
     <div class="row race-selector-3">
-      <h4>Sélectionnez un semi-marathon en <%= @month - 1 %>/19</h4>
-      <% @races.where('extract(month from date) = ?', (@month - 1)).where(distance: 21100).each do |race| %>
+      <h4>Sélectionnez un semi-marathon en <%=(@race3_semi.month) %>/<%=(@race3_semi).year.to_s.split('').last(2).join%><h4>
+      <%  @races.where("extract( month from date) = ? and extract(year from date )= ? and distance = ?", @race3_semi.month,@race3_semi.year, 21100).each do |race| %>
           <%= link_to race_runs_path(race), method: :post  do %>
             <div class="col-xs-12 col-sm-3">
               <div class="card-race-results-3 card-race-results-<%=race.distance%>">
