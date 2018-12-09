@@ -3,8 +3,7 @@ class RunsController < ApplicationController
 
   def index
     @objective = current_user.current_objective
-
-    @runs = current_user.objectives.last.runs.sort_by { |run| run.race.date }
+    @runs = @objective.runs.sort_by { |run| run.race.date }
     @race = @objective.race.date
   end
 
@@ -12,15 +11,13 @@ class RunsController < ApplicationController
   end
 
   def create
-    @objective = current_user.objectives.last
+    @objective = current_user.current_objective
     @race = Race.find(params[:race_id])
     @run = Run.new
     @run.race = @race
     @run.objective = @objective
     @run.status = 'pending_subscription'
     @run.save
-
-
   end
 
   def subscribe
