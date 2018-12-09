@@ -95,70 +95,77 @@ puts "Training Plans Created"
 #Training Sessions
 
 	#Week 1
-session1 = TrainingSession.create!(training_plan: training_plan1, description: 'courir 5 à 12 Km', position: 1)
-session2 = TrainingSession.create!(training_plan: training_plan1, description: 'courir 3 à 8 km', position: 2)
-session3 = TrainingSession.create!(training_plan: training_plan1, description: 'courir 10 Km', position: 3)
+# session1 = TrainingSession.create!(training_plan: training_plan1, description: 'courir 5 à 12 Km', position: 1)
+# session2 = TrainingSession.create!(training_plan: training_plan1, description: 'courir 3 à 8 km', position: 2)
+# session3 = TrainingSession.create!(training_plan: training_plan1, description: 'courir 10 Km', position: 3)
 
-	#Week 2
-session4 = TrainingSession.create!(training_plan: training_plan1, description: 'courir 5 à 12 km', position: 4)
-session5 = TrainingSession.create!(training_plan: training_plan1, description: 'courir 3 à 8 Km', position: 5)
-session6 = TrainingSession.create!(training_plan: training_plan1, description: 'courir 13 km', position: 6)
+# 	#Week 2
+# session4 = TrainingSession.create!(training_plan: training_plan1, description: 'courir 5 à 12 km', position: 4)
+# session5 = TrainingSession.create!(training_plan: training_plan1, description: 'courir 3 à 8 Km', position: 5)
+# session6 = TrainingSession.create!(training_plan: training_plan1, description: 'courir 13 km', position: 6)
 
-	#Week 3
-session7 = TrainingSession.create!(training_plan: training_plan1, description: 'courir 5 à 12 Km', position: 7)
-session8 = TrainingSession.create!(training_plan: training_plan1, description: 'courir 3 à 8 km', position: 8)
-session9 = TrainingSession.create!(training_plan: training_plan1, description: 'courir 10 Km', position: 9)
+# 	#Week 3
+# session7 = TrainingSession.create!(training_plan: training_plan1, description: 'courir 5 à 12 Km', position: 7)
+# session8 = TrainingSession.create!(training_plan: training_plan1, description: 'courir 3 à 8 km', position: 8)
+# session9 = TrainingSession.create!(training_plan: training_plan1, description: 'courir 10 Km', position: 9)
 
-	#week 4
-session10 = TrainingSession.create!(training_plan: training_plan1, description: 'courir 5 à 12 km', position: 10)
-session11 = TrainingSession.create!(training_plan: training_plan1, description: 'courir 3 à 8 km', position: 11)
-session12 = TrainingSession.create!(training_plan: training_plan1, description: 'courir 16 km', position: 12)
+# 	#week 4
+# session10 = TrainingSession.create!(training_plan: training_plan1, description: 'courir 5 à 12 km', position: 10)
+# session11 = TrainingSession.create!(training_plan: training_plan1, description: 'courir 3 à 8 km', position: 11)
+# session12 = TrainingSession.create!(training_plan: training_plan1, description: 'courir 16 km', position: 12)
 
-	#Week 5
-session13 = TrainingSession.create!(training_plan: training_plan1, description: 'courir 5 à 12 Km', position: 13)
-session14 = TrainingSession.create!(training_plan: training_plan1, description: 'courir 3 à 8 km', position: 14)
-session15 = TrainingSession.create!(training_plan: training_plan1, description: 'courir 13 Km', position: 15)
+# 	#Week 5
+# session13 = TrainingSession.create!(training_plan: training_plan1, description: 'courir 5 à 12 Km', position: 13)
+# session14 = TrainingSession.create!(training_plan: training_plan1, description: 'courir 3 à 8 km', position: 14)
+# session15 = TrainingSession.create!(training_plan: training_plan1, description: 'courir 13 Km', position: 15)
 
-	#Week 6
-session16 = TrainingSession.create!(training_plan: training_plan1, description: 'courir 5 à 12 km', position: 16)
-session17 = TrainingSession.create!(training_plan: training_plan1, description: 'courir 3 à 8 Km', position: 17)
-session18 = TrainingSession.create!(training_plan: training_plan1, description: 'courir 16 km', position: 18)
+# 	#Week 6
+# session16 = TrainingSession.create!(training_plan: training_plan1, description: 'courir 5 à 12 km', position: 16)
+# session17 = TrainingSession.create!(training_plan: training_plan1, description: 'courir 3 à 8 Km', position: 17)
+# session18 = TrainingSession.create!(training_plan: training_plan1, description: 'courir 16 km', position: 18)
 
-	#Week 7
-session19 = TrainingSession.create!(training_plan: training_plan1, description: 'courir 5 à 12 Km', position: 19)
-session20 = TrainingSession.create!(training_plan: training_plan1, description: 'courir 3 à 8 km', position: 20)
-session21 = TrainingSession.create!(training_plan: training_plan1, description: 'courir 19 Km', position: 21)
+# 	#Week 7
+# session19 = TrainingSession.create!(training_plan: training_plan1, description: 'courir 5 à 12 Km', position: 19)
+# session20 = TrainingSession.create!(training_plan: training_plan1, description: 'courir 3 à 8 km', position: 20)
+# session21 = TrainingSession.create!(training_plan: training_plan1, description: 'courir 19 Km', position: 21)
 
-	#week 8
-session22 = TrainingSession.create!(training_plan: training_plan1, description: 'courir 5 à 12 km', position: 22)
-session23 = TrainingSession.create!(training_plan: training_plan1, description: 'courir 3 à 8 km', position: 23)
-session24 = TrainingSession.create!(training_plan: training_plan1, description: 'courir 22.5 km', position: 24)
+# 	#week 8
+# session22 = TrainingSession.create!(training_plan: training_plan1, description: 'courir 5 à 12 km', position: 22)
+# session23 = TrainingSession.create!(training_plan: training_plan1, description: 'courir 3 à 8 km', position: 23)
+# session24 = TrainingSession.create!(training_plan: training_plan1, description: 'courir 22.5 km', position: 24)
 
-	#Week 9
-session25 = TrainingSession.create!(training_plan: training_plan1, description: 'courir 5 à 12 Km', position: 25)
-session26 = TrainingSession.create!(training_plan: training_plan1, description: 'courir 3 à 8 km', position: 26)
-session27 = TrainingSession.create!(training_plan: training_plan1, description: 'courir 22.5 Km', position: 27)
+# 	#Week 9
+# session25 = TrainingSession.create!(training_plan: training_plan1, description: 'courir 5 à 12 Km', position: 25)
+# session26 = TrainingSession.create!(training_plan: training_plan1, description: 'courir 3 à 8 km', position: 26)
+# session27 = TrainingSession.create!(training_plan: training_plan1, description: 'courir 22.5 Km', position: 27)
 
-	#Week 10
-session28 = TrainingSession.create!(training_plan: training_plan1, description: 'courir 5 à 12 km', position: 28)
-session29 = TrainingSession.create!(training_plan: training_plan1, description: 'courir 3 à 8 Km', position: 29)
-session30 = TrainingSession.create!(training_plan: training_plan1, description: 'courir 29 km', position: 30)
+# 	#Week 10
+# session28 = TrainingSession.create!(training_plan: training_plan1, description: 'courir 5 à 12 km', position: 28)
+# session29 = TrainingSession.create!(training_plan: training_plan1, description: 'courir 3 à 8 Km', position: 29)
+# session30 = TrainingSession.create!(training_plan: training_plan1, description: 'courir 29 km', position: 30)
 
-	#Week 11
-session31 = TrainingSession.create!(training_plan: training_plan1, description: 'courir 5 à 12 Km', position: 31)
-session32 = TrainingSession.create!(training_plan: training_plan1, description: 'courir 3 à 8 km', position: 32)
-session33 = TrainingSession.create!(training_plan: training_plan1, description: 'courir 22.5 Km', position: 33)
+# 	#Week 11
+# session31 = TrainingSession.create!(training_plan: training_plan1, description: 'courir 5 à 12 Km', position: 31)
+# session32 = TrainingSession.create!(training_plan: training_plan1, description: 'courir 3 à 8 km', position: 32)
+# session33 = TrainingSession.create!(training_plan: training_plan1, description: 'courir 22.5 Km', position: 33)
 
-	#week 12
-session34 = TrainingSession.create!(training_plan: training_plan1, description: 'courir 5 à 12 km', position: 34)
-session35 = TrainingSession.create!(training_plan: training_plan1, description: 'courir 3 à 8 km', position: 35)
-session36 = TrainingSession.create!(training_plan: training_plan1, description: 'courir 29 km', position: 36)
+# 	#week 12
+# session34 = TrainingSession.create!(training_plan: training_plan1, description: 'courir 5 à 12 km', position: 34)
+# session35 = TrainingSession.create!(training_plan: training_plan1, description: 'courir 3 à 8 km', position: 35)
+# session36 = TrainingSession.create!(training_plan: training_plan1, description: 'courir 29 km', position: 36)
 
-puts "Training Sessions Created"
 
 #Trainings
 
 training = Training.create!(user: user1, training_plan: training_plan1, begin_date: '2019-01-06')
+
+TrainingSession::SESSIONS.each do |training_session_data|
+	training_session = TrainingSession.new(training_session_data)
+	training_session.training_plan = training_plan1
+	training_session.save
+end
+puts "Training Sessions Created"
+
 
 puts "Training Created"
 
