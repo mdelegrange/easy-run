@@ -21,13 +21,13 @@ class RacesController < ApplicationController
 
     # Race before 1 month of marathon (distance: 21 km) ==> beginner, intermediate and advanced
     @race3_semi = Race.where("date BETWEEN ? AND ? AND distance = ? OR distance = ?", @race.date.beginning_of_month.next_month(-1).strftime('%F'), 
-            @race.date.end_of_month.next_month(-1).strftime('%F'), 21_100, 21_037)
+            @race.date.end_of_month.next_month(-1).strftime('%F'), 21_100, 21_037).first
 
     if @user.level == 'beginner'
 
     # Race before 6 months of marathon (distance: 10 km)
       @race1_10km = Race.where("date BETWEEN ? AND ? AND distance = ?", @race.date.beginning_of_month.next_month(-6).strftime('%F'), 
-        @race.date.end_of_month.next_month(-5).strftime('%F'), 10_000)
+        @race.date.end_of_month.next_month(-5).strftime('%F'), 10_000).first
 
     # Race before 3 months of marathon (distance: 10km)
       @race2_10km = Race.where("date BETWEEN ? AND ? AND distance = ?", @race.date.beginning_of_month.next_month(-3).strftime('%F'), 
@@ -37,20 +37,20 @@ class RacesController < ApplicationController
 
       # Race before 4 months of marathon (distance: 10 km)
       @race1_10km = Race.where("date BETWEEN ? AND ? AND distance = ?", @race.date.beginning_of_month.next_month(-4).strftime('%F'), 
-              @race.date.end_of_month.next_month(-3).strftime('%F'), 10_000)
+              @race.date.end_of_month.next_month(-3).strftime('%F'), 10_000).last
 
       # Race before 3 months of marathon (distance: 10km)
       @race2_10km = Race.where("date BETWEEN ? AND ? AND distance = ?", @race.date.beginning_of_month.next_month(-2).strftime('%F'), 
-              @race.date.end_of_month.next_month(-3).strftime('%F'), 10_000)
+              @race.date.end_of_month.next_month(-3).strftime('%F'), 10_000).last
 
       elsif @user.level == 'advanced'
 
         # Race before 3 months of marathon (distance: 10 km)
         @race1_10km = Race.where("date BETWEEN ? AND ? AND distane = ?", @race.date.beginning_of_month.next_month(-3).strftime('%F'), 
-          @race.date.end_of_month.next_month(-2).strftime('%F'), 10_000)
+          @race.date.end_of_month.next_month(-2).strftime('%F'), 10_000).first
         # Race before 2 months of marathon (distance: 10km)
         @race2_10km = Race.where("date BETWEEN ? AND ? AND distane = ?", @race.date.beginning_of_month.next_month(-2).strftime('%F'), 
-          @race.date.end_of_month.next_month(-1).strftime('%F'), 10_000)
+          @race.date.end_of_month.next_month(-1).strftime('%F'), 10_000).first
 
         # Race before 1 month of marathon (distance: 21 km)
         
