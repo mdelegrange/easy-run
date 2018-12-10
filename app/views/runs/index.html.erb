@@ -4,9 +4,9 @@
       <h2>Vos courses</h2>
     </div>
     <div class="row">
+      <div class="timeline-container">
       <% @runs.each do |run| %>
-        <div class="col-xs-12 col-sm-3">
-          <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+          <div class="flip-container <%=run.race.date%>" id="run-<%=run.id%>" ontouchstart="this.classList.toggle('hover');">
             <div class="flipper">
               <div class="front">
                 <!-- front content -->
@@ -35,7 +35,7 @@
           </div>
         </div>
       <%end %>
-
+      </div>
     </div>
     <div class="timeline">
 
