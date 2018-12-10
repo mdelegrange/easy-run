@@ -31,7 +31,7 @@ class RacesController < ApplicationController
 
     # Race before 3 months of marathon (distance: 10km)
       @race2_10km = Race.where("date BETWEEN ? AND ? AND distance = ?", @race.date.beginning_of_month.next_month(-3).strftime('%F'), 
-        @race.date.end_of_month.next_month(-2).strftime('%F'), 10_000)
+        @race.date.end_of_month.next_month(-2).strftime('%F'), 10_000).last
       
     elsif @user.level == 'intermediate'
 
@@ -48,7 +48,6 @@ class RacesController < ApplicationController
         # Race before 3 months of marathon (distance: 10 km)
         @race1_10km = Race.where("date BETWEEN ? AND ? AND distane = ?", @race.date.beginning_of_month.next_month(-3).strftime('%F'), 
           @race.date.end_of_month.next_month(-2).strftime('%F'), 10_000)
-
         # Race before 2 months of marathon (distance: 10km)
         @race2_10km = Race.where("date BETWEEN ? AND ? AND distane = ?", @race.date.beginning_of_month.next_month(-2).strftime('%F'), 
           @race.date.end_of_month.next_month(-1).strftime('%F'), 10_000)
