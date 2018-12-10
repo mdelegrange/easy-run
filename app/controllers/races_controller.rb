@@ -23,7 +23,7 @@ class RacesController < ApplicationController
     @races = Race.all
 
     # Race before 1 month of marathon (distance: 21 km) ==> beginner, intermediate and advanced
-    @race3_semi = suggest_races(@race, 1, 21_087).first
+    @race3_semi = suggest_races(@race, 1, 21_097).first
 
     if @user.level == 'beginner'
       # Race before 6 months of marathon (distance: 10 km)
@@ -57,8 +57,8 @@ class RacesController < ApplicationController
     @end_date    = @race.date.end_of_month.next_month(- @month_before_marathon).strftime('%F')
     if @distance == 10_000
       Race.where("date BETWEEN ? AND ? AND distance = ?", @begin_date, @end_date, @distance)
-    elsif @distance == 21_100 || @distance == 21_087
-      Race.where("date BETWEEN ? AND ? AND distance = ? OR distance = ?", @begin_date, @end_date, 21_000, 21_087)      
+    elsif @distance == 21_100 || @distance == 21_097
+      Race.where("date BETWEEN ? AND ? AND distance = ? OR distance = ?", @begin_date, @end_date, 21_000, 21_097)
     end
   end
 
