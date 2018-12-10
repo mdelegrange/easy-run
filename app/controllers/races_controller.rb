@@ -1,10 +1,9 @@
 class RacesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
+  before_action :set_user, only: [:index, :show]
 
   def index
-    @user = current_user
     @departments_options = Race::DEPARTMENTS.map { |label, value| [label, value] }
-   
     if @user.level == "beginner"
     @races = Race.where("distance = ? AND date BETWEEN ? AND ?", @user.targeted_distance, Date.today.beginning_of_month.next_month(12).strftime('%F'), Date.today.end_of_month.next_month(12).strftime('%F'))
     elsif @user.level == "intermediate"
@@ -19,7 +18,6 @@ class RacesController < ApplicationController
     @objective = current_user.current_objective
     @departments_options = Race::DEPARTMENTS.map { |label, value| [label, value] }
     @races = Race.all
-    @user = current_user
     if @user.level == 'beginner'
 
     # Race before 6 months of marathon (distance: 10 km)
@@ -71,5 +69,11 @@ class RacesController < ApplicationController
         @race3_semi = @races.where("extract( month from date) = ? and extract(year from date )= ? and distance = ? OR distance = ?",
           @race3_semi_date.month, @race3_semi_date.year, 21_100, 21_037)
       end
+  end
+
+  private
+
+  def set_user
+    @user = current_user
   end
 end
