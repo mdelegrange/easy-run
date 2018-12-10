@@ -19,73 +19,69 @@ class ObjectivesController < ApplicationController
         race_id: params[:race_id]
       )
       @run.save
-      
-      @race3_semi = Race.where("date BETWEEN ? AND ? AND distance = ? OR distance = ?", @race.date.beginning_of_month.next_month(-1).strftime('%F'), 
-      @race.date.end_of_month.next_month(-1).strftime('%F'), 21_100, 21_037).first
-      
-      @run3_semi = Run.create(
-        objective_id: @objective.id,
-        race_id: @race3_semi.id
-      )
+      # Suggested Races (distance: semi)
+      @race3_semi = suggest_races_semi(@race, 1, 1, 21_100, 21_037).first    
+      # Created Run
+      create_run(@objective.id, @race3_semi.id)
       @user = current_user
-        if @user.level == 'beginner'
+      if @user.level == 'beginner'
 
-          # Race before 6 months of marathon (distance: 10 km)
-          @race1_10km = Race.where("date BETWEEN ? AND ? AND distance = ?", @race.date.beginning_of_month.next_month(-6).strftime('%F'), 
-           @race.date.end_of_month.next_month(-5).strftime('%F'), 10_000).first
+        # Suggested Races (distance: 10 km)
+        @race1_10km = suggest_races_10km(@race, 6, 5, 10_000).first
+        @race2_10km = suggest_races_10km(@race, 3, 2, 10_000).first
+        # Created Run
+        create_run(@objective.id, @race1_10km.id)
+        create_run(@objective.id, @race2_10km.id)
+      elsif @user.level == 'intermediate'
 
-          @run1_10km = Run.create(
-            objective_id: @objective.id,
-            race_id: @race1_10km.id
-          )
-          # Race before 3 months of marathon (distance: 10km)
-          @race2_10km = Race.where("date BETWEEN ? AND ? AND distance = ?", @race.date.beginning_of_month.next_month(-3).strftime('%F'), 
-          @race.date.end_of_month.next_month(-2).strftime('%F'), 10_000).first
-        
-          @run2_10km = Run.create(
-            objective_id: @objective.id,
-            race_id: @race2_10km.id
-          )
-        elsif @user.level == 'intermediate'
+        # Suggested Races (distance: 10 km)
+        @race1_10km = suggest_races_10km(@race, 4, 3, 10_000).last
+        @race2_10km = suggest_races_10km(@race, 3, 2, 10_000).last
 
-          #  Race before 4 months of marathon (distance: 10 km)
-          @race1_10km = Race.where("date BETWEEN ? AND ? AND distance = ?", @race.date.beginning_of_month.next_month(-4).strftime('%F'), 
-          @race.date.end_of_month.next_month(-3).strftime('%F'), 10_000).last
+        # Created Run
+        create_run(@objective.id, @race1_10km.id)
+        create_run(@objective.id, @race2_10km.id)
+      elsif @user.level == 'advanced'
 
-          @run1_10km = Run.create(
-            objective_id: @objective.id,
-            race_id: @race1_10km.id
-          )
-          # Race before 3 months of marathon (distance: 10km)
-          @race2_10km = Race.where("date BETWEEN ? AND ? AND distance = ?", @race.date.beginning_of_month.next_month(-2).strftime('%F'), 
-          @race.date.end_of_month.next_month(-3).strftime('%F'), 10_000).first
-
-          @run2_10km = Run.create(
-            objective_id: @objective.id,
-            race_id: @race2_10km.id
-          )
-        elsif @user.level == 'advanced'
-
-          # Race before 3 months of marathon (distance: 10 km)
-          @race1_10km = Race.where("date BETWEEN ? AND ? AND distane = ?", @race.date.beginning_of_month.next_month(-3).strftime('%F'), 
-          @race.date.end_of_month.next_month(-2).strftime('%F'), 10_000).first
-          
-          @run1_10km = Run.create(
-            objective_id: @objective.id,
-            race_id: @race1_10km.id
-          )
-          # Race before 2 months of marathon (distance: 10km)
-          @race2_10km = Race.where("date BETWEEN ? AND ? AND distane = ?", @race.date.beginning_of_month.next_month(-2).strftime('%F'), 
-          @race.date.end_of_month.next_month(-1).strftime('%F'), 10_000).last
-
-          @run2_10km = Run.create(
-            objective_id: @objective.id,
-            race_id: @race2_10km.id
-          )      
-        end
+        # Suggested Races (distance: 10 km)
+        @race1_10km = suggest_races_10km(@race, 3, 2, 10_000).first
+        @race2_10km = suggest_races_10km(@race, 2, 1, 10_000).last
+        # Create Run
+        create_run(@objective.id, @race1_10km.id)
+        create_run(@objective.id, @race2_10km.id)
+      end
       redirect_to objective_runs_path(@objective)
     else
       render 'races/show'
     end
+  end
+
+  private
+
+  def create_run(object_id, race_id)
+    @object_id = object_id
+    @race_id = race_id
+    Run.create(objective_id: @object_id, race_id: @race_id)
+  end
+
+  def suggest_races_10km(race, first_month, last_month, distance)
+    @race        = race
+    @first_month = first_month
+    @last_month  = last_month
+    @distance    = distance
+    @begin_date  = @race.date.beginning_of_month.next_month(- @first_month).strftime('%F')
+    @end_date    = @race.date.end_of_month.next_month(-@last_month).strftime('%F')
+    Race.where("date BETWEEN ? AND ? AND distance = ?", @begin_date, @end_date, @distance)
+  end
+
+  def suggest_races_semi(race, first_month, last_month, distance1, distance2)
+    @race        = race
+    @first_month = first_month
+    @last_month  = last_month
+    @distance1   = distance1
+    @distance2   = distance2
+    @begin_date  = @race.date.beginning_of_month.next_month(- @first_month).strftime('%F')
+    @end_date    = @race.date.end_of_month.next_month(-@last_month).strftime('%F')
+    Race.where("date BETWEEN ? AND ? AND distance = ? OR distance = ?", @begin_date, @end_date, @distance1, @distance2)
   end
 end
