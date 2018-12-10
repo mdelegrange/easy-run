@@ -157,13 +157,6 @@ puts "Training Plans Created"
 
 #Trainings
 
-training = Training.create!(user: user1, training_plan: training_plan1, begin_date: '2019-01-06')
-
-TrainingSession::SESSIONS.each do |training_session_data|
-	training_session = TrainingSession.new(training_session_data)
-	training_session.training_plan = training_plan1
-	training_session.save
-end
 puts "Training Sessions Created"
 
 

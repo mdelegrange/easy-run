@@ -3,7 +3,7 @@ class RunsController < ApplicationController
 
   def index
     @objective = current_user.current_objective
-    @runs = @objective.runs.sort_by { |run| run.race.date }
+    @runs = current_user.objectives.last.runs.sort_by { |run| run.race.date }
     @race = @objective.race.date
   end
 
@@ -11,7 +11,7 @@ class RunsController < ApplicationController
   end
 
   def create
-    @objective = current_user.current_objective
+    @objective = current_user.objectives.last
     @race = Race.find(params[:race_id])
     @run = Run.new
     @run.race = @race
