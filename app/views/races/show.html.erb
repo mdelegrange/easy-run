@@ -10,7 +10,7 @@
 
     </div>
     <div class="row race-selector-1">
-      <h4>Sélectionnez un 10km en <%= @race1_10km_date.month %>/<%= @race1_10km_date.year.to_s.split('').last(2).join %></h4>
+      <h4>Sélectionnez un 10km en <%= @race1_10km.first.date.month %>/<%= @race1_10km.first.date.year.to_s.split('').last(2).join %></h4>
       <% @race1_10km.each do |race| %>
           <%= link_to race_runs_path(race), method: :post  do %>
             <div class="col-xs-12 col-sm-3">
@@ -39,7 +39,7 @@
         <% end %>
     </div>
     <div class="row race-selector-2">
-      <h4>Sélectionnez un 10km en <%=@race2_10km_date.month %>/<%=@race2_10km_date.year.to_s.split('').last(2).join%></h4>
+      <h4>Sélectionnez un 10km en <%=@race2_10km.first.date.month %>/<%=@race2_10km.first.date.year.to_s.split('').last(2).join%></h4>
       <% @race2_10km.each do |race| %>
           <%= link_to race_runs_path(race), method: :post  do %>
             <div class="col-xs-12 col-sm-3">
@@ -68,7 +68,7 @@
         <% end %>
     </div>
     <div class="row race-selector-3">
-      <h4>Sélectionnez un semi-marathon en <%=@race3_semi_date.month %>/<%=@race3_semi_date.year.to_s.split('').last(2).join%><h4>
+      <h4>Sélectionnez un semi-marathon en <%=@race3_semi.first.date.month %>/<%=@race3_semi.first.date.year.to_s.split('').last(2).join%><h4>
       <%  @race3_semi.each do |race| %>
           <%= link_to race_runs_path(race), method: :post  do %>
             <div class="col-xs-12 col-sm-3">
