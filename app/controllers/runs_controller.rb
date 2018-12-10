@@ -2,7 +2,7 @@ class RunsController < ApplicationController
   before_action :set_run, only: [:show, :edit, :register, :update, :destroy]
 
   def index
-    @objective = current_user.current_objective
+    @objective = current_user.objectives.last
     @runs = current_user.objectives.last.runs.sort_by { |run| run.race.date }
     @race = @objective.race.date
   end
