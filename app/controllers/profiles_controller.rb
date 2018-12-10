@@ -23,8 +23,8 @@ class ProfilesController < ApplicationController
       ["Je n'ai jamais couru", "beginner"],
       ["Je cours de temps en temps", "intermediate"],
       ["Je cours régulièrement", "advanced"]
-   ]
-    @targeted_distances = [["Finir un marathon", 42195]]
+    ]
+    @targeted_distances = [["Finir un marathon", 42_195]]
     @departments_options = Race::DEPARTMENTS.map { |label, value| [label, value] }
   end
 
@@ -35,8 +35,9 @@ class ProfilesController < ApplicationController
       redirect_to races_path
     else
       render :new
+    end
   end
-end
+  
   private
 
   def user_params
