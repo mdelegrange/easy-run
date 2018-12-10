@@ -4,7 +4,8 @@ class RacesController < ApplicationController
   def index
     @user = current_user
     @departments_options = Race::DEPARTMENTS.map { |label, value| [label, value] }
-    @races = Race.where(distance: @user.targeted_distance)
+    if @user.level == 'beginner'
+      @races = Race.where("distance = ? AND EXTRACT(YEAR FROM date) = ?",  @user.targeted_distance, DateTime.now.next_year(1))
   end
 
   def show
