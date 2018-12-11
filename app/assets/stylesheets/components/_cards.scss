@@ -215,8 +215,8 @@
   position: absolute;
   top: 5px;
   left: 5px;
-  height: 79%;
-  width: 96%;
+  right: 5px;
+  bottom: 55px;
   opacity: 0;
   transition: .5s ease;
   background-color: $grey;
@@ -224,11 +224,11 @@
 }
 
 .overlay-10000 {
-  background-color: $blue-dark;
+  background-color: #B6EE8A;
 }
 
 .overlay-21100, .overlay-21097 {
-  background-color: $green-dark;
+  background-color: #B6EE8A;
 }
 
 .overlay-42195 {
@@ -254,10 +254,10 @@
     font-family: $body-font;
   }
   p:last-child {
-    font-size: 15px; 
+    font-size: 14px; 
     text-align: center; 
     text-decoration: underline;
-    bottom: 20px;
+    bottom: 27px;
     font-weight: bold;
     font-family: $body-font;
    }
@@ -276,10 +276,21 @@
   color: $grey;
 
   h3 {
+    position: absolute;
+    top: 10px;
     font-size: 25px;
+    text-align: center;
+    padding: 5px 15px;
+    font-size: 22.5px;
   }
   h4 {
+    position: absolute;
+    bottom: 50px;
     font-size: 20px;
+    font-family: $body-font;
+    color:  #070d59;
+    padding: 5px 15px;
+    font-size: 15px;
   }
 
 
