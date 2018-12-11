@@ -11,7 +11,7 @@ Rails.application.routes.draw do
 
   # Dashboard
   resources :objectives, only: [:index, :show] do
-    resources :runs, only: [:index]
+    resources :runs, only: [:index, :new]
   end
 
   resources :runs, only: [:show, :edit, :update, :destroy] do
