@@ -25,7 +25,6 @@
   font-size: 25px;
   font-weight: lighter;
   color: rgb(255, 255, 255);
-  opacity: 0.6;
   margin-bottom: 30px;
 }
 
@@ -43,9 +42,13 @@
   border-radius: 5px;
   margin-top: 60px;
   padding: 10px;
+  background-color: #A2FAA3;
+  border-width: 0px;
 }
 
-
+.btn-home-design:hover {
+  background-color: #94E495;
+}
 
 .btn-padding {
   padding: 10px 50px;

@@ -7,6 +7,10 @@
   box-shadow: 1px 1px 4px #E6E6E6;
 }
 
+.week_training_list {
+  list-style: none;
+}
+
 .training_week a {
   color: #4381C1;
 }
@@ -14,7 +18,7 @@
 .training_week a:hover {
   text-decoration: none;
   font-weight: bold;
-  transition: all 0.3s ease;
+  transition: all 0.2s ease;
 }
 
 .contain {

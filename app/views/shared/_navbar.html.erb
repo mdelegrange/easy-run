@@ -1,11 +1,11 @@
-<div class="navbar-wagon  <%= "navbar-wagon-home" if @is_home %>">
+<div class="navbar-wagon  <%= "navbar-wagon-home" if @is_home %> <%= "navbar-wagon-quiz" if @is_quiz %>">
   <!-- Logo -->
 
 
   <!-- Logo -->
   <%= link_to root_path, class: "navbar-wagon-brand logo-navbar" do %>
     <%#= image_tag "logo.png", height: 30 unless @is_home%>
-    <%= "EASY RUN" unless @is_home%>
+    <%= "EASY RUN" unless @is_home %>
   <% end %>
 
   <!-- Right Navigation -->

@@ -9,14 +9,14 @@
     </div>
   <div class="row">
     <div class="contain">
-        <ul>
+        <ul class="week_training_list">
           <% @training_plan.training_sessions.each_slice(3).to_a.each_with_index do |training_week, index| %>
           <div class="training_week col-xs-8">
             <h3 class="week text-center">week  <%= index + 1 %></h3>
               <% training_week.each do |training_session|%>
                 <li>
                   <%= link_to training_session_path(training_session) do  %>
-                    <%= training_session.position %> -
+                    <strong> <%= training_session.position %></strong> -
                     <%= training_session.kind %>
                   <% end %>
                 </li>
