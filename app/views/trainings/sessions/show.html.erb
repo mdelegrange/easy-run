@@ -1,13 +1,14 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-12 col-md-6 col-md-offset-3">
-      <h2>Détails de la session</h2>
+      <h2 class="text-center">Détails de la session <%= @session.position%></h2>
       <hr></hr>
-
-      <h3> <%= @session.position%> - <%= @session.kind%></h3>
-      <p><%= @session.description %></p>
-      <hr>
-      <%= link_to "Retour au plan d'entrainement",  training_path %>
+      <div class="training_session_show">
+        <h3><%= @session.kind%></h3>
+        <p><%= @session.description %></p>
+        <hr>
+        <%= link_to "Retour au plan d'entrainement",  training_path %>
+        </div>
     </div>
   </div>
 </div>

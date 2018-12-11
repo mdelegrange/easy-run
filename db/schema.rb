@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_09_221947) do
+ActiveRecord::Schema.define(version: 2018_12_07_184636) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -71,7 +71,6 @@ ActiveRecord::Schema.define(version: 2018_12_09_221947) do
     t.integer "position"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "kind"
     t.index ["training_plan_id"], name: "index_training_sessions_on_training_plan_id"
   end
 
@@ -99,9 +98,9 @@ ActiveRecord::Schema.define(version: 2018_12_09_221947) do
     t.string "photo"
     t.string "level"
     t.integer "targeted_distance"
-    t.boolean "quiz_completed", default: false
     t.string "has_already_run"
     t.string "department"
+    t.boolean "quiz_completed", default: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

@@ -1,4 +1,5 @@
 import "bootstrap";
+import "../components/quiz";
 $(document).ready(function(){
   $(".category-choice_1").click(function(){
     $(".category-choice_1").siblings().removeClass('active');
