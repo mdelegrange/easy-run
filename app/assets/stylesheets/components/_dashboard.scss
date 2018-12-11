@@ -1,0 +1,25 @@
+.dash-flexbox {
+  display: flex;
+}
+
+.dash-flex-column {
+  flex-direction: column;
+}
+
+.dash-races {
+  width: 400px;
+  margin: 20px 10px 20px 40px;
+  padding: 10px 20px;
+  border: 1px solid black;
+}
+
+.dash-trainings {
+  flex-grow: 1;
+  margin: 20px 40px 20px 10px;
+  padding: 10px 20px;
+  border: 1px solid red;
+}
+
+.dash-cards {
+  justify-content: flex-start;
+}

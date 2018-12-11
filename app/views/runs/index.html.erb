@@ -1,3 +1,65 @@
+<div class="dash-flexbox">
+
+  <div class="dash-flexbox dash-races dash-flex-column">
+    <div>
+      <h1>Test</h1>
+    </div>
+    <div class="dash-flexbox">
+      <div>
+        Completion bar
+      </div>
+      <div class="dash-flexbox dash-cards">
+        <div>
+          date card
+        </div>
+        <div class="dash-flexbox dash-flex-column">
+          <% @runs.each do |run| %>
+            <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+              <div class="flipper">
+                <div class="front">
+                  <div class="dash-card-race">
+                    <div class="dash-card-race-detail">
+                      <h3><%=run.race.event_name  %></h3>
+                    </div>
+                    <p><%=Race::DISTANCES[run.race.distance.to_s]%></p>
+                    <h5><i class="fas fa-bullseye"></i> - <%= run.targeted_time %></h5>
+                  </div>
+                </div>
+                <div class="back">
+                  <div class="dash-card-back">
+                    <%= link_to run.race.url, target: "_blank" do  %>
+                      <p><i class="fas fa-eye"></i></p>
+                      <p>Plus d'infos</p>
+                    <% end %>
+                    <br>
+                    <%= link_to edit_run_path(run) do  %>
+                      <p><i class="fas fa-exchange-alt"></i></p>
+                      <p>Changer de course</p>
+                    <% end %>
+                  </div>
+                </div>
+            </div>
+          </div>
+        <%end %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="dash-flexbox dash-trainings">
+    <h1>Test</h1>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
 <div class="container">
   <div class="card-container">
     <div class="row text-center">

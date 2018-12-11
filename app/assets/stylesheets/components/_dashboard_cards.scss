@@ -1,0 +1,109 @@
+.dash-card-race {
+  height: 210px;
+  width: 160px;
+  margin: 10px;
+  text-align:center;
+  padding: 8px 8px 50px 8px;
+  border-radius:8px;
+  background: $blue-dark;
+  color: white;
+  position: relative;
+  box-shadow: 1px 1px 2px $blue-dark;
+  p {
+    font-family: 'Fredoka One';
+    margin: 10px 0 5px 0;
+    font-size: 20px;
+  }
+  h5 {
+    color: $green;
+    margin: 0 0 5px 0;
+    font-family: 'Raleway';
+  }
+}
+
+.dash-card-race-detail {
+  padding: 0 4px;
+  display:flex;
+  height: 120px;
+  background: white;
+  align-items:center;
+  border-radius:8px;
+  color: $blue-dark;
+  &::after {
+    content: '◀';
+    font-size: 28px;
+    position: absolute;
+    bottom: 150px;
+    left: -20px;
+    color: inherit;
+  }
+  h3 {
+    font-family: 'Raleway';
+    font-size: 16px;
+    margin-top: 8px;
+  }
+}
+
+
+.dash-card-back {
+  height: 210px;
+  width: 160px;
+  margin: 10px;
+  text-align: center;
+  padding: 30px 0 45px 0;
+
+  border-radius:8px;
+  background: $blue-dark;
+  color: white;
+  position: relative;
+  box-shadow: 1px 1px 2px $blue-dark;
+  &::after {
+    content: '◀';
+    font-size: 28px;
+    position: absolute;
+    bottom: 150px;
+    left: -20px;
+    color: $blue-dark;
+  }
+  a {
+    text-decoration: none;
+    color:white;
+  }
+
+  p {
+    margin: 0;
+    font-size: 15px;
+    i {
+      color: $green;
+      margin: 0;
+      font-size: 30px;
+    }
+  }
+}
+
+
+.card-date {
+  height: 230px;
+  width: 230px;
+  margin: 10px;
+  margin-top: 24px;
+  text-align:center;
+  padding: 8px 8px 50px 8px;
+  border-radius:8px;
+  color: $grey;
+  background: white;
+  position: relative;
+
+  p {
+    margin: 12.5px 0 12.5px;
+    font-size: 18px;
+  }
+  &::before {
+    content: '◢';
+    font-size: 36px;
+    position: absolute;
+    top: -24px;
+    left: 97px;
+    color: white;
+  }
+}
