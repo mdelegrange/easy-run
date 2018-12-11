@@ -22,7 +22,7 @@ class RacesController < ApplicationController
     @departments_options = Race::DEPARTMENTS.map { |label, value| [label, value] }
     @races = Race.all
 
-    # Race before 1 month of marathon (distance: 21 km) ==> beginner, intermediate and advanced
+    # Race before 1 month of marathon (distance: 21 km) ==> DEBUTANT, REGULIER and EXPERT
     @race3_semi = suggest_races(@race, 1, 21_097).first
 
     if @user.level == 'DEBUTANT'

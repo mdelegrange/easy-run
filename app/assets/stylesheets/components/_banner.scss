@@ -16,7 +16,30 @@
   justify-content: center;
   background-attachment: fixed;
 }
+.banner_index_races {
+  height: calc(50vh - 50px);
+  /* if you have a 70px navbar => height: calc(100vh - 70px); */
+  background-size: cover !important;
+  display: flex;
+  justify-content: space-around;
+  background-attachment: fixed;
+  align-items: center;
+}
 
+.banner_index_races {
+  .text-center {
+    h2 {
+    margin-top: 0;
+    }
+  }
+}
+
+// .banner_input_department {
+//   height: calc(50vh - 50px);
+//   background-size: cover !important;
+//   align-items: center;
+//   justify-content: center;
+// }
 .banner h1 h2 {
   color: white;
 }
@@ -25,11 +48,20 @@
   font-size: 25px;
   font-weight: lighter;
   color: rgb(255, 255, 255);
+  opacity: 1;
+  margin-bottom: 5px;
+
+}
+
+.text p {
+  font-family: $body-font;
+  font-weight: lighter;
+  color: $blue-dark;
+
   margin-bottom: 30px;
 }
 
 .btn-home {
-  display: flex;
   justify-content: center;
   margin-top: 20px;
 }
