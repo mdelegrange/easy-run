@@ -215,8 +215,8 @@
   position: absolute;
   top: 5px;
   left: 5px;
-  height: 79%;
-  width: 96%;
+  height: 33vh;
+  width: 17.9vw;
   opacity: 0;
   transition: .5s ease;
   background-color: $grey;
@@ -254,10 +254,10 @@
     font-family: $body-font;
   }
   p:last-child {
-    font-size: 15px; 
+    font-size: 14px; 
     text-align: center; 
     text-decoration: underline;
-    bottom: 20px;
+    bottom: 27px;
     font-weight: bold;
     font-family: $body-font;
    }
