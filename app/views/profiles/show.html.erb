@@ -13,11 +13,11 @@
         <p>Email : <%= @user.email %></p>
         <p>Niveau de course :
           <% if @user.level == 0%>
-            <%= "Débutant" %>
+            <%= "DEBUTANT" %>
           <% elsif @user.level == 0%>
-            <%= "Intermédiaire" %>
+            <%= "REGULIER" %>
           <% else %>
-            <%= "Expérimenté" %>
+            <%= "EXPERT" %>
           <% end %>
           </p>
         <p>Objectif de distance : <%= @user.targeted_distance %> m</p>

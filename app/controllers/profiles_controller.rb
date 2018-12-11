@@ -20,11 +20,11 @@ class ProfilesController < ApplicationController
   def quiz_form
     @user = current_user
     @levels_options = [
-      ["Je n'ai jamais couru", "beginner"],
-      ["Je cours de temps en temps", "intermediate"],
-      ["Je cours régulièrement", "advanced"]
+      ["shoes", "DEBUTANT"],
+      ["timer", "REGULIER"],
+      ["winner", "EXPERT"]
    ]
-    @targeted_distances = [["Finir un marathon", 42195]]
+    @targeted_distances = [["SEMI-MARATHON", 21000, "semi-marathon"],["MARATHON", 42195, "marathon"]]
     @departments_options = Race::DEPARTMENTS.map { |label, value| [label, value] }
   end
 
@@ -32,6 +32,7 @@ class ProfilesController < ApplicationController
     if current_user.update(quiz_params)
       current_user.quiz_completed = true
       current_user.save
+
       redirect_to races_path
     else
       render :new

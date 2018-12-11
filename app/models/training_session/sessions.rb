@@ -7,7 +7,7 @@ class TrainingSession
       800 mètres à votre allure sur 10KM
      2 fois 400 mètres à votre allure sur 5KM
      4 fois 200 mètres à votre allure sur 5KM
-     2 fois 400 mètres à votre allure sur 5 km
+     2 fois 400 mètres à votre allure sur 5KM
       800 mètres à votre allure sur 10KM
      2 minutes de récupération après chaque phase
      de fractionné de 800 mètres, 90 secondes après
