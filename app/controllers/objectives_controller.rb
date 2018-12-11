@@ -16,7 +16,7 @@ class ObjectivesController < ApplicationController
     if @objective.save
       create_run(@objective.id, params[:race_id])
       # Suggested Races (distance: semi)
-      @race3_semi = suggest_races(@race, 1, 21_100).first  
+      @race3_semi = suggest_races(@race, 1, 21_100).first
       # Created Run
       create_run(@objective.id, @race3_semi.id)
       @user = current_user

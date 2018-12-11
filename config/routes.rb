@@ -22,7 +22,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resource :training, only: [:show] do
+  resource :training, only: [:show, :create] do
     resources :sessions, only: [:show], module: :trainings
   end
 
