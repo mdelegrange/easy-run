@@ -20,7 +20,7 @@ class ObjectivesController < ApplicationController
       # Created Run
       create_run(@objective.id, @race3_semi.id)
       @user = current_user
-      if @user.level == 'beginner'
+      if @user.level == 'DEBUTANT'
 
         # Suggested Races (distance: 10 km)
         @race1_10km = suggest_races(@race, 6, 10_000).first
@@ -28,7 +28,7 @@ class ObjectivesController < ApplicationController
         # Created Run
         create_run(@objective.id, @race1_10km.id)
         create_run(@objective.id, @race2_10km.id)
-      elsif @user.level == 'intermediate'
+      elsif @user.level == 'REGULIER'
 
         # Suggested Races (distance: 10 km)
         @race1_10km = suggest_races(@race, 4, 10_000).last
@@ -37,7 +37,7 @@ class ObjectivesController < ApplicationController
         # Created Run
         create_run(@objective.id, @race1_10km.id)
         create_run(@objective.id, @race2_10km.id)
-      elsif @user.level == 'advanced'
+      elsif @user.level == 'EXPERT'
 
         # Suggested Races (distance: 10 km)
         @race1_10km = suggest_races(@race, 3, 10_000).first

@@ -1,51 +1,73 @@
-<div class="banner" style="background-image: linear-gradient(to right, rgba(10, 207, 254, 0.7) 0%, rgba(73, 90, 255, 0.7) 100%), url(<%= image_path 'quiz-run.jpg'%>);">
-  <div class="container race-results">
-    <div class="row text-center">
-        <h2 style="color: white">Choisissez votre course</h2>
-        <%= form_tag races_path, method: :get do %>
-            <%= select_tag "department" , options_for_select(@departments_options) %>
-            <%= submit_tag "RUN", :class => "btn" %>
-          <%end%>
-    </div>
-    <div class="row">
-      <% if params[:department].nil? %>
-        <% races_to_display = @races %>
-      <% else %>
-        <% races_to_display = @races.where(department: params[:department].to_i) %>
-      <% end %>
+<div class = "banner_index_races" style="background-image: linear-gradient(to right, rgba(10, 207, 254, 0.7) 0%, rgba(73, 90, 255, 0.7) 100%), url(<%= image_path 'home-run.jpg'%>);">
+  <div class="text-center">
+      <h2 style="color: white">Choisissez votre course</h2>
+      <%= form_tag races_path, class: "form-inline", method: :get do %>
+        <div class="form-group">
+          <%= select_tag "department", options_for_select(@departments_options), class: "form-control"%>
+        </div>
+        <div class="form-group">
+          <%= submit_tag "RUN", :class => "btn btn-primary btn-padding" %>
+        </div>
+        <%end%>
+  </div>
+</div>
+<div class="container race-results">
+  <div class="row">
+    <% if params[:department].nil? %>
+      <% races_to_display = @races %>
+    <% else %>
+      <% races_to_display = @races.where(department: params[:department].to_i) %>
+    <% end %>
 
-      <% if races_to_display.count.zero? %>
-        <h3 style="color: white" class="text-center">Il n'y a pas de course correspondant à votre recherche.</h3>
-      <% else %>
-        <% races_to_display.each do |race| %>
-          <%= link_to race_objectives_path([race, @objective]), method: :post  do %>
-            <div class="col-xs-12 col-sm-4">
+    <% if races_to_display.count.zero? %>
+      <h3 style="color: #376996; margin-bottom: 400px" class="text-center">Il n'y a pas de course correspondant à votre recherche</h3>
+    <% else %>
+      <% races_to_display.each do |race| %>
+        <%= link_to race_objectives_path(race), "data-toggle" => "modal", 'data-target' => "#raceModal-#{race.id}"  do %>
+          <div class="col-xs-12 col-sm-3">
+            <div class="flexbox-center">
               <div class="card-race-results card-race-results-<%=race.distance%>">
                 <div class="card-race-results-detail card-race-results-detail-<%=race.distance%>">
-                  <h3><%=race.event_name  %></h3>
-                  <h4><%=race.name%></h4>
-                  <h4><%=race.price%></h4>
+                  <h3><%=race.event_name %></h3>
+                  <h4><i class="fas fa-map-marker-alt"></i> <%= Race::DEPARTMENTS.key(race.department)[5..Race::DEPARTMENTS.key(race.department).length] %></h4>
                 </div>
-                <p><%=race.distance%> m</p>
+                <p><%=Race::DISTANCES[race.distance.to_s]%></p>
                 <div class="overlay overlay-<%=race.distance%>">
                   <div class="text">
-                    <p style="font-weight: bold">Sélectionner cette course</p>
+                    <p style="font-weight: bold">Choisir cette course</p>
                     <p style="font-size: 40px"><i class="far fa-hand-point-up"></i></p>
+                    <p> + de details</p>
                   </div>
                 </div>
               </div>
               <div class="card-date-result card-date-results-<%=race.distance%>">
                 <div>
-                  <h4 class="date-details"><%=race.date.day%></h4>
-                  <h4 class="date-details"><%=race.date.strftime("%B").first(3)%></h4>
-                  <h4 class="date-details"><%=race.date.year%></h4>
+                  <h4 class="date-details"><%=race.date.strftime('%d/%m/%Y')%></h4>
                 </div>
               </div>
             </div>
-          <% end %>
+          </div>
         <% end %>
+        <!-- Modal -->
+        <div class="modal fade" id="raceModal-<%= race.id %>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+          <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+
+              <div class="modal-body">
+                <h5 class="modal-title">Vous avez sélectionné la course suivante :</h5>
+                <p>- <%= race.event_name %></p>
+                <p>- <%= race.date %></p>
+                <p> Nous allons vous proposer d'autres courses pour personnaliser votre entraînement et vous permettre d'atteindre vos objectifs</p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <%= link_to 'Run', race_objectives_path(race), method: :post, class: "btn btn-primary" %>
+              </div>
+            </div>
+          </div>
+        </div>
       <% end %>
-    </div>
+    <% end %>
   </div>
 </div>
 
