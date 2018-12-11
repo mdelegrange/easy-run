@@ -20,11 +20,8 @@ class ProfilesController < ApplicationController
   def quiz_form
     @user = current_user
     @levels_options = [
-      ["shoes", "DEBUTANT"],
-      ["timer", "REGULIER"],
-      ["winner", "EXPERT"]
-   ]
     @targeted_distances = [["SEMI-MARATHON", 21000, "semi-marathon"],["MARATHON", 42195, "marathon"]]
+
     @departments_options = Race::DEPARTMENTS.map { |label, value| [label, value] }
   end
 
@@ -36,8 +33,9 @@ class ProfilesController < ApplicationController
       redirect_to races_path
     else
       render :new
+    end
   end
-end
+
   private
 
   def user_params

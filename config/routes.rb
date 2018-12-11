@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   resources :objectives, only: [:index, :show] do
     resources :runs, only: [:index]
   end
+
   resources :runs, only: [:show, :edit, :update, :destroy] do
     member do
       patch :subscribe

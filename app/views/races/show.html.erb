@@ -10,91 +10,91 @@
 
     </div>
     <div class="row race-selector-1">
-      <h4>Sélectionnez un 10km en <%= @month - 4 %>/19</h4>
-      <% @races.where('extract(month from date) = ?', (@month - 4)).where(distance: 10000).each do |race| %>
-          <%= link_to race_runs_path(race), method: :post  do %>
+      <h4>Sélectionnez un 10km en <%= @race1_10km.date.month %>/<%= @race1_10km.date.year.to_s.split('').last(2).join %></h4>
+      
+          <%= link_to race_runs_path(@race1_10km), method: :post  do %>
             <div class="col-xs-12 col-sm-3">
-              <div class="card-race-results-1 card-race-results-<%=race.distance%>">
-                <div class="card-race-results-detail card-race-results-detail-<%=race.distance%>">
-                  <h3><%=race.event_name  %></h3>
-                  <h4><%=race.name%></h4>
+              <div class="card-race-results-1 card-race-results-<%=@race1_10km.distance%>">
+                <div class="card-race-results-detail card-race-results-detail-<%=@race1_10km.distance%>">
+                  <h3><%=@race1_10km.event_name  %></h3>
+                  <h4><%=@race1_10km.name%></h4>
                 </div>
-                <p><%=race.distance%> m</p>
-                <div class="overlay overlay-<%=race.distance%>">
+                <p><%=@race1_10km.distance%> m</p>
+                <div class="overlay overlay-<%=@race1_10km.distance%>">
                   <div class="text">
                     <p style="font-weight: bold">Sélectionner cette course</p>
                     <p style="font-size: 40px"><i class="far fa-hand-point-up"></i></p>
                   </div>
                 </div>
               </div>
-              <div class="card-date-result card-date-results-<%=race.distance%>">
+              <div class="card-date-result card-date-results-<%=@race1_10km.distance%>">
                 <div>
-                  <h4 class="date-details"><%=race.date.day%></h4>
-                  <h4 class="date-details"><%=race.date.strftime("%B").first(3)%></h4>
-                  <h4 class="date-details"><%=race.date.year%></h4>
+                  <h4 class="date-details"><%=@race1_10km.date.day%></h4>
+                  <h4 class="date-details"><%=@race1_10km.date.strftime("%B").first(3)%></h4>
+                  <h4 class="date-details"><%=@race1_10km.date.year%></h4>
                 </div>
               </div>
             </div>
           <% end %>
-        <% end %>
+       
     </div>
     <div class="row race-selector-2">
-      <h4>Sélectionnez un 10km en <%= @month - 2 %>/19</h4>
-      <% @races.where('extract(month from date) = ?', (@month - 2)).where(distance: 10000).each do |race| %>
-          <%= link_to race_runs_path(race), method: :post  do %>
+      <h4>Sélectionnez un 10km en <%=@race2_10km.date.month %>/<%=@race2_10km.date.year.to_s.split('').last(2).join%></h4>
+     
+          <%= link_to race_runs_path(@race2_10km), method: :post  do %>
             <div class="col-xs-12 col-sm-3">
-              <div class="card-race-results-2 card-race-results-<%=race.distance%>">
-                <div class="card-race-results-detail card-race-results-detail-<%=race.distance%>">
-                  <h3><%=race.event_name  %></h3>
-                  <h4><%=race.name%></h4>
+              <div class="card-race-results-2 card-race-results-<%=@race2_10km.distance%>">
+                <div class="card-race-results-detail card-race-results-detail-<%=@race2_10km.distance%>">
+                  <h3><%=@race2_10km.event_name  %></h3>
+                  <h4><%=@race2_10km.name%></h4>
                 </div>
-                <p><%=race.distance%> m</p>
-                <div class="overlay overlay-<%=race.distance%>">
+                <p><%=@race2_10km.distance%> m</p>
+                <div class="overlay overlay-<%=@race2_10km.distance%>">
                   <div class="text">
                     <p style="font-weight: bold">Sélectionner cette course</p>
                     <p style="font-size: 40px"><i class="far fa-hand-point-up"></i></p>
                   </div>
                 </div>
               </div>
-              <div class="card-date-result card-date-results-<%=race.distance%>">
+              <div class="card-date-result card-date-results-<%=@race2_10km.distance%>">
                 <div>
-                  <h4 class="date-details"><%=race.date.day%></h4>
-                  <h4 class="date-details"><%=race.date.strftime("%B").first(3)%></h4>
-                  <h4 class="date-details"><%=race.date.year%></h4>
+                  <h4 class="date-details"><%=@race2_10km.date.day%></h4>
+                  <h4 class="date-details"><%=@race2_10km.date.strftime("%B").first(3)%></h4>
+                  <h4 class="date-details"><%=@race2_10km.date.year%></h4>
                 </div>
               </div>
             </div>
           <% end %>
-        <% end %>
+       
     </div>
     <div class="row race-selector-3">
-      <h4>Sélectionnez un semi-marathon en <%= @month - 1 %>/19</h4>
-      <% @races.where('extract(month from date) = ?', (@month - 1)).where(distance: 21100).each do |race| %>
-          <%= link_to race_runs_path(race), method: :post  do %>
+      <h4>Sélectionnez un semi-marathon en <%=@race3_semi.date.month %>/<%=@race3_semi.date.year.to_s.split('').last(2).join%><h4>
+      
+          <%= link_to race_runs_path(@race3_semi), method: :post  do %>
             <div class="col-xs-12 col-sm-3">
-              <div class="card-race-results-3 card-race-results-<%=race.distance%>">
-                <div class="card-race-results-detail card-race-results-detail-<%=race.distance%>">
-                  <h3><%=race.event_name  %></h3>
-                  <h4><%=race.name%></h4>
+              <div class="card-race-results-3 card-race-results-<%=@race3_semi.distance%>">
+                <div class="card-race-results-detail card-race-results-detail-<%=@race3_semi.distance%>">
+                  <h3><%=@race3_semi.event_name  %></h3>
+                  <h4><%=@race3_semi.name%></h4>
                 </div>
-                <p><%=race.distance%> m</p>
-                <div class="overlay overlay-<%=race.distance%>">
+                <p><%=@race3_semi.distance%> m</p>
+                <div class="overlay overlay-<%=@race3_semi.distance%>">
                   <div class="text">
                     <p style="font-weight: bold">Sélectionner cette course</p>
                     <p style="font-size: 40px"><i class="far fa-hand-point-up"></i></p>
                   </div>
                 </div>
               </div>
-              <div class="card-date-result card-date-results-<%=race.distance%>">
+              <div class="card-date-result card-date-results-<%=@race3_semi.distance%>">
                 <div>
-                  <h4 class="date-details"><%=race.date.day%></h4>
-                  <h4 class="date-details"><%=race.date.strftime("%B").first(3)%></h4>
-                  <h4 class="date-details"><%=race.date.year%></h4>
+                  <h4 class="date-details"><%=@race3_semi.date.day%></h4>
+                  <h4 class="date-details"><%=@race3_semi.date.strftime("%B").first(3)%></h4>
+                  <h4 class="date-details"><%=@race3_semi.date.year%></h4>
                 </div>
               </div>
             </div>
           <% end %>
-        <% end %>
+        
     </div>
     <div class="row race-selector-4 text-center hidden">
       <h3>Voir vos courses</h3>

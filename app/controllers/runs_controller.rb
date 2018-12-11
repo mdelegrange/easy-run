@@ -2,9 +2,8 @@ class RunsController < ApplicationController
   before_action :set_run, only: [:show, :edit, :register, :update, :destroy]
 
   def index
-    @objective = current_user.current_objective
-
-    @runs = current_user.objectives.last.runs.sort_by{ |run| run.race.date }
+    @objective = current_user.objectives.last
+    @runs = current_user.objectives.last.runs.sort_by { |run| run.race.date }
     @race = @objective.race.date
   end
 
@@ -19,8 +18,6 @@ class RunsController < ApplicationController
     @run.objective = @objective
     @run.status = 'pending_subscription'
     @run.save
-
-
   end
 
   def subscribe
@@ -38,11 +35,22 @@ class RunsController < ApplicationController
   end
 
   def edit
+    run_date = @run.race.date
+    begin_date = run_date.beginning_of_month.next_month(-1)
+    end_date = run_date.end_of_month.next_month(1)
+    @departments_options = Race::DEPARTMENTS.map { |label, value| [label, value] }
+
+    if params[:department].nil? || params[:department] == ''
+      @switch_runs = Race.where("date BETWEEN ? AND ? AND department = ? AND distance BETWEEN ? AND ?", begin_date, end_date, @run.race.department, 0.5*@run.race.distance, 1.5*@run.race.distance)
+    else
+      @switch_runs = Race.where("date BETWEEN ? AND ? AND department = ? AND distance BETWEEN ? AND ?", begin_date, end_date, params[:department], 0.5*@run.race.distance, 1.5*@run.race.distance)
+    end
+
   end
 
   def update
-    @run.update(run_params)
-    redirect_to run_path(@run)
+    @run.update(race_id: params[:run][:race].to_i)
+    redirect_to objective_runs_path(current_user.objectives.last)
   end
 
   def destroy
