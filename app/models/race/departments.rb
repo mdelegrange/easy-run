@@ -95,4 +95,6 @@ class Race
 		"94 - Val-de-Marne" => 94,
 		"95 - Val-d'Oise" => 95
 	}
+
+	
 end
