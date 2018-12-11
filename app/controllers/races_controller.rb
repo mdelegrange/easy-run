@@ -3,7 +3,6 @@ class RacesController < ApplicationController
   before_action :set_user, only: [:index, :show]
 
   def index
-    @objective = current_user.objectives.last
     @departments_options = Race::DEPARTMENTS.map { |label, value| [label, value] }
 
     if @user.level == "DEBUTANT"
