@@ -44,7 +44,6 @@
   }
 }
 
-
 .dash-card-back {
   height: 210px;
   width: 160px;
@@ -78,6 +77,25 @@
       margin: 0;
       font-size: 30px;
     }
+  }
+}
+
+.dash-date-card {
+  width: 160px;
+  height: 160px;
+  background: white;
+  border: 1.5px solid $green;
+  margin-top: 10px;
+  border-radius:8px;
+}
+
+.dash-date {
+  background: $green;
+  p {
+    text-align:center;
+    color: $blue-dark;
+    padding: 6px 0;
+    font-size: 15px;
   }
 }
 
