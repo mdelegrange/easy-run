@@ -1,48 +1,89 @@
-<div class="container">
-  <div class="card-container">
-    <div class="row text-center">
-      <h2>Vos courses</h2>
+<div class="dash-flexbox">
+
+  <div class="dash-flexbox dash-races dash-flex-column">
+    <div class="dash-title">
+      <h1><span class="dash-percent">25%</span> de vos <span class="dash-span">COURSES</span></h1>
     </div>
-    <div class="row">
-      <div id="timeline">
-      <% @runs.each do |run| %>
-          <div class="flip-container" data-date="<%=run.race.date%>" ontouchstart="this.classList.toggle('hover');">
-            <div class="flipper">
-              <div class="front">
-                <!-- front content -->
-                <div class="card-race card-race-<%=run.race.distance%>">
-                  <div class="card-race-detail card-race-detail-<%=run.race.distance%>">
-                    <h3><%=run.race.event_name  %></h3>
-                    <h4><%=run.race.name%></h4>
-                  </div>
-                  <p><%=run.race.date.strftime('%d/%m/%Y')%></p>
+    <div class="dash-flexbox">
+      <div>
+        <div class="load-bar-back">
+          <div id="load-bar" class="load-bar-front"></div>
+        </div>
+      </div>
+      <div class="dash-cards dash-flexbox dash-flex-column">
+          <% @runs.each do |run| %>
+            <div class="dash-flexbox dash-card">
+              <div class="dash-date-card">
+                <div class="dash-date">
+                  <p><%= run.race.date.strftime('%d/%m/%Y') %></p>
+                </div>
+                <div class="dash-content">
+
                 </div>
               </div>
-              <div class="back">
-                <!-- back content -->
-                <div class="card-back card-back-<%=run.race.distance%>">
-                  <%= link_to run.race.url, target: "_blank" do  %>
-                    <p><i class="fas fa-eye"></i></p>
-                    <p>See race details</p>
-                  <% end %>
-                  <%= link_to edit_run_path(run) do  %>
-                    <p><i class="fas fa-exchange-alt"></i></p>
-                    <p>Switch race</p>
-                  <% end %>
+              <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+                <div class="flipper">
+                  <div class="front">
+                    <div class="dash-card-race">
+                      <div class="dash-card-race-detail">
+                        <h3><%=run.race.event_name  %></h3>
+                      </div>
+                      <p><%=Race::DISTANCES[run.race.distance.to_s]%></p>
+                      <h5><i class="fas fa-bullseye"></i> - <%= run.targeted_time %></h5>
+                    </div>
+                  </div>
+                  <div class="back">
+                    <div class="dash-card-back">
+                      <%= link_to run.race.url, target: "_blank" do  %>
+                        <p><i class="fas fa-eye"></i></p>
+                        <p>Plus d'infos</p>
+                      <% end %>
+                      <br>
+                      <%= link_to edit_run_path(run) do  %>
+                        <p><i class="fas fa-exchange-alt"></i></p>
+                        <p>Changer de course</p>
+                      <% end %>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        <%end %>
-      </div>
+          <%end %>
       </div>
     </div>
-    <div class="timeline">
-
+  </div>
+  <div class="dash-flexbox dash-trainings dash-flex-column">
+    <div class="dash-title">
+      <h1><span class="dash-percent">3</span> <span class="dash-span">ENTRAINEMENTS</span> de la <span class="dash-span">SEMAINE</span></h1>
     </div>
-    <div class="row">
-
-
+    <div>
+        <div class="load-bar-back-hor">
+          <div id="load-bar-hor" class="load-bar-front-hor"></div>
+        </div>
+      </div>
+    <div class="dash-training-card dash-flexbox">
+      <div class="dash-training-image" style="background-image: linear-gradient(to right, rgba(10, 207, 254, 0.7) 0%, rgba(73, 90, 255, 0.7) 100%), url(<%= image_path 'run-fast.jpg'%>);"></div>
+      <div class="dash-training-desc">
+        <h2>ENDURANCE - <strong>10km</strong></h1>
+        <hr>
+        <p>En parcourant cette distance régulièrement, vous préparerez votre corps et votre esprit à aller au bout du marathon.</p>
+      </div>
+    </div>
+    <div class="dash-training-card dash-flexbox">
+      <div class="dash-training-image" style="background-image: linear-gradient(to right, rgba(10, 207, 254, 0.7) 0%, rgba(73, 90, 255, 0.7) 100%), url(<%= image_path 'run-far.jpg'%>);"></div>
+      <div class="dash-training-desc">
+        <h2>ENDURANCE - <strong>10km</strong></h1>
+        <hr>
+        <p>En parcourant cette distance régulièrement, vous préparerez votre corps et votre esprit à aller au bout du marathon.</p>
+      </div>
+    </div>
+    <div class="dash-training-card dash-flexbox">
+      <div class="dash-training-image" style="background-image: linear-gradient(to right, rgba(10, 207, 254, 0.7) 0%, rgba(73, 90, 255, 0.7) 100%), url(<%= image_path 'run-fast.jpg'%>);"></div>
+      <div class="dash-training-desc">
+        <h2>ENDURANCE - <strong>10km</strong></h1>
+        <hr>
+        <p>En parcourant cette distance régulièrement, vous préparerez votre corps et votre esprit à aller au bout du marathon.</p>
+      </div>
     </div>
   </div>
 </div>
