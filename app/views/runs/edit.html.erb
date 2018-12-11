@@ -1,43 +1,49 @@
 <div class="switch-box">
-
-<div class="container">
-  <%= form_tag edit_run_path(@run), method: :get do %>
-    <%= select_tag "department" , options_for_select(@departments_options), prompt: 'Département' %>
-    <%= select_tag "distance" , options_for_select([5000, 10000, 21100, 42195]), prompt: 'Distance' %>
-    <%= submit_tag "RUN", :class => "btn" %>
-  <%end%>
-  <div class="row flexbox">
-    <div class="col-xs-3 vertical-align">
-      <div class="card-switch-origin">
-        <div class="card-switch-detail">
-          <h3><%=@run.race.event_name  %></h3>
-          <h4><%=@run.race.name%> <%=@run.race.distance%></h4>
-          <h4><%=@run.race.department %></h4>
+  <div class="container overflow">
+    <div class="row">
+    <%= form_tag edit_run_path(@run), method: :get do %>
+      <%= select_tag "department" , options_for_select(@departments_options), prompt: 'Département' %>
+      <%= select_tag "distance" , options_for_select([5000, 10000, 21100, 42195]), prompt: 'Distance' %>
+      <%= submit_tag "RUN", :class => "btn" %>
+    <%end%>
+  </div>
+    <div class="row flexbox">
+      <div class="col-xs-3 vertical-align">
+        <div class="card-switch-origin">
+          <div class="card-switch-origin-detail">
+            <h3><%=@run.race.event_name  %></h3>
+            <h4><i class="fas fa-map-marker-alt"></i> <%=@run.race.department %></h4>
+          </div>
+          <p><%=Race::DISTANCES[@run.race.distance.to_s]%></p>
         </div>
-        <p><%=@run.race.date.strftime('%d/%m/%Y')%></p>
+      </div>
+      <div class="col-xs-1">
+        <%= image_tag "switch.png", height: '50px', alt: "alttext" %>
+        <!-- <p><i class="fas fa-exchange-alt" style="color: #376996;"></i></p> -->
+      </div>
+      <div class="col-xs-8 flexbox-column">
+        <% @switch_runs.each do |race| %>
+          <%= form_for @run, method: :patch do |f| %>
+            <%= f.hidden_field :race, value: race.id %>
+            <%= f.button :submit, class: 'switch-runs' do %>
+              <div class="card-switch">
+                <div class="card-switch-detail">
+                  <h3><%=race.event_name  %></h3>
+                  <h4><i class="fas fa-map-marker-alt"></i> <%=Race::DEPARTMENTS.key(race.department) %></h4>
+                </div>
+                <p><%=Race::DISTANCES[race.distance.to_s]%></p>
+              </div>
+              <div class="card-date-switch">
+                <div>
+                  <h4 class="date-switch-details"><%=race.date.day%></h4>
+                  <h4 class="date-switch-details"><%=race.date.strftime("%B").first(3)%></h4>
+                  <h4 class="date-switch-details"><%=race.date.year%></h4>
+                </div>
+              </div>
+            <% end %>
+          <% end %>
+        <% end %>
       </div>
     </div>
-    <div class="col-xs-1">
-      <p><i class="fas fa-exchange-alt" style="color: #376996;"></i></p>
-    </div>
-    <div class="col-xs-8">
-      <% @switch_runs.each do |race| %>
-        <%= form_for @run, method: :patch do |f| %>
-          <%= f.hidden_field :race, value: race.id %>
-          <%= f.button :submit, class: 'switch-runs' do %>
-            <div class="card-switch">
-              <div class="card-switch-detail">
-                <h3><%=race.event_name  %></h3>
-                <h4><%=race.name%> / <%=race.distance%> / <%=race.department %></h4>
-              </div>
-              <p><%=race.date.strftime('%d/%m/%Y')%></p>
-            </div>
-                    <% end %>
-
-        <% end %>
-      <% end %>
-
-    </div>
   </div>
-</div>
 </div>

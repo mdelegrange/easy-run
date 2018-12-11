@@ -63,7 +63,7 @@ class Race
 		"62 - Pas-de-Calais" => 62,
 		"63 - Puy-de-Dôme" => 63,
 		"64 - Pyrénées-Atlantiques" => 64,
-	    "65 - Hautes-Pyrénées" => 65,
+	  "65 - Hautes-Pyrénées" => 65,
 		"66 - Pyrénées-Orientales" => 66,
 		"67 - Bas-Rhin" => 67,
 		"68 - Haut-Rhin" => 68,

@@ -1,13 +1,13 @@
 .switch-box {
   background: #B0D5FC;
   background-size: cover !important;
+  height: 100vh;
 }
 
 .flexbox {
   display: flex;
   align-items:center;
   height: 80vh;
-
 }
 
 .card-switch-origin {
@@ -19,7 +19,6 @@
   border-radius:8px;
   background: #376996;
   color: white;
-  position: relative;
   box-shadow: 1px 1px 2px #376996;
 
   p {
@@ -29,8 +28,8 @@
 }
 
 .card-switch {
-  height: 150px;
-  width: 500px;
+  height: 170px;
+  width: 540px;
   margin: 10px;
   text-align:center;
   padding: 8px 8px 50px 8px;
@@ -45,19 +44,42 @@
     font-size: 18px;
   }
 }
-.card-switch-detail {
-  padding: 0 4px;
+.card-switch-origin-detail {
+  padding: 10px 30px 0 30px;
   display:flex;
   flex-direction:column;
   height: 100%;
   width: 100%;
   background: white;
-  justify-content:space-between;
+  justify-content:space-around;
   align-items:center;
   border-radius:8px;
   color: #376996;
+
   h3 {
-    font-size: 15px;
+    font-family: 'Fredoka One';
+    font-size: 18px;
+    margin-top: 8px;
+  }
+  h4 {
+    font-size: 12px;
+  }
+}
+
+.card-switch-detail {
+  padding: 25px 5px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  background: white;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 8px;
+  color: #376996;
+  h3 {
+    font-family: 'Fredoka One';
+    font-size: 18px;
     margin-top: 8px;
   }
   h4 {
@@ -75,4 +97,26 @@
     opacity: 0.8;
     border-radius: 20px;
   }
+}
+
+.card-date-switch {
+  position: relative;
+  top: -220px;
+  left: 40px;
+  background: #376996;
+  border-radius: 50%;
+  height: 75px;
+  width: 75px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.date-switch-details {
+  font-family: 'Fredoka One';
+  text-align: center;
+  font-size: 16px;
+  margin-top: 0;
+  margin-bottom: 0;
 }
