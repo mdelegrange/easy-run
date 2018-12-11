@@ -70,6 +70,7 @@ ActiveRecord::Schema.define(version: 2018_12_06_165447) do
     t.integer "position"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "kind"
     t.index ["training_plan_id"], name: "index_training_sessions_on_training_plan_id"
   end
 
