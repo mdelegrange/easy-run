@@ -29,7 +29,7 @@
               <div class="card-race-results card-race-results-<%=race.distance%>">
                 <div class="card-race-results-detail card-race-results-detail-<%=race.distance%>">
                   <h3><%=race.event_name %></h3>
-                  <h4><%=race.price%></h4>
+                  <h4><i class="fas fa-map-marker-alt"></i> <%= Race::DEPARTMENTS.key(race.department)[5..Race::DEPARTMENTS.key(race.department).length] %></h4>
                 </div>
                 <p><%=Race::DISTANCES[race.distance.to_s]%></p>
                 <div class="overlay overlay-<%=race.distance%>">
