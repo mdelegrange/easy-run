@@ -6,13 +6,13 @@ class RacesController < ApplicationController
     @races = Race.all
     @objective = current_user.objectives.last
     @departments_options = Race::DEPARTMENTS.map { |label, value| [label, value] }
-    if @user.level == "beginner"
-    @races = suggest_races_marathon(@user.targeted_distance, 12)
-    elsif @user.level == "intermediate"
-    @races = suggest_races_marathon(@user.targeted_distance, 6)
 
+    if @user.level == "beginner"
+      @races = suggest_races_marathon(@user.targeted_distance, 12)
+    elsif @user.level == "intermediate"
+      @races = suggest_races_marathon(@user.targeted_distance, 6)
     elsif @user.level == "advanced"
-    @races = suggest_races_marathon(@user.targeted_distance, 4)
+      @races = suggest_races_marathon(@user.targeted_distance, 4)
     end
 
   end

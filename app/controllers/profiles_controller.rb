@@ -1,5 +1,6 @@
 class ProfilesController < ApplicationController
   skip_before_action :check_quizz_completion, only: [:quiz_form, :quiz]
+
   def show
     @user = current_user
   end
@@ -19,8 +20,8 @@ class ProfilesController < ApplicationController
 
   def quiz_form
     @user = current_user
-    @levels_options = [
-    @targeted_distances = [["SEMI-MARATHON", 21000, "semi-marathon"],["MARATHON", 42195, "marathon"]]
+    @levels_options = [["shoes", "DEBUTANT"], ["timer", "REGULIER"], ["winner", "EXPERT"]]
+    @targeted_distances = [["SEMI-MARATHON", 21000, "semi-marathon"], ["MARATHON", 42195, "marathon"]]
 
     @departments_options = Race::DEPARTMENTS.map { |label, value| [label, value] }
   end
