@@ -11,6 +11,8 @@ class TrainingsController < ApplicationController
       training_plan_id: 21,
       begin_date: Race.find(current_user.objectives.first.race_id).date - 126
       )
-    @training.save
+    if @training.save
+      redirect_to objective_runs_path(current_user.current_objective.id)
+    end
   end
 end
