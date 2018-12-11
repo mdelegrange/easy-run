@@ -7,6 +7,14 @@ class RunsController < ApplicationController
     @race = @objective.race.date
   end
 
+  def new
+    @objective = current_user.objectives.last
+    @races = Race.all
+    @departments_options = Race::DEPARTMENTS.map { |label, value| [label, value] }
+    @distances_options = Race::DISTANCES.map { |label, value| [value, label] }
+  end
+
+
   def show
   end
 
@@ -18,6 +26,7 @@ class RunsController < ApplicationController
     @run.objective = @objective
     @run.status = 'pending_subscription'
     @run.save
+    redirect_to objective_runs_path(@objective)
   end
 
   def subscribe
