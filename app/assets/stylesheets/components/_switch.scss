@@ -88,15 +88,16 @@
 }
 
 .switch-runs {
+  display: flex;
   text-decoration: none;
     border: none;
     background: none;
-  &:hover {
-    // border: 2px solid #376996;
-    background: #B0D5FC;
-    opacity: 0.8;
-    border-radius: 20px;
-  }
+  // &:hover {
+  //   // border: 2px solid #376996;
+  //   background: #B0D5FC;
+  //   opacity: 0.8;
+  //   border-radius: 20px;
+  // }
 }
 
 .card-date-switch {
