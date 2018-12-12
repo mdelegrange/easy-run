@@ -21,7 +21,7 @@
         <%= image_tag "switch.png", height: '50px', alt: "alttext" %>
         <!-- <p><i class="fas fa-exchange-alt" style="color: #376996;"></i></p> -->
       </div>
-      <div class="col-xs-8 flexbox-column">
+      <div class="col-xs-8 flexbox">
         <% @switch_runs.each do |race| %>
           <%= form_for @run, method: :patch do |f| %>
             <%= f.hidden_field :race, value: race.id %>
