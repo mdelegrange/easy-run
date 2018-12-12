@@ -1,5 +1,6 @@
 class RunsController < ApplicationController
-  before_action :set_run, only: [:show, :edit, :register, :update, :destroy, :subscribe, :mark_as_finished]
+
+  before_action :set_run, only: [:show, :edit, :update, :destroy, :subscribe, :mark_as_finished]
 
   def index
     @objective = current_user.objectives.last
@@ -24,6 +25,7 @@ class RunsController < ApplicationController
     @run.race = @race
     @run.objective = @objective
     @run.status = 'pending_subscription'
+    @run.targeted_time = current_user.time_targeted(@race)
     @run.save
     redirect_to objective_runs_path(@objective)
   end
