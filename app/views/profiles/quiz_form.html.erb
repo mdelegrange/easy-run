@@ -10,17 +10,23 @@
       <div class="question-card"id="title-quiz">
       <div id="question-one">
         <div class="quiz-form-login">
-            <div class="question_quiz" ><%= f.label "Quel est votre niveau ?" %></div>
-              <%= f.input :level, label: false, collection: @levels_options, as: :radio_buttons, wrapper_html: {class: 'hidden'} %>
-              <div class="category-choices">
-                <% @levels_options.each do |level_option| %>
-                  <label class="category-choice_1" for="user_level_<%=level_option[1].downcase%>">
-                    <%= image_tag level_option[0], alt: "level", height: 150,width: 150, class: "level_icon level_icone_white"%>
-                    <p class="level_text"><%= level_option[1] %></p>
-                  </label>
+            <div class="question_quiz" >
+              <%= f.label "Quel est votre niveau ?" %>
 
-                <% end %>
-              </div>
+            </div>
+              <% if @quiz_errors && @quiz_errors.key?(:level) %>
+                <p class="quizz-error"><%= @quiz_errors[:level] %></p>
+              <% end %>
+            <%= f.input :level, label: false, selected: false, collection: @levels_options, as: :radio_buttons, wrapper_html: {class: 'hidden'} %>
+
+            <div class="category-choices">
+              <% @levels_options.each do |level_option| %>
+                <label class="category-choice_1 <%= 'active' if @user.level == level_option %>" for="user_level_<%= level_option[1].downcase %>">
+                  <%= image_tag level_option[0], alt: "level", height: 150,width: 150, class: "level_icone"%>
+                  <p class="level_text"><%= level_option[1] %></p>
+                </label>
+              <% end %>
+            </div>
             <a href="#question-two" class="btn btn-primary btn-primary-er btn-suivant">SUIVANT</a>
           </div>
         </div>
@@ -31,6 +37,9 @@
       <div class="question-card" id="question-two">
         <div id="question-two">
           <div class="question_quiz_two"  ><%= f.label "Quel est votre objectif ?" %></div>
+            <% if @quiz_errors && @quiz_errors.key?(:targeted_distance) %>
+              <p class="quizz-error"><%= @quiz_errors[:targeted_distance] %></p>
+            <% end %>
           <%= f.input :targeted_distance, label: false, collection: @targeted_distances, as: :radio_buttons, wrapper_html: {class: 'hidden'} %>
           <div class=" category-choices category-choices-2">
             <% @targeted_distances.each do |targeted_distance| %>
@@ -46,17 +55,22 @@
       <div class="space"></div>
       <div id="inter"></div>
       <div class="question-card"id="question-three">
-        <div class="last-question"   >
-          <div class="question_quiz_three"><%= f.label "Avez-vous déjà participé à une course officielle ?" %></div>
+        <div class="last-question">
+          <div class="question_quiz_three">
+            <%= f.label "Avez-vous déjà participé à une course officielle ?" %>
+          </div>
+            <% if @quiz_errors && @quiz_errors.key?(:has_already_run) %>
+                <p class="quizz-error"><%= @quiz_errors[:has_already_run] %></p>
+              <% end %>
           <%= f.input :has_already_run, label: false, collection: ['oui', 'non'], as: :radio_buttons, wrapper_html: {class: 'hidden'} %>
           <div class="category-choices">
             <% ['NON', 'OUI'].each do |choice| %>
               <label class="category-choice_3" for="user_has_already_run_<%= choice.downcase %>">
                 <% if choice == "NON" %>
-                  <%= image_tag "not_official", alt: "level", height: 150,width: 150, class: "level_icone"%>
+                  <%= image_tag "not_official.svg", alt: "level", height: 150,width: 150, class: "level_icone"%>
                   <p class="level_text"><%= choice %></p>
                 <% else %>
-                  <%= image_tag "official", alt: "level", height: 150,width: 150, class: "level_icone"%>
+                  <%= image_tag "official.svg", alt: "level", height: 150,width: 150, class: "level_icone"%>
                   <p class="level_text"><%= choice %></p>
                 <% end %>
               </label>

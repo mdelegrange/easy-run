@@ -1,5 +1,6 @@
 class RunsController < ApplicationController
-  before_action :set_run, only: [:show, :edit, :register, :update, :destroy, :subscribe, :mark_as_finished]
+
+  before_action :set_run, only: [:show, :edit, :update, :destroy, :subscribe, :mark_as_finished]
 
   def index
     @objective = current_user.objectives.last
@@ -30,6 +31,7 @@ class RunsController < ApplicationController
     @run.race = @race
     @run.objective = @objective
     @run.status = 'pending_subscription'
+    @run.targeted_time = current_user.time_targeted(@race)
     @run.save
     redirect_to objective_runs_path(@objective)
   end
@@ -55,20 +57,20 @@ class RunsController < ApplicationController
 
   def edit
     run_date = @run.race.date
-    begin_date = run_date.beginning_of_month.next_month(-1)
-    end_date = run_date.end_of_month.next_month(1)
+    begin_date = run_date.beginning_of_month.next_month(-2)
+    end_date = run_date.end_of_month.next_month(2)
     @departments_options = Race::DEPARTMENTS.map { |label, value| [label, value] }
 
     if params[:department].nil? || params[:department] == ''
-      @switch_runs = Race.where("date BETWEEN ? AND ? AND department = ? AND distance BETWEEN ? AND ?", begin_date, end_date, @run.race.department, 0.5*@run.race.distance, 1.5*@run.race.distance)
+      @switch_runs = Race.where("date BETWEEN ? AND ? AND department = ? AND distance BETWEEN ? AND ?", begin_date, end_date, @run.race.department, 0.75*@run.race.distance, 1.25*@run.race.distance).where.not(id: @run.race.id)
     else
-      @switch_runs = Race.where("date BETWEEN ? AND ? AND department = ? AND distance BETWEEN ? AND ?", begin_date, end_date, params[:department], 0.5*@run.race.distance, 1.5*@run.race.distance)
+      @switch_runs = Race.where("date BETWEEN ? AND ? AND department = ? AND distance BETWEEN ? AND ?", begin_date, end_date, params[:department], 0.75*@run.race.distance, 1.25*@run.race.distance).where.not(id: @run.race.id)
     end
 
   end
 
   def update
-    @run.update(race_id: params[:run][:race].to_i)
+    @run.update(race_id: params[:run][:race].to_i, status: 'pending_subscription')
     redirect_to objective_runs_path(current_user.objectives.last)
   end
 

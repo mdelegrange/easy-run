@@ -53,7 +53,11 @@ class ScrapeMarathonsService
           unless list.search('td:nth-child(3) b').text == ""
             race_detail_info = {}
             race_detail_info[:race_name] = list.search('td:nth-child(3) b').text
-            race_detail_info[:race_distance] = list.search('td:nth-child(5)').text.gsub(' m', '').to_i
+            if list.search('td:nth-child(5)').text.gsub(' m', '').to_i == 21100
+              race_detail_info[:race_distance] = 21097
+            else
+              race_detail_info[:race_distance] = list.search('td:nth-child(5)').text.gsub(' m', '').to_i
+            end
             unless list.next_element.nil?
               unless list.next_element.search('tr').first.nil?
                 if list.next_element.search('tr').first.text.first(7) == 'Montant'

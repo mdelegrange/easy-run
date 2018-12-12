@@ -21,3 +21,12 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         });
     });
 });
+
+const boxChecked =
+console.log(document.querySelectorAll('active').length);
+
+document.querySelectorAll("label").forEach((label) => {
+  label.addEventListener("click", (event) => {
+    event.currentTarget.classList.toggle("img-circle");
+  });
+});
