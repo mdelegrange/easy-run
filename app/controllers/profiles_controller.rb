@@ -20,7 +20,7 @@ class ProfilesController < ApplicationController
 
   def quiz_form
     @user = current_user
-    @levels_options = [["shoes", "DEBUTANT", "shoes-blue"], ["timer", "REGULIER", "timer-blue"], ["winner", "EXPERT", "winner-blue"]]
+    @levels_options = [["shoes.svg", "DEBUTANT", "shoes-blue.svg"], ["timer.svg", "REGULIER", "timer-blue.svg"], ["winner.svg", "EXPERT", "winner-blue.svg"]]
     @targeted_distances = [["SEMI-MARATHON", 21000, "semi-marathon"], ["MARATHON", 42195, "marathon"]]
 
     @departments_options = Race::DEPARTMENTS.map { |label, value| [label, value] }
