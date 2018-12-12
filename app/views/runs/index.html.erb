@@ -52,7 +52,6 @@
                         <h3><%=run.race.event_name  %></h3>
                       </div>
                       <p><%=Race::DISTANCES[run.race.distance.to_s]%></p>
-
                       <% unless run.targeted_time.nil? %>
                       <h5><i class="fas fa-bullseye"></i> <%= Time.at(run.targeted_time).utc.strftime("%Hh %Mmin") %></h5>
                       <% end %>
