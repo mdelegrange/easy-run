@@ -98,9 +98,9 @@ ActiveRecord::Schema.define(version: 2018_12_12_112654) do
     t.string "last_name"
     t.string "photo"
     t.integer "targeted_distance"
-    t.boolean "quiz_completed", default: false
     t.string "has_already_run"
     t.string "department"
+    t.boolean "quiz_completed", default: false
     t.string "level"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
