@@ -3,7 +3,7 @@
       <h2 style="color: white">Choisissez votre course</h2>
       <%= form_tag races_path, class: "form-inline", method: :get do %>
         <div class="form-group">
-          <%= select_tag "department", options_for_select(@departments_options), class: "form-control"%>
+          <%= select_tag "department", options_for_select(@departments_options), prompt: 'filtrez par département', class: "form-control"%>
         </div>
         <div class="form-group">
           <%= submit_tag "RUN", :class => "btn btn-primary btn-primary-er" %>
