@@ -1,5 +1,5 @@
 class RunsController < ApplicationController
-  before_action :set_run, only: [:show, :edit, :register, :update, :destroy, :subscribe]
+  before_action :set_run, only: [:show, :edit, :register, :update, :destroy, :subscribe, :mark_as_finished]
 
   def index
     @objective = current_user.objectives.last
@@ -40,7 +40,11 @@ class RunsController < ApplicationController
   end
 
   def mark_as_finished
+    final_time = params[:run][:final_hours].to_i * 3_600 + params[:run][:final_minutes].to_i * 60 + params[:run][:final_seconds].to_i
+    @run.update(final_time: final_time)
     @run.update(status: 'finished')
+    @run.save
+    redirect_to objective_runs_path(@run.objective)
   end
 
   def edit
