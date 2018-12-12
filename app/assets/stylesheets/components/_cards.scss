@@ -1,7 +1,7 @@
 // Card pour timeline
 .card-race {
-  height: 305px;
-  width: 230px;
+  height: 230px;
+  width: 160px;
   margin: 10px;
   text-align:center;
   padding: 8px 8px 50px 8px;
@@ -38,10 +38,11 @@
     color: inherit;
   }
   h3 {
-    font-size: 26px;
+    font-size: 15px;
+    margin-top: 5px;
   }
   h4 {
-    font-size: 16px;
+    font-size: 12px;
   }
 }
 
@@ -97,12 +98,11 @@
 }
 
 .card-back {
-  height: 300px;
-  width: 230px;
+  height: 230px;
+  width: 160px;
+  padding-top: 40px;
   margin: 10px;
-  margin-bottom: 24px;
   text-align:center;
-  padding: 8px 8px 50px 8px;
   border-radius:8px;
   background: $grey;
   color: white;
@@ -114,8 +114,8 @@
   }
 
   p {
-    margin: 12.5px 0 12.5px;
-    font-size: 18px;
+    margin: 0;
+    font-size: 15px;
   }
   &::after {
     content: '◢';
@@ -177,32 +177,55 @@
 }
 
 //Cards pour resultats de recherche
-.card-race-results {
-  height: 60vh;
+.card-race-results, .card-race-results-1, .card-race-results-2, .card-race-results-3 {
+  height: 200px;
   width: 100%;
-  margin: 10px;
+  margin: 40px 10px;
   text-align:center;
-  padding: 12px 12px 80px 12px;
+  padding: 5px 5px 90px 5px;
   border-radius:8px;
   background: $grey;
   color: white;
   position: relative;
   box-shadow: 1px 1px 2px $grey;
-
   p {
     margin: 12.5px 0 12.5px;
     font-size: 24px;
+    color: white;
+    font-family: $font-family;
+  }
+
+  h5 {
+    font-family: $body-font;
+    color: $green;
+    font-size: 15px;
+    padding: 0px 15px;
+  }
+
+  &.active {
+    background: black;
+  }
+  h3 {
+    display: flex;
+    font-family: $body-font;
+    text-align: center;
+    justify-content: center;
+
   }
 }
 
+// .race-results {
+//   overflow: scroll;
+//   width: 100%;
+//   padding-right: 15px;
+// }
+
 .overlay {
   position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 100%;
-  width: 100%;
+  top: 5px;
+  left: 5px;
+  right: 5px;
+  bottom: 4px;
   opacity: 0;
   transition: .5s ease;
   background-color: $grey;
@@ -210,35 +233,51 @@
 }
 
 .overlay-10000 {
-  background-color: $blue-dark;
+  background-color: $green;
 }
 
 .overlay-21100, .overlay-21097 {
-  background-color: $green-dark;
+  background-color: $green;
 }
 
 .overlay-42195 {
-  background-color: $orange-dark;
+  background-color: $green;
 }
+
 
 .overlay:hover {
-  opacity: 0.7;
+  opacity: 1;
 }
-
 .text {
   color: white;
-  font-size: 20px;
+  font-size: 10px;
+  font-family: $body-font;
   position: absolute;
-  top: 50%;
+  top: 60%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   text-align: center;
+  padding-top: 10px;
+  p {
+    font-family: $body-font;
+    font-size: 15px;
+   
+  }
+  p:last-child {
+    font-size: 14px;
+    text-align: center;
+    text-decoration: underline;
+    bottom: 10px;
+    font-weight: bold;
+    font-family: $body-font;
+    padding-bottom: 30px;
+   }
 }
 
 .card-race-results-detail {
-  padding: 0 30px;
+  padding: 10px 30px 0 30px;
   display:flex;
   flex-direction:column;
   height: 100%;
@@ -248,15 +287,12 @@
   align-items:center;
   border-radius:8px;
   color: $grey;
-
   h3 {
-    font-size: 30px;
-  }
-  h4 {
+    text-align: center;
+    padding: 5px 5px;
     font-size: 20px;
+    margin-top: 0;
   }
-
-
 }
 .card-race-results-10000 {
   background: $blue-dark;
@@ -275,67 +311,73 @@
 }
 
 .card-race-results-42195 {
-  background: $orange-dark;
+  background: $blue-dark;
 }
 
 .card-race-results-detail-42195 {
-  color: $orange-dark;
+  color: $blue-dark;
 }
 
 
-//
+.card-date-result {
+  position : absolute;
+  top: 22px;
+  left: 55card-px;
+  border: 1px solid rgba(0, 0, 255, .2);
+  box-shadow: 1px 1px 1px 1px rgba(0, 0, 255, .2);
+  background: $grey;
+  border-radius: 5px;
+  height: 35px;
+  width: 130px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-date-results-10000 {
+  background: $blue-dark;
+}
+
+.card-date-results-21100, .card-date-results-21097{
+  background: $green-dark;
+}
+
+.card-date-results-42195 {
+  background: $green;
+}
 
 
-// .card {
-//   height: 175px;
-//   text-shadow: 0 1px 3px rgba(0,0,0,0.6);
-//   background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://picsum.photos/200/300/?random');
-//   background-size: cover !important;
-//   background-position: center;
-//   color: white;
-//   position: relative;
-//   margin: 10px;
-// }
-// .card-user {
-//   position: absolute;
-//   right: 10px;
-//   top: 10px;
-//   width: 40px;
-//   border-radius: 50%;
-// }
-// .card-category {
-//   position: absolute;
-//   top: 10px;
-//   left: 10px;
-//   font-size: 15px;
-//   text-transform: uppercase;
-// }
-// .card-description {
-//   position: absolute;
-//   bottom: 10px;
-//   left: 10px;
-// }
-// .card-description h2 {
-//   font-size: 24px;
-// }
-// .card-description p {
-//   font-size: 14px;
-//   opacity: 0.7;
-//   font-weight: lighter;
-// }
-// .card-link {
-//   position: absolute;
-//   top: 0;
-//   bottom: 0;
-//   right: 0;
-//   width: 100%;
-//   z-index: 2;
-//   background: black;
-//   opacity: 0;
-// }
-// .card-link:hover {
-//   opacity: 0.1;
-// }
+.date-details {
+  text-align: center;
+  font-size: 15px;
+  margin-top: 0;
+  margin-bottom: 0;
+  color: $blue-dark;
+}
+
+.flexbox-center {
+  display: flex;
+  justify-content: center;
+}
+
+.banner-home {
+  color: white;
+  height: calc(100vh);
+  /* if you have a 70px navbar => height: calc(100vh - 70px); */
+  background-size: cover !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.banner p {
+  font-size: 25px;
+  font-weight: lighter;
+  color: white;
+  opacity: 1;
+  margin-bottom: 5px;
+}
 
 
 

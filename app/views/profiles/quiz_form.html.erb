@@ -1,16 +1,76 @@
-<div class="container">  
-<h2><%= @user.first_name %><%= @user.last_name %></h2>
+<%= simple_form_for @user, url: quiz_profile_path, method: :patch do |f| %>
+<div class="banner-quiz overflow" id="quiz-form"  style="background-image: linear-gradient(to right, rgba(10, 207, 254, 0.7) 0%, rgba(73, 90, 255, 0.7) 100%), url(<%= image_path 'home-run.jpg'%>);">
+  <div class="container">
+    <div class="row">
+      <h2 class="quiz_title">QUEL COUREUR ÊTES-VOUS ?</h2>
+    </div>
+  </div>
+  <div class="container overflow overflow-height">
+    <div class="row">
+      <div class="question-card"id="title-quiz">
+      <div id="question-one">
+        <div class="quiz-form-login">
+            <div class="question_quiz" ><%= f.label "Quel est votre niveau ?" %></div>
+              <%= f.input :level, label: false, collection: @levels_options, as: :radio_buttons, wrapper_html: {class: 'hidden'} %>
+              <div class="category-choices">
+                <% @levels_options.each do |level_option| %>
+                  <label class="category-choice_1" for="user_level_<%=level_option[1].downcase%>">
+                    <%= image_tag level_option[0], alt: "level", height: 150,width: 150, class: "level_icone"%>
+                    <p class="level_text"><%= level_option[1] %></p>
+                  </label>
+                <% end %>
+              </div>
+            <a href="#question-two" class="btn btn-primary btn-primary-er btn-suivant">SUIVANT</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="space"></div>
+          <%#= f.input_field :level, collection: @levels_options, as: :check_boxes %>
+      <div class="question-card" id="question-two">
+        <div id="question-two">
+          <div class="question_quiz_two"  ><%= f.label "Quel est votre objectif ?" %></div>
+          <%= f.input :targeted_distance, label: false, collection: @targeted_distances, as: :radio_buttons, wrapper_html: {class: 'hidden'} %>
+          <div class=" category-choices category-choices-2">
+            <% @targeted_distances.each do |targeted_distance| %>
+              <label class="category-choice_2" for="user_targeted_distance_<%=targeted_distance[1]%>"><%= image_tag targeted_distance[2], alt: "level", height: 150,width: 150, class: "level_icone"%>
+              <p class="level_text"><%= targeted_distance[0] %></p>
+              </label>
+              <a href="#question-three" class="btn btn-primary btn-primary-er btn-suivant" id="suivant-two">SUIVANT</a>
+              <a href="#title-quiz"class="btn btn-secondary-er btn-precedent" id="title-quiz">PRECEDENT</a>
+            <% end %>
+          </div>
+        </div>
+      </div>
+      <div class="space"></div>
+      <div id="inter"></div>
+      <div class="question-card"id="question-three">
+        <div class="last-question"   >
+          <div class="question_quiz_three"><%= f.label "Avez-vous déjà participé à une course officielle ?" %></div>
+          <%= f.input :has_already_run, label: false, collection: ['oui', 'non'], as: :radio_buttons, wrapper_html: {class: 'hidden'} %>
+          <div class="category-choices">
+            <% ['NON', 'OUI'].each do |choice| %>
+              <label class="category-choice_3" for="user_has_already_run_<%= choice.downcase %>">
+                <% if choice == "NON" %>
+                  <%= image_tag "not_official", alt: "level", height: 150,width: 150, class: "level_icone"%>
+                  <p class="level_text"><%= choice %></p>
+                <% else %>
+                  <%= image_tag "official", alt: "level", height: 150,width: 150, class: "level_icone"%>
+                  <p class="level_text"><%= choice %></p>
+                <% end %>
+              </label>
+            <% end %>
+          </div>
+          <a href="#question-two"class="btn btn-secondary-er btn-precedent btn-precedent-deux" id="precedent-two">PRECEDENT</a>
+          <%= f.submit "VALIDER", :class =>"btn btn-primary btn-primary-er btn-suivant btn-valider" %>
 
-<%= simple_form_for @user, url: quiz_profile_path, method: :patch do |f| %> 
-  <%= f.label "Quel est votre niveau ?" %>
-  <%= f.input_field :level, collection: @levels_options, class: "form-control" %>
-  <%= f.label "Quel est votre objectif ?" %>
-  <%= f.input :targeted_distance, label: false, collection: @targeted_distance%>
-  <%= simple_fields_for :other do |o| %>
-    <%= o.label "Avez-vous déjà participé à une course ?" %>
-    <%= o.input :already_run_in_official_run, label: false, as: :boolean %>
-  <% end %>
-  <%= f.submit "Create", :class =>"btn btn-primary" %>
-  <% end %>
+        </div>
+        <%#= f.label "Dans quel département courez-vous ?" %>
+      </div>
+          <%#= f.input :department , label: false, collection: @departments_options, class: 'form-control full-width' %>
+    </div>
+    </div>
+  </div>
+<% end %>
 </div>
 

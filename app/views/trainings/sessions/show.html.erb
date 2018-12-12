@@ -1,19 +1,14 @@
-<div class="main-container">
-  <h1><%= current_user.first_name%> <%=current_user.last_name%> </h1>
-  <div class="card-container">
-    <div class="row text-center">
-      <h2>Your Session</h2>
-    </div>
-    <div class="row">
-      <div class="col-xs-12 col-sm-4">
-          <div class="card">
-            <div class="card-category"><%= @session.training_plan.name%></div>
-            <div class="card-description">
-              <h2><%= @session.description%></h2>
-              <p><strong>position: <%= @session.position %></strong></p> 
-            </div>
-          </div>
-      </div>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-md-6 col-md-offset-3">
+      <h2 class="text-center">Détails de la session <%= @session.position%></h2>
+      <hr></hr>
+      <div class="training_session_show">
+        <h3><%= @session.kind%></h3>
+        <p><%= @session.description %></p>
+        <hr>
+        <%= link_to "Retour au plan d'entrainement",  training_path %>
+        </div>
     </div>
   </div>
 </div>

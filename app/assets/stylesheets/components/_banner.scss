@@ -1,4 +1,4 @@
-.banner {
+.banner-home {
   color: white;
   height: calc(100vh);
   /* if you have a 70px navbar => height: calc(100vh - 70px); */
@@ -8,6 +8,39 @@
   justify-content: center;
 }
 
+.banner {
+  height: calc(100vh - 70px);
+  /* if you have a 70px navbar => height: calc(100vh - 70px); */
+  background-size: cover !important;
+  display: flex;
+  justify-content: center;
+  background-attachment: fixed;
+}
+
+.banner_index_races {
+  height: calc(50vh - 50px);
+  /* if you have a 70px navbar => height: calc(100vh - 70px); */
+  background-size: cover !important;
+  display: flex;
+  justify-content: space-around;
+  background-attachment: fixed;
+  align-items: center;
+}
+
+.banner_index_races {
+  .text-center {
+    h2 {
+    margin-top: 0;
+    }
+  }
+}
+
+// .banner_input_department {
+//   height: calc(50vh - 50px);
+//   background-size: cover !important;
+//   align-items: center;
+//   justify-content: center;
+// }
 .banner h1 h2 {
   color: white;
 }
@@ -16,38 +49,26 @@
   font-size: 25px;
   font-weight: lighter;
   color: rgb(255, 255, 255);
-  opacity: 0.6;
-  margin-bottom: 30px;
+  opacity: 1;
+  margin-bottom: 5px;
+
 }
 
-.btn-home {
-  display: flex;
-  justify-content: center;
-  margin-top: 20px;
-}
-
-.btn-home-design {
-  width: 135px;
-  // margin-bottom: 16px;
-  margin-left: 15px;
-  font-weight: bolder;
-}
-
-
-
-.btn-padding {
-  padding: 10px 50px;
+.text p {
+  font-family: $body-font;
+  font-weight: lighter;
+  color: $blue-dark;
+  margin-bottom: 20px;
 }
 
 .home-subtitle {
-  text-align: left;
-  font-family: 'Montserrat';
-  font-weight: lighter;
-  font-size: 60px;
+  font-family: 'Raleway';
+  font-weight: light;
+  font-size: 26px;
+  text-transform: uppercase;
 }
 
 .home-title {
-  text-align: left;
   font-family: 'Fredoka One';
   font-size: 90px;
 }
@@ -144,8 +165,3 @@ rgba(0, 0, 255, .2);
   -moz-animation: ani-mouse 2.5s linear infinite;
   animation: ani-mouse 2.5s linear infinite;
 }
-
-
-
-
-

@@ -1,0 +1,34 @@
+<div class="container">
+    <div class="text-center title-session">
+      <% if current_user.trainings.last.nil? %>
+        <h2>Ajouter un plan d'entrainement</h2>
+      <% else %>
+        <h2>Votre plan d'entrainement</h2>
+        <hr class="hr">
+        <h3><%= @training_plan.name %></h3>
+    </div>
+  <div class="row">
+    <div class="contain">
+        <ul class="week_training_list">
+          <% @training_plan.training_sessions.each_slice(3).to_a.each_with_index do |training_week, index| %>
+          <div class="training_week col-xs-8">
+            <h3 class="week text-center">week  <%= index + 1 %></h3>
+              <% training_week.each do |training_session|%>
+                <li>
+                  <%= link_to training_session_path(training_session) do  %>
+                    <strong> <%= training_session.position %></strong> -
+                    <%= training_session.kind %>
+                  <% end %>
+                </li>
+              <% end %>
+            </div>
+          <% end %>
+
+        </ul>
+      <% end %>
+      </div>
+    </div>
+  </div>
+
+
+

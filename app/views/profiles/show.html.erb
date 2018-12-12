@@ -1,16 +1,31 @@
 <div class="container">
-  <% if current_user.photo.present? %>
-    <%= cl_image_tag(current_user.photo, height: 300, width: 300, crop: :fill, alt: "user avatar",  class: "img-circle")%>
-  <% else %>
-  <%= image_tag "user.png", alt: "user avatar", height: 300, class: "img-circle"%>
-  <% end %>
+  <div class="row">
+    <div class="col-xs-12 col-md-5">
+      <div class="profile">
+        <% if current_user.photo.present? %>
+          <%= cl_image_tag(current_user.photo, height: 300, width: 300, crop: :fill, alt: "user avatar",  class: "img-circle img-profile")%>
+        <% else %>
+        <%= image_tag "user.png", alt: "user avatar", height: 300, class: "img-circle img-profile"%>
+        <% end %>
+        <h1> Votre profil </h1>
+        <p>Prénom : <%= @user.first_name %></p>
+        <p>Nom de famille : <%= @user.last_name %></p>
+        <p>Email : <%= @user.email %></p>
+        <p>Niveau de course :
+          <% if @user.level == 0%>
+            <%= "DEBUTANT" %>
+          <% elsif @user.level == 0%>
+            <%= "REGULIER" %>
 
-  <h1> Your Profile </h1>
-  <p>First name : <%= @user.first_name %></p>
-  <p>Last name : <%= @user.last_name %></p>
-  <p>Email : <%= @user.email %></p>
-
-
-  <%= link_to 'Edit', edit_profile_path %>
+          <% else %>
+            <%= "EXPERT" %>
+          <% end %>
+          </p>
+        <p>Objectif de distance : <%= @user.targeted_distance %> m</p>
+        <p>Département : <%= @user.department %></p>
+        <%= link_to 'Edit', edit_profile_path, class: 'btn btn-primary' %>
+      </div>
+    </div>
+  </div>
 
 </div>

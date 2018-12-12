@@ -51,10 +51,17 @@ class ScrapeMarathonsService
         lists = test.parent.next_element.search("tr > td > table > tr")
         lists.each do |list|
           unless list.search('td:nth-child(3) b').text == ""
-          races << {
-            race_name: list.search('td:nth-child(3) b').text,
-            race_distance: list.search('td:nth-child(5)').text.gsub(' m', '').to_i,
-          }
+            race_detail_info = {}
+            race_detail_info[:race_name] = list.search('td:nth-child(3) b').text
+            race_detail_info[:race_distance] = list.search('td:nth-child(5)').text.gsub(' m', '').to_i
+            unless list.next_element.nil?
+              unless list.next_element.search('tr').first.nil?
+                if list.next_element.search('tr').first.text.first(7) == 'Montant'
+                  race_detail_info[:price] = list.next_element.search('tr').first.text.gsub('Montant Inscription:', '')
+                end
+              end
+            end
+            races << race_detail_info
           end
         end
       end

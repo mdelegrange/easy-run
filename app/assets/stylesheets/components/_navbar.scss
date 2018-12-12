@@ -17,6 +17,13 @@
   width: 100vw;
   text-align: right;
 }
+
+.navbar-wagon-quiz {
+  background: transparent;
+  position: fixed;
+  width: 100vw;
+  text-align: right;
+}
 /* Logo */
 // .navbar-wagon-brand img {
 //   height: 50px;
@@ -88,7 +95,7 @@
   font-weight: lighter;
 }
 
-.navbar-white-link:hover {
+.navbar-wagon-link:hover {
   color: #49D49D;
   transition-duration: 0.4s;
 

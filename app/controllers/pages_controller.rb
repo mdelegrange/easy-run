@@ -3,7 +3,7 @@ class PagesController < ApplicationController
 
   def home
     @is_home = params[:controller] == "pages" && params[:action] == "home"
+    @is_quiz = params[:controller] == "profiles" && params[:action] == "quiz_form"
     @race = Race.new
-    @departments_options = Race::DEPARTMENTS.map { |label, value| [label, value] }
   end
 end

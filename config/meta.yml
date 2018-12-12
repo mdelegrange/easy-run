@@ -1,0 +1,5 @@
+meta_product_name: "EASY RUN"
+meta_title: "EASY RUN - Trouvez votre course et atteignez votre objectif."
+meta_description: "Trouvez votre course et atteignez votre objectif."
+meta_image: "cover.png"                       # should exist in `app/assets/images/`
+twitter_account: "@LeWagonNantes"

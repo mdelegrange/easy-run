@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_06_165447) do
+ActiveRecord::Schema.define(version: 2018_12_08_172532) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,6 +41,7 @@ ActiveRecord::Schema.define(version: 2018_12_06_165447) do
     t.datetime "updated_at", null: false
     t.string "event_name"
     t.integer "department"
+    t.string "price"
   end
 
   create_table "runs", force: :cascade do |t|
@@ -96,8 +97,11 @@ ActiveRecord::Schema.define(version: 2018_12_06_165447) do
     t.string "first_name"
     t.string "last_name"
     t.string "photo"
-    t.string "level"
+    t.integer "level"
     t.integer "targeted_distance"
+    t.string "has_already_run"
+    t.string "department"
+    t.boolean "quiz_completed", default: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

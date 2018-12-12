@@ -1,8 +1,9 @@
+<div class="banner" style="background-image: linear-gradient(to right, rgba(10, 207, 254, 0.7) 0%, rgba(73, 90, 255, 0.7) 100%), url(<%= image_path 'quiz-run.jpg'%>);">
 <div class="container">
   <div class="row">
     <div class="col-xs-12 col-sm-6 col-sm-offset-3">
       <div class="form-login">
-        <h2>Connexion</h2>
+        <h2 class="title_page">Connexion</h2>
 
         <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
           <div class="form-inputs">
@@ -10,8 +11,8 @@
             <%= f.input :password, required: false, label: false, placeholder: "Password" %>
             <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
           </div>
-          <div class="form-actions">
-            <%= f.button :submit, "Log in", class: "btn btn-primary" %>
+          <div class="form-actions text-center">
+            <%= f.button :submit, "Connexion", class: "btn btn-primary btn-primary-er" %>
           </div>
           <%= render "devise/shared/links" %>
         <% end %>
@@ -20,5 +21,5 @@
     </div>
   </div>
 </div>
-
+</div>
 
