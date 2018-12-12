@@ -16,6 +16,7 @@
   justify-content: center;
   background-attachment: fixed;
 }
+
 .banner_index_races {
   height: calc(50vh - 50px);
   /* if you have a 70px navbar => height: calc(100vh - 70px); */
@@ -60,40 +61,14 @@
   margin-bottom: 20px;
 }
 
-.btn-home {
-  justify-content: center;
-  margin-top: 20px;
-}
-
-.btn-home-design {
-  width: 50%;
-  // margin-bottom: 16px;
-  margin-left: 170px;
-  font-weight: bolder;
-  border-radius: 5px;
-  margin-top: 60px;
-  padding: 10px;
-  background-color: #A2FAA3;
-  border-width: 0px;
-}
-
-.btn-home-design:hover {
-  background-color: #94E495;
-}
-
-.btn-padding {
-  padding: 10px 50px;
-}
-
 .home-subtitle {
-  text-align: left;
-  font-family: 'Montserrat';
-  font-weight: 100;
-  font-size: 30px;
+  font-family: 'Raleway';
+  font-weight: light;
+  font-size: 26px;
+  text-transform: uppercase;
 }
 
 .home-title {
-  text-align: left;
   font-family: 'Fredoka One';
   font-size: 90px;
 }
@@ -113,6 +88,3 @@ rgba(0, 0, 255, .2);
   align-items: center;
 }
 
-.banner-content {
-  // margin-bottom: 500px;
-}
