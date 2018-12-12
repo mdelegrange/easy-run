@@ -188,7 +188,7 @@
   color: white;
   position: relative;
   box-shadow: 1px 1px 2px $grey;
-  
+
   p {
     margin: 12.5px 0 12.5px;
     font-size: 24px;
@@ -201,7 +201,7 @@
   }
   h3 {
     font-family: $body-font;
-    
+
   }
 }
 
@@ -224,15 +224,15 @@
 }
 
 .overlay-10000 {
-  background-color: #B6EE8A;
+  background-color: $green;
 }
 
 .overlay-21100, .overlay-21097 {
-  background-color: #B6EE8A;
+  background-color: $green;
 }
 
 .overlay-42195 {
-  background-color: #B6EE8A;
+  background-color: $green;
 }
 
 
@@ -254,8 +254,8 @@
     font-family: $body-font;
   }
   p:last-child {
-    font-size: 14px; 
-    text-align: center; 
+    font-size: 14px;
+    text-align: center;
     text-decoration: underline;
     bottom: 27px;
     font-weight: bold;
@@ -288,7 +288,7 @@
     bottom: 50px;
     font-size: 20px;
     font-family: $body-font;
-    color:  #070d59;
+    color:  $blue-dark;
     padding: 5px 15px;
     font-size: 15px;
   }
@@ -312,14 +312,14 @@
 }
 
 .card-race-results-42195 {
-  background: #070d59;
+  background: $blue-dark;
   p {
     font-family: $font-family;
   }
 }
 
 .card-race-results-detail-42195 {
-  color: #070d59;
+  color: $blue-dark;
 }
 
 
@@ -349,7 +349,7 @@
 }
 
 .card-date-results-42195 {
-  background: #A2FAA3;
+  background: $green;
 }
 
 
@@ -358,7 +358,7 @@
   font-size: 15px;
   margin-top: 0;
   margin-bottom: 0;
-  color: #376996;
+  color: $blue-dark;
 }
 
 .flexbox-center {
@@ -379,64 +379,10 @@
 .banner p {
   font-size: 25px;
   font-weight: lighter;
-  color: rgb(255, 255, 255);
+  color: white;
   opacity: 1;
   margin-bottom: 5px;
 }
-
-//
-
-
-// .card {
-//   height: 175px;
-//   text-shadow: 0 1px 3px rgba(0,0,0,0.6);
-//   background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://picsum.photos/200/300/?random');
-//   background-size: cover !important;
-//   background-position: center;
-//   color: white;
-//   position: relative;
-//   margin: 10px;
-// }
-// .card-user {
-//   position: absolute;
-//   right: 10px;
-//   top: 10px;
-//   width: 40px;
-//   border-radius: 50%;
-// }
-// .card-category {
-//   position: absolute;
-//   top: 10px;
-//   left: 10px;
-//   font-size: 15px;
-//   text-transform: uppercase;
-// }
-// .card-description {
-//   position: absolute;
-//   bottom: 10px;
-//   left: 10px;
-// }
-// .card-description h2 {
-//   font-size: 24px;
-// }
-// .card-description p {
-//   font-size: 14px;
-//   opacity: 0.7;
-//   font-weight: lighter;
-// }
-// .card-link {
-//   position: absolute;
-//   top: 0;
-//   bottom: 0;
-//   right: 0;
-//   width: 100%;
-//   z-index: 2;
-//   background: black;
-//   opacity: 0;
-// }
-// .card-link:hover {
-//   opacity: 0.1;
-// }
 
 
 

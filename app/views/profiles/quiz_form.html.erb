@@ -20,7 +20,7 @@
                   </label>
                 <% end %>
               </div>
-            <a href="#question-two" class="btn btn-primary btn-suivant">SUIVANT</a>
+            <a href="#question-two" class="btn btn-primary btn-primary-er btn-suivant">SUIVANT</a>
           </div>
         </div>
       </div>
@@ -36,8 +36,8 @@
               <label class="category-choice_2" for="user_targeted_distance_<%=targeted_distance[1]%>"><%= image_tag targeted_distance[2], alt: "level", height: 150,width: 150, class: "level_icone"%>
               <p class="level_text"><%= targeted_distance[0] %></p>
               </label>
-              <a href="#question-three" class="btn btn-primary btn-suivant" id="suivant-two">SUIVANT</a>
-              <a href="#title-quiz"class="btn booton btn-primary btn-precedent" id="title-quiz">PRECEDENT</a>
+              <a href="#question-three" class="btn btn-primary btn-primary-er btn-suivant" id="suivant-two">SUIVANT</a>
+              <a href="#title-quiz"class="btn btn-secondary-er btn-precedent" id="title-quiz">PRECEDENT</a>
             <% end %>
           </div>
         </div>
@@ -61,8 +61,9 @@
               </label>
             <% end %>
           </div>
-          <a href="#question-two"class="btn btn-primary btn-precedent-deux btn-precedent" id="precedent-two">PRECEDENT</a>
-          <%= f.submit "VALIDER", :class =>"btn btn-primary btn-suivant btn-valider" %>
+          <a href="#question-two"class="btn btn-secondary-er btn-precedent btn-precedent-deux" id="precedent-two">PRECEDENT</a>
+          <%= f.submit "VALIDER", :class =>"btn btn-primary btn-primary-er btn-suivant  btn-valider" %>
+
         </div>
         <%#= f.label "Dans quel département courez-vous ?" %>
       </div>
