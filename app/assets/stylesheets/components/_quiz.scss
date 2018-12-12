@@ -77,7 +77,6 @@
 
   .btn {
     width: 200px;
-    margin-bottom: 20px
   }
 }
 
@@ -107,11 +106,10 @@
 
 .question_quiz_three {
   font-size: 36px;
-  margin-bottom: 30px;
   label {
   font-weight: lighter;
   color: white;
-  padding-bottom: 70px;
+  padding-bottom: 40px;
   }
 }
 
@@ -127,7 +125,7 @@
 .btn-suivant {
   width: 200px;
   position: absolute;
-  bottom: 75px;
+  bottom: 100px;
   right: 10px;
   border-radius: 27px;
 }
@@ -135,7 +133,7 @@
 .btn-precedent {
   width: 200px;
   position: absolute;
-  bottom: 75px;
+  bottom: 100px;
   left: 10px;
   border-radius: 27px;
   border-width: 1px;
@@ -177,7 +175,8 @@
 }
 
 .category-choices-2 {
-  padding-bottom: 100px;
+  padding-bottom: 80px;
+  margin-top: 35px;
 }
 
 .category-choice_2 {
@@ -192,6 +191,6 @@
   background-attachment: fixed;
 }
 
-.ok {
+.overflow-height {
   height: 80vh;
 }
