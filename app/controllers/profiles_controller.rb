@@ -27,17 +27,36 @@ class ProfilesController < ApplicationController
   end
 
   def quiz
-    if current_user.update(quiz_params)
+    if quizz_valid?
+      current_user.update(quiz_params)
       current_user.quiz_completed = true
       current_user.save
 
       redirect_to races_path
     else
-      render :new
+      build_quiz_errors
+      @user = current_user
+      @levels_options = [["shoes", "DEBUTANT"], ["timer", "REGULIER"], ["winner", "EXPERT"]]
+      @targeted_distances = [["SEMI-MARATHON", 21000, "semi-marathon"], ["MARATHON", 42195, "marathon"]]
+
+      @departments_options = Race::DEPARTMENTS.map { |label, value| [label, value] }
+
+      render :quiz_form
     end
   end
 
   private
+
+  def quizz_valid?
+    quiz_params[:level].present? && quiz_params[:targeted_distance].present? && quiz_params[:has_already_run].present?
+  end
+
+  def build_quiz_errors
+    @quiz_errors = {}
+    @quiz_errors[:level]             = 'Vous devez nous donner votre niveau' unless quiz_params[:level].present?
+    @quiz_errors[:targeted_distance] = 'Vous devez nous donner votre objectif distance' unless quiz_params[:level].present?
+    @quiz_errors[:has_already_run]   = 'Vous devez nous indiquer si vous avez déjà couru une course officielle' unless quiz_params[:level].present?
+  end
 
   def user_params
     params.require(:user).permit(:first_name, :last_name, :email, :photo, :password)

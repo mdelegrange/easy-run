@@ -152,3 +152,11 @@
 .overflow-height {
   height: 80vh;
 }
+
+.quizz-error {
+  color: white;
+  padding: 3px;
+  background-color: $red;
+  border-radius: 3px;
+  text-align: center;
+}
