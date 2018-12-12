@@ -36,7 +36,7 @@ class ProfilesController < ApplicationController
     else
       build_quiz_errors
       @user = current_user
-      @levels_options = [["shoes", "DEBUTANT"], ["timer", "REGULIER"], ["winner", "EXPERT"]]
+      @levels_options = [["shoes.svg", "DEBUTANT", "shoes-blue.svg"], ["timer.svg", "REGULIER", "timer-blue.svg"], ["winner.svg", "EXPERT", "winner-blue.svg"]]
       @targeted_distances = [["SEMI-MARATHON", 21000, "semi-marathon"], ["MARATHON", 42195, "marathon"]]
 
       @departments_options = Race::DEPARTMENTS.map { |label, value| [label, value] }
