@@ -39,7 +39,7 @@
   }
   h3 {
     font-size: 15px;
-    margin-top: 8px;
+    margin-top: 5px;
   }
   h4 {
     font-size: 12px;
@@ -178,29 +178,39 @@
 
 //Cards pour resultats de recherche
 .card-race-results, .card-race-results-1, .card-race-results-2, .card-race-results-3 {
-  height: 42vh;
+  height: 200px;
   width: 100%;
   margin: 40px 10px;
   text-align:center;
-  padding: 5px 5px 55px 5px;
+  padding: 5px 5px 90px 5px;
   border-radius:8px;
   background: $grey;
   color: white;
   position: relative;
   box-shadow: 1px 1px 2px $grey;
-
   p {
     margin: 12.5px 0 12.5px;
     font-size: 24px;
-    position: relative;
-    bottom: 5px;
     color: white;
+    font-family: $font-family;
+    letter-spacing: 5px;
   }
+
+  h5 {
+    font-family: $body-font;
+    color: $green;
+    font-size: 15px;
+    padding: 0px 15px;
+  }
+
   &.active {
     background: black;
   }
   h3 {
+    display: flex;
     font-family: $body-font;
+    text-align: center;
+    justify-content: center;
 
   }
 }
@@ -216,7 +226,7 @@
   top: 5px;
   left: 5px;
   right: 5px;
-  bottom: 55px;
+  bottom: 4px;
   opacity: 0;
   transition: .5s ease;
   background-color: $grey;
@@ -250,21 +260,25 @@
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   text-align: center;
+  padding-top: 10px;
   p {
     font-family: $body-font;
+    font-size: 15px;
+   
   }
   p:last-child {
     font-size: 14px;
     text-align: center;
     text-decoration: underline;
-    bottom: 27px;
+    bottom: 10px;
     font-weight: bold;
     font-family: $body-font;
+    padding-bottom: 30px;
    }
 }
 
 .card-race-results-detail {
-  padding: 10px 30px 0 30px;
+  padding: 5px 2px;
   display:flex;
   flex-direction:column;
   height: 100%;
@@ -274,26 +288,12 @@
   align-items:center;
   border-radius:8px;
   color: $grey;
-
   h3 {
-    position: absolute;
-    top: 10px;
-    font-size: 25px;
     text-align: center;
-    padding: 5px 15px;
-    font-size: 22.5px;
-  }
-  h4 {
-    position: absolute;
-    bottom: 50px;
+    padding: 5px 5px;
     font-size: 20px;
-    font-family: $body-font;
-    color:  $blue-dark;
-    padding: 5px 15px;
-    font-size: 15px;
+    margin-top: 0;
   }
-
-
 }
 .card-race-results-10000 {
   background: $blue-dark;
@@ -313,9 +313,6 @@
 
 .card-race-results-42195 {
   background: $blue-dark;
-  p {
-    font-family: $font-family;
-  }
 }
 
 .card-race-results-detail-42195 {
@@ -337,7 +334,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-
 }
 
 .card-date-results-10000 {

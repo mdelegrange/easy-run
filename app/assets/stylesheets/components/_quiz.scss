@@ -77,14 +77,8 @@
 .quiz-form-login {
   // background: rgba(250, 250, 250, 0.6);
   color: white;
-
   margin-bottom: 20px;
   border-radius: 3px;
-
-  .btn {
-    width: 200px;
-    margin-bottom: 20px
-  }
 }
 
 .level_icone {
@@ -113,11 +107,10 @@
 
 .question_quiz_three {
   font-size: 36px;
-  margin-bottom: 30px;
   label {
   font-weight: lighter;
   color: white;
-  padding-bottom: 70px;
+  padding-bottom: 40px;
   }
 }
 
@@ -129,6 +122,7 @@
   color: white;
   }
 }
+
 
 .last-question {
   position: relative;
@@ -145,7 +139,8 @@
 }
 
 .category-choices-2 {
-  padding-bottom: 100px;
+  padding-bottom: 80px;
+  margin-top: 35px;
 }
 
 .category-choice_2 {
@@ -160,7 +155,7 @@
   background-attachment: fixed;
 }
 
-.ok {
+.overflow-height {
   height: 80vh;
 }
 
