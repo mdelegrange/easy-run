@@ -12,12 +12,6 @@
 // });
 
 
-$(document).ready(function(){
-  $("#suivant-one").click(function(){
-    $(".question_quiz").addClass("hidden");
-  });
-});
-
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
@@ -26,4 +20,13 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             behavior: 'smooth'
         });
     });
+});
+
+const boxChecked =
+console.log(document.querySelectorAll('active').length);
+
+document.querySelectorAll("label").forEach((label) => {
+  label.addEventListener("click", (event) => {
+    event.currentTarget.classList.toggle("img-circle");
+  });
 });

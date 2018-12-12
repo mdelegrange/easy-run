@@ -35,7 +35,7 @@ class User < ApplicationRecord
         return 13_800
       elsif race.distance == 21_100 || race.distance == 21_097
         return 6_300
-      elif race.distance == 10_000
+      elsif race.distance == 10_000
         return 2_700
       end
     end
