@@ -100,6 +100,40 @@
   }
 }
 
+.dash-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 65%;
+  p {
+    color: $blue-dark;
+    font-size: 16px;
+    text-align: center;
+    &.card-title {
+      font-family: 'Fredoka One';
+      padding: 10px 10px 0 10px;
+    }
+  }
+  i {
+    font-size: 20px;
+    color: red;
+  }
+  a {
+    i {
+    color: $blue-dark;
+    font-size: 20px;
+    &:hover {
+      text-decoration: none;
+      color: $green;
+      }
+    }
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+
 
 .card-date {
   height: 230px;
