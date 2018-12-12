@@ -25,31 +25,31 @@ class ObjectivesController < ApplicationController
         # Suggested Races (distance: 10 km)
         @race1_10km = suggest_races(@race, 6, 10_000).first
         @race2_10km = suggest_races(@race, 3, 10_000).first
-        unless @race1_10km.nil? || @race2_10km.nil?
-          # Created Run
-          create_run(@objective.id, @race1_10km.id, @race1_10km)
-          create_run(@objective.id, @race2_10km.id, @race2_10km)
-        end
+        # unless @race1_10km.nil? || @race2_10km.nil?
+        #   # Created Run
+        #   create_run(@objective.id, @race1_10km.id, @race1_10km)
+        #   create_run(@objective.id, @race2_10km.id, @race2_10km)
+        # end
       elsif @user.level == 'REGULIER'
 
         # Suggested Races (distance: 10 km)
         @race1_10km = suggest_races(@race, 4, 10_000).first
         @race2_10km = suggest_races(@race, 3, 10_000).last
-        unless @race1_10km.nil? || @race2_10km.nil?
-          # Created Run
-          create_run(@objective.id, @race1_10km.id, @race1_10km)
-          create_run(@objective.id, @race2_10km.id, @race2_10km)
-        end
+        # unless @race1_10km.nil? || @race2_10km.nil?
+        #   # Created Run
+        #   create_run(@objective.id, @race1_10km.id, @race1_10km)
+        #   create_run(@objective.id, @race2_10km.id, @race2_10km)
+        # end
       elsif @user.level == 'EXPERT'
 
         # Suggested Races (distance: 10 km)
         @race1_10km = suggest_races(@race, 3, 10_000).first
         @race2_10km = suggest_races(@race, 2, 10_000).last
-        unless @race1_10km.nil? || @race2_10km.nil?
-          # Create Run
-          create_run(@objective.id, @race1_10km.id, @race1_10km)
-          create_run(@objective.id, @race2_10km.id, @race2_10km)
-        end
+        # unless @race1_10km.nil? || @race2_10km.nil?
+        #   # Create Run
+        #   create_run(@objective.id, @race1_10km.id, @race1_10km)
+        #   create_run(@objective.id, @race2_10km.id, @race2_10km)
+        # end
       end
       redirect_to objective_runs_path(@objective)
     else
