@@ -25,6 +25,7 @@ class RunsController < ApplicationController
     @run.race = @race
     @run.objective = @objective
     @run.status = 'pending_subscription'
+    @run.targeted_time = current_user.time_targeted(@race)
     @run.save
     redirect_to objective_runs_path(@objective)
   end
