@@ -62,7 +62,7 @@ class RunsController < ApplicationController
   end
 
   def update
-    @run.update(race_id: params[:run][:race].to_i)
+    @run.update(race_id: params[:run][:race].to_i, status: 'pending_subscription')
     redirect_to objective_runs_path(current_user.objectives.last)
   end
 
