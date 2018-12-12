@@ -99,7 +99,7 @@
     </div>
   </div>
   <div class="dash-flexbox dash-trainings dash-flex-column">
-    <% if current_user.trainings.last.nil? %>
+    <% if @training_plan.nil? %>
       <div class="dash-title">
         <h1><span class="dash-percent">ICI</span> les <span class="dash-span">ENTRAINEMENTS</span> de la <span class="dash-span">SEMAINE</span></h1>
       </div>
@@ -113,7 +113,8 @@
         </div>
       </div>
       <% end %>
-      <% else %>
+    <% else %>
+
       <div class="dash-title">
         <h1><span class="dash-percent">3</span> <span class="dash-span">ENTRAINEMENTS</span> de la <span class="dash-span">SEMAINE</span></h1>
       </div>
@@ -122,30 +123,16 @@
             <div id="load-bar-hor" class="load-bar-front-hor"></div>
           </div>
         </div>
+        <% @training_plan.training_sessions.each_slice(3).to_a.first.each do |training_session| %>
       <div class="dash-training-card dash-flexbox">
         <div class="dash-training-image" style="background-image: linear-gradient(to right, rgba(10, 207, 254, 0.7) 0%, rgba(73, 90, 255, 0.7) 100%), url(<%= image_path 'run-fast.jpg'%>);"></div>
         <div class="dash-training-desc">
-          <h2>ENDURANCE - <strong>10km</strong></h1>
+          <h2><%= training_session.kind %></h1>
           <hr>
-          <p>En parcourant cette distance régulièrement, vous préparerez votre corps et votre esprit à aller au bout du marathon.</p>
+          <p><%= training_session.description %></p>
         </div>
       </div>
-      <div class="dash-training-card dash-flexbox">
-        <div class="dash-training-image" style="background-image: linear-gradient(to right, rgba(10, 207, 254, 0.7) 0%, rgba(73, 90, 255, 0.7) 100%), url(<%= image_path 'run-far.jpg'%>);"></div>
-        <div class="dash-training-desc">
-          <h2>ENDURANCE - <strong>10km</strong></h1>
-          <hr>
-          <p>En parcourant cette distance régulièrement, vous préparerez votre corps et votre esprit à aller au bout du marathon.</p>
-        </div>
-      </div>
-      <div class="dash-training-card dash-flexbox">
-        <div class="dash-training-image" style="background-image: linear-gradient(to right, rgba(10, 207, 254, 0.7) 0%, rgba(73, 90, 255, 0.7) 100%), url(<%= image_path 'run-fast.jpg'%>);"></div>
-        <div class="dash-training-desc">
-          <h2>ENDURANCE - <strong>10km</strong></h1>
-          <hr>
-          <p>En parcourant cette distance régulièrement, vous préparerez votre corps et votre esprit à aller au bout du marathon.</p>
-        </div>
-      </div>
-    <% end %>
+        <% end %>
   </div>
 </div>
+    <% end %>

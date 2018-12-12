@@ -5,6 +5,12 @@ class RunsController < ApplicationController
     @objective = current_user.objectives.last
     @runs = current_user.objectives.last.runs.sort_by { |run| run.race.date }
     @race = @objective.race.date
+
+    if current_user.trainings.last.nil?
+      @training_plan = nil
+    else
+      @training_plan = TrainingPlan.find(Training.find(current_user.training_ids).first.training_plan_id)
+    end
   end
 
   def new
