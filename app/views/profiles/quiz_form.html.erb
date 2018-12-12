@@ -5,12 +5,12 @@
       <h2 class="quiz_title">QUEL COUREUR ÊTES-VOUS ?</h2>
     </div>
   </div>
-  <div class="container overflow ok">
+  <div class="container overflow overflow-height">
     <div class="row">
-      <div class="question-card">
+      <div class="question-card"id="title-quiz">
       <div id="question-one">
         <div class="quiz-form-login">
-            <div class="question_quiz" id="title-quiz"><%= f.label "Quel est votre niveau ?" %></div>
+            <div class="question_quiz" ><%= f.label "Quel est votre niveau ?" %></div>
               <%= f.input :level, label: false, collection: @levels_options, as: :radio_buttons, wrapper_html: {class: 'hidden'} %>
               <div class="category-choices">
                 <% @levels_options.each do |level_option| %>
@@ -27,9 +27,9 @@
     </div>
     <div class="space"></div>
           <%#= f.input_field :level, collection: @levels_options, as: :check_boxes %>
-      <div class="question-card">
+      <div class="question-card" id="question-two">
         <div id="question-two">
-          <div class="question_quiz_two"  id="question-two"><%= f.label "Quel est votre objectif ?" %></div>
+          <div class="question_quiz_two"  ><%= f.label "Quel est votre objectif ?" %></div>
           <%= f.input :targeted_distance, label: false, collection: @targeted_distances, as: :radio_buttons, wrapper_html: {class: 'hidden'} %>
           <div class=" category-choices category-choices-2">
             <% @targeted_distances.each do |targeted_distance| %>
@@ -44,8 +44,8 @@
       </div>
       <div class="space"></div>
       <div id="inter"></div>
-      <div class="question-card">
-        <div class="last-question"  id="question-three" >
+      <div class="question-card"id="question-three">
+        <div class="last-question"   >
           <div class="question_quiz_three"><%= f.label "Avez-vous déjà participé à une course officielle ?" %></div>
           <%= f.input :has_already_run, label: false, collection: ['oui', 'non'], as: :radio_buttons, wrapper_html: {class: 'hidden'} %>
           <div class="category-choices">
@@ -60,8 +60,10 @@
                 <% end %>
               </label>
             <% end %>
+          </div>
           <a href="#question-two"class="btn btn-secondary-er btn-precedent btn-precedent-deux" id="precedent-two">PRECEDENT</a>
           <%= f.submit "VALIDER", :class =>"btn btn-primary btn-primary-er btn-suivant  btn-valider" %>
+
         </div>
         <%#= f.label "Dans quel département courez-vous ?" %>
       </div>
