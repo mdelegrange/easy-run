@@ -24,6 +24,7 @@
               <div class="card-race-results card-race-results-<%=race.distance%>">
                 <div class="card-race-results-detail card-race-results-detail-<%=race.distance%>">
                   <h3><%=race.event_name %></h3>
+
                 </div>
                 <p><%=Race::DISTANCES[race.distance.to_s]%></p>
                 <% if Race::DEPARTMENTS.key(race.department).nil? %>

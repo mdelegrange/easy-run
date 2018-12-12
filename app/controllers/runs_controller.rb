@@ -49,14 +49,14 @@ class RunsController < ApplicationController
 
   def edit
     run_date = @run.race.date
-    begin_date = run_date.beginning_of_month.next_month(-1)
-    end_date = run_date.end_of_month.next_month(1)
+    begin_date = run_date.beginning_of_month.next_month(-2)
+    end_date = run_date.end_of_month.next_month(2)
     @departments_options = Race::DEPARTMENTS.map { |label, value| [label, value] }
 
     if params[:department].nil? || params[:department] == ''
-      @switch_runs = Race.where("date BETWEEN ? AND ? AND department = ? AND distance BETWEEN ? AND ?", begin_date, end_date, @run.race.department, 0.5*@run.race.distance, 1.5*@run.race.distance)
+      @switch_runs = Race.where("date BETWEEN ? AND ? AND department = ? AND distance BETWEEN ? AND ?", begin_date, end_date, @run.race.department, 0.75*@run.race.distance, 1.25*@run.race.distance).where.not(id: @run.race.id)
     else
-      @switch_runs = Race.where("date BETWEEN ? AND ? AND department = ? AND distance BETWEEN ? AND ?", begin_date, end_date, params[:department], 0.5*@run.race.distance, 1.5*@run.race.distance)
+      @switch_runs = Race.where("date BETWEEN ? AND ? AND department = ? AND distance BETWEEN ? AND ?", begin_date, end_date, params[:department], 0.75*@run.race.distance, 1.25*@run.race.distance).where.not(id: @run.race.id)
     end
 
   end
