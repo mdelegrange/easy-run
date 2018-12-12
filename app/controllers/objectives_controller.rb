@@ -63,7 +63,7 @@ class ObjectivesController < ApplicationController
     @object_id = object_id
     @race_id = race_id
     @race = race
-    Run.create(objective_id: @object_id, race_id: @race_id, targeted_time: current_user.time_targeted(@race))
+    Run.create(objective_id: @object_id, race_id: @race_id, targeted_time: current_user.time_targeted(@race), status: 'pending_subscription')
   end
 
   def suggest_races(race, month_before_marathon, distance)

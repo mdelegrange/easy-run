@@ -17,7 +17,31 @@
                   <p><%= run.race.date.strftime('%d/%m/%Y') %></p>
                 </div>
                 <div class="dash-content">
+                  <% if run.race.date < Date.today %>
+                    <% if run.status == 'finished' %>
+                      <%= image_tag "chronometer.svg", height: '45px' %>
+                      <p class='card-title'><%= Time.at(run.final_time).utc.strftime("%Hh %Mmin %Ss") %></p>
+                    <% else %>
+                      <%= link_to mark_as_finished_run_path(run), "data-toggle" => "modal", 'data-target' => "#runModal-#{run.id}"  do %>
+                        <p class='card-title'>ajouter mon temps</p>
+                      <% end %>
+                    <% end %>
+                  <% else %>
+                    <% if run.status == 'pending_subscription' %>
+                      <p class='card-title'>dossard acheté ?</p>
+                      <div>
+                        <%= link_to subscribe_run_path(run), method: :patch do  %>
+                          <i class="far fa-check-circle"></i>
+                        <% end %>
+                        <i class="far fa-times-circle"></i>
+                      </div>
+                    <% elsif run.status == 'subscribed' %>
+                      <p class='card-title'>inscrit !</p>
+                      <p><strong><%= (run.race.date - Date.today).to_i %></strong>  jours avant la course</p>
+                    <% end %>
 
+
+                  <% end %>
                 </div>
               </div>
               <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
@@ -43,6 +67,26 @@
                         <p>Changer de course</p>
                       <% end %>
                     </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Modal -->
+            <div class="modal fade" id="runModal-<%= run.id %>">
+              <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content modal-content-er">
+                  <div class="modal-body modal-body-er">
+                    <h5 class="modal-title"> Quel est votre temps à l'arrivée ?</h5>
+                    <%= simple_form_for run, :url => mark_as_finished_run_path(run),wrapper: :inline_form, html: { class: 'form-inline text-center' }, :method => :patch do |f| %>
+                        <%= f.input :final_hours, :input_html => { :type => "number", :style => 'width: 120px' }, label: false, placeholder: 'heures' %>
+                        <%= f.input :final_minutes, :input_html => { :type => "number", :style => 'width: 120px' }, label: false, placeholder: 'minutes' %>
+                        <%= f.input :final_seconds, :input_html => { :type => "number", :style => 'width: 120px' }, label: false, placeholder: 'secondes' %>
+                        <h5></h5>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary-er" data-dismiss="modal">Fermer</button>
+                          <%= f.button :submit, 'Enregister', class: 'btn btn-primary btn-primary-er' %>
+                        </div>
+                      <% end %>
                   </div>
                 </div>
               </div>
