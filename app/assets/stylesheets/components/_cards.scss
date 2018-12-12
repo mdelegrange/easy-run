@@ -188,7 +188,7 @@
   color: white;
   position: relative;
   box-shadow: 1px 1px 2px $grey;
-  
+
   p {
     margin: 12.5px 0 12.5px;
     font-size: 24px;
@@ -201,7 +201,7 @@
   }
   h3 {
     font-family: $body-font;
-    
+
   }
 }
 
@@ -224,15 +224,15 @@
 }
 
 .overlay-10000 {
-  background-color: #B6EE8A;
+  background-color: $green;
 }
 
 .overlay-21100, .overlay-21097 {
-  background-color: #B6EE8A;
+  background-color: $green;
 }
 
 .overlay-42195 {
-  background-color: #B6EE8A;
+  background-color: $green;
 }
 
 
@@ -254,8 +254,8 @@
     font-family: $body-font;
   }
   p:last-child {
-    font-size: 14px; 
-    text-align: center; 
+    font-size: 14px;
+    text-align: center;
     text-decoration: underline;
     bottom: 27px;
     font-weight: bold;
@@ -288,7 +288,7 @@
     bottom: 50px;
     font-size: 20px;
     font-family: $body-font;
-    color:  #070d59;
+    color:  $blue-dark;
     padding: 5px 15px;
     font-size: 15px;
   }
@@ -312,14 +312,14 @@
 }
 
 .card-race-results-42195 {
-  background: #070d59;
+  background: $blue-dark;
   p {
     font-family: $font-family;
   }
 }
 
 .card-race-results-detail-42195 {
-  color: #070d59;
+  color: $blue-dark;
 }
 
 
@@ -349,7 +349,7 @@
 }
 
 .card-date-results-42195 {
-  background: #A2FAA3;
+  background: $green;
 }
 
 
@@ -358,7 +358,7 @@
   font-size: 15px;
   margin-top: 0;
   margin-bottom: 0;
-  color: #376996;
+  color: $blue-dark;
 }
 
 .flexbox-center {
@@ -379,7 +379,7 @@
 .banner p {
   font-size: 25px;
   font-weight: lighter;
-  color: rgb(255, 255, 255);
+  color: white;
   opacity: 1;
   margin-bottom: 5px;
 }
