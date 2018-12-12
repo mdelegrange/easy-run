@@ -1,5 +1,5 @@
 class RunsController < ApplicationController
-  before_action :set_run, only: [:show, :edit, :register, :update, :destroy]
+  before_action :set_run, only: [:show, :edit, :register, :update, :destroy, :subscribe]
 
   def index
     @objective = current_user.objectives.last
@@ -13,7 +13,6 @@ class RunsController < ApplicationController
     @departments_options = Race::DEPARTMENTS.map { |label, value| [label, value] }
     @distances_options = Race::DISTANCES.map { |label, value| [value, label] }
   end
-
 
   def show
   end
@@ -31,6 +30,7 @@ class RunsController < ApplicationController
 
   def subscribe
     @run.update(status: 'subscribed')
+    @run.save
     redirect_to objective_runs_path(@run.objective)
   end
 
@@ -39,8 +39,8 @@ class RunsController < ApplicationController
     redirect_to objective_runs_path(@run.objective)
   end
 
-  def mark_as_done
-    @run.update(status: 'done')
+  def mark_as_finished
+    @run.update(status: 'finished')
   end
 
   def edit

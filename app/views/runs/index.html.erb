@@ -17,7 +17,17 @@
                   <p><%= run.race.date.strftime('%d/%m/%Y') %></p>
                 </div>
                 <div class="dash-content">
-
+                  <% if run.status == 'pending_subscription' %>
+                    <p>dossard acheté ?</p>
+                    <div>
+                      <%= link_to subscribe_run_path(run), method: :patch do  %>
+                        <i class="far fa-check-circle"></i>
+                      <% end %>
+                      <i class="far fa-times-circle"></i>
+                    </div>
+                  <% elsif run.status == 'subscribed' %>
+                  <p>inscrit !</p>
+                  <% end %>
                 </div>
               </div>
               <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
