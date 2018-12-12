@@ -20,7 +20,7 @@ class ProfilesController < ApplicationController
 
   def quiz_form
     @user = current_user
-    @levels_options = [["shoes", "DEBUTANT"], ["timer", "REGULIER"], ["winner", "EXPERT"]]
+    @levels_options = [["shoes", "DEBUTANT", "shoes-blue"], ["timer", "REGULIER", "timer-blue"], ["winner", "EXPERT", "winner-blue"]]
     @targeted_distances = [["SEMI-MARATHON", 21000, "semi-marathon"], ["MARATHON", 42195, "marathon"]]
 
     @departments_options = Race::DEPARTMENTS.map { |label, value| [label, value] }
@@ -47,3 +47,4 @@ class ProfilesController < ApplicationController
     params.require(:user).permit(:level, :targeted_distance, :has_already_run, :department)
   end
 end
+
