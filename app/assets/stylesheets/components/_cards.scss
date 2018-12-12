@@ -193,6 +193,7 @@
     font-size: 24px;
     color: white;
     font-family: $font-family;
+    letter-spacing: 5px;
   }
 
   h5 {
@@ -277,7 +278,7 @@
 }
 
 .card-race-results-detail {
-  padding: 10px 30px 0 30px;
+  padding: 5px 2px;
   display:flex;
   flex-direction:column;
   height: 100%;
