@@ -124,48 +124,10 @@
   }
 }
 
-.btn-suivant {
-  width: 200px;
-  position: absolute;
-  bottom: 75px;
-  right: 10px;
-  border-radius: 27px;
-}
-
-.btn-precedent {
-  width: 200px;
-  position: absolute;
-  bottom: 75px;
-  left: 10px;
-  border-radius: 27px;
-  border-width: 1px;
-  background-color: rgba(250, 250,250, 0)
-}
-.btn-precedent-deux {
-  width: 200px;
-  position: absolute;
-  bottom: 0px;
-  left: 10px;
-  border-radius: 27px;
-  border-width: 1px;
-  background-color: rgba(250, 250,250, 0)
-}
-
-.btn-valider {
-  position: absolute;
-  bottom: 0px;
-  right: 10px;
-  border-radius: 27px;
-}
-
 .last-question {
   position: relative;
   padding-bottom: 100px;
   margin-bottom: 100px;
-}
-
-.btn {
-  font-weight: bolder;
 }
 
 .space {

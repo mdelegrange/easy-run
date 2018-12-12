@@ -1,0 +1,51 @@
+.btn-home-design {
+  font-weight: bolder;
+  color: $blue-dark;
+  text-transform: uppercase;
+  width: 50%;
+  margin-top: 60px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.btn-primary-er {
+  font-weight: bolder;
+  color: $blue-dark;
+  text-transform: uppercase;
+  padding: 10px 40px;
+
+}
+
+.btn-secondary-er {
+  background-color: white;
+  opacity: 0.3;
+  font-weight: bolder;
+  color: $blue-dark;
+  border: 2px solid $green;
+  text-transform: uppercase;
+  padding: 10px 25px;
+}
+
+.btn-suivant {
+  position: absolute;
+  bottom: 75px;
+  right: 10px;
+}
+
+.btn-precedent {
+  position: absolute;
+  bottom: 75px;
+  left: 10px;
+}
+
+.btn-precedent-deux {
+  position: absolute;
+  bottom: 0px;
+  left: 10px;
+}
+
+.btn-valider {
+  position: absolute;
+  bottom: 0px;
+  right: 10px;
+}

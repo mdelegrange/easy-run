@@ -6,7 +6,7 @@
           <%= select_tag "department", options_for_select(@departments_options), class: "form-control"%>
         </div>
         <div class="form-group">
-          <%= submit_tag "RUN", :class => "btn btn-primary btn-padding" %>
+          <%= submit_tag "RUN", :class => "btn btn-primary btn-primary-er" %>
         </div>
         <%end%>
   </div>
@@ -61,7 +61,7 @@
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <%= link_to 'Run', race_objectives_path(race), method: :post, class: "btn btn-primary" %>
+                <%= link_to 'Run', race_objectives_path(race), method: :post, class: "btn btn-primary btn-primary-er" %>
               </div>
             </div>
           </div>
