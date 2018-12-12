@@ -67,10 +67,10 @@
             <% ['NON', 'OUI'].each do |choice| %>
               <label class="category-choice_3" for="user_has_already_run_<%= choice.downcase %>">
                 <% if choice == "NON" %>
-                  <%= image_tag "not_official", alt: "level", height: 150,width: 150, class: "level_icone"%>
+                  <%= image_tag "not_official.svg", alt: "level", height: 150,width: 150, class: "level_icone"%>
                   <p class="level_text"><%= choice %></p>
                 <% else %>
-                  <%= image_tag "official", alt: "level", height: 150,width: 150, class: "level_icone"%>
+                  <%= image_tag "official.svg", alt: "level", height: 150,width: 150, class: "level_icone"%>
                   <p class="level_text"><%= choice %></p>
                 <% end %>
               </label>
