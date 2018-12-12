@@ -8,8 +8,24 @@
 }
 
 .card-race-results-modal {
-  width: 200px;
-  height: 200px;
+  width: 160px;
+  height: 210px;
+  margin: 37px 10px 10px 10px;
+
+  p {
+    font-size: 20px;
+  }
+
+  h5 {
+    font-family: $body-font;
+    color: $green;
+    font-size: 15px;
+    padding: 0px 15px;
+  }
+
 }
 
 
+.card-date-result-modal {
+  top: 50px;
+}
