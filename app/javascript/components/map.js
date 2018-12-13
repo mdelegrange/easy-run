@@ -1,4 +1,6 @@
 const ara = document.getElementById("ara");
+if (ara) {
+
 const araImage = document.getElementById("ara-hover")
 
 ara.addEventListener('mouseenter', (event) => {
@@ -151,3 +153,6 @@ pdllImage.addEventListener('mouseleave', (event) => {
 // pacaImage.addEventListener('mouseleave', (event) => {
 //   pacaImage.classList.add("hidden");
 // })
+}
+
+
