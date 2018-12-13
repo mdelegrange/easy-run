@@ -107,8 +107,8 @@
       </div>
         <%= link_to training_path, method: :post  do %>
       <div class="dash-training-card dash-flexbox add_training_plan">
-        <div class="dash-training-image add"><%= image_tag 'add.svg', height: '100%', width: '75%' %></div>
-        <div class="dash-training-desc">
+        <div class="dash-training-image add"><%= image_tag 'add.svg', height: '85px', width: '85px' %></div>
+        <div class="dash-training-desc dash-training-desc-add">
           <h2>PLAN D'ENTRAINEMENT</h1>
           <hr>
           <p>En ajoutant un plan d'entrainement à votre profil vous profiterez d'un accompagnement complet dans la réalisation de vos objectifs.</p>
@@ -125,13 +125,13 @@
             <div id="load-bar-hor" class="load-bar-front-hor"></div>
           </div>
         </div>
-        <% @training_plan.training_sessions.each_slice(3).to_a.first.each do |training_session| %>
+        <% @training_plan.training_sessions.order(:id).each_slice(3).to_a.first.each do |training_session| %>
       <div class="dash-training-card dash-flexbox">
         <div class="dash-training-image" style="background-image: linear-gradient(to right, rgba(10, 207, 254, 0.7) 0%, rgba(73, 90, 255, 0.7) 100%), url(<%= image_path 'run-fast.jpg'%>);"></div>
         <div class="dash-training-desc">
-          <h2><%= training_session.kind %></h1>
+          <h2 class="training-title"><%= training_session.kind %> - <strong><%= training_session.subkind %></strong></h1>
           <hr>
-          <p><%= training_session.description %></p>
+          <p class="training-desc"><%= training_session.description %></p>
         </div>
       </div>
         <% end %>
