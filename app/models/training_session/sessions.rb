@@ -700,8 +700,7 @@ class TrainingSession
     800 mètres à votre allure sur 10KM
     2 fois 400 mètres à votre allure pour le marathon
     2 fois 200 mètres à votre allure au km
-   2 minutes de récupération entre deux
-   phases de fractionné."
+    2 minutes de récupération entre deux phases de fractionné."
    },
    {
    "position" => 53,
