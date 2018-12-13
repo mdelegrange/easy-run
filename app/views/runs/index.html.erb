@@ -101,7 +101,7 @@
   </div>
   <div class="dash-flexbox dash-trainings dash-flex-column">
     <% if @training_plan.nil? %>
-      <div class="dash-title">
+      <div class="dash-title dash-title-training">
         <h1><span class="dash-percent">Vos entrainements</span></h1>
       </div>
         <%= link_to training_path, method: :post  do %>
@@ -118,8 +118,9 @@
     <% else %>
 
       <div class="dash-title">
-        <h1><span class="dash-percent">Vos entrainements</span></h1>
+        <h1><span class="dash-percent">Vos entrainements<span></h1>
       </div>
+
       <div>
           <div class="load-bar-back-hor">
             <div id="load-bar-hor" class="load-bar-front-hor"></div>

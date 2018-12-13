@@ -100,7 +100,7 @@
 .dash-training-card {
   margin: 10px;
   width: 100%;
-  height: fit-content;
+  height: 175px;
   background: white;
   border-radius: 8px;
   box-shadow: 1px 1px 2px #e6e6e6;
@@ -175,4 +175,17 @@
 
 .dash-training-desc h2 {
   margin-top: 2px;
+}
+
+.week {
+  text-align: end;
+}
+
+.dash-title-training {
+  display: flex;
+  align-item: center;
+}
+
+.dash-training-desc {
+  overflow: scroll;
 }
