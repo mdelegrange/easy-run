@@ -1,5 +1,6 @@
 import "bootstrap";
 import "../components/quiz";
+import "../components/map";
 
 $(document).ready(function(){
   $(".category-choice_1").click(function(){

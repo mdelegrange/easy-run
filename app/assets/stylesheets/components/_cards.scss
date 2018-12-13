@@ -6,10 +6,10 @@
   text-align:center;
   padding: 8px 8px 50px 8px;
   border-radius:8px;
-  background: $grey;
+  background: $blue-dark;
   color: white;
   position: relative;
-  box-shadow: 1px 1px 2px $grey;
+  box-shadow: 1px 1px 2px $blue-dark;
 
   p {
     margin: 12.5px 0 12.5px;
@@ -27,7 +27,7 @@
   justify-content:space-between;
   align-items:center;
   border-radius:8px;
-  color: $grey;
+  color: $blue-dark;
   &::after {
     content: '◢';
     font-size: 36px;
@@ -46,56 +46,56 @@
   }
 }
 
-.card-race-10000 {
-  background: $blue-dark;
-}
+// .card-race-10000 {
+//   background: $blue-dark;
+// }
 
-.card-race-detail-10000 {
-  color: $blue-dark;
-  &::after {
-    content: '◢';
-    font-size: 36px;
-    position: absolute;
-    transform: rotate(45deg);
-    bottom: -25px;
-    left: 97px;
-    color: inherit;
-  }
-}
+// .card-race-detail-10000 {
+//   color: $blue-dark;
+//   &::after {
+//     content: '◢';
+//     font-size: 36px;
+//     position: absolute;
+//     transform: rotate(45deg);
+//     bottom: -25px;
+//     left: 97px;
+//     color: inherit;
+//   }
+// }
 
-.card-race-21100, .card-race-21097 {
-  background: $green-dark;
-}
+// .card-race-21100, .card-race-21097 {
+//   background: $green-dark;
+// }
 
-.card-race-detail-21100, .card-race-detail-21097 {
-  color: $green-dark;
-  &::after {
-    content: '◢';
-    font-size: 36px;
-    position: absolute;
-    transform: rotate(45deg);
-    bottom: -25px;
-    left: 97px;
-    color: inherit;
-  }
-}
+// .card-race-detail-21100, .card-race-detail-21097 {
+//   color: $green-dark;
+//   &::after {
+//     content: '◢';
+//     font-size: 36px;
+//     position: absolute;
+//     transform: rotate(45deg);
+//     bottom: -25px;
+//     left: 97px;
+//     color: inherit;
+//   }
+// }
 
-.card-race-42195 {
-  background: $orange-dark;
-}
+// .card-race-42195 {
+//   background: $orange-dark;
+// }
 
-.card-race-detail-42195 {
-  color: $orange-dark;
-  &::after {
-    content: '◢';
-    font-size: 36px;
-    position: absolute;
-    transform: rotate(45deg);
-    bottom: -25px;
-    left: 97px;
-    color: inherit;
-  }
-}
+// .card-race-detail-42195 {
+//   color: $orange-dark;
+//   &::after {
+//     content: '◢';
+//     font-size: 36px;
+//     position: absolute;
+//     transform: rotate(45deg);
+//     bottom: -25px;
+//     left: 97px;
+//     color: inherit;
+//   }
+// }
 
 .card-back {
   height: 230px;
@@ -104,10 +104,10 @@
   margin: 10px;
   text-align:center;
   border-radius:8px;
-  background: $grey;
+  background: $blue-dark;
   color: white;
   position: relative;
-  box-shadow: 1px 1px 2px $grey;
+  box-shadow: 1px 1px 2px $blue-dark;
   a {
     text-decoration: none;
     color:white;
@@ -124,30 +124,30 @@
     transform: rotate(45deg);
     bottom: -25px;
     left: 97px;
-    color: $grey;
-  }
-}
-
-.card-back-10000 {
-  background: $blue-dark;
-  &::after {
     color: $blue-dark;
   }
 }
 
-.card-back-21100, .card-back-21097 {
-  background: $green-dark;
-  &::after {
-    color: $green-dark;
-  }
-}
+// .card-back-10000 {
+//   background: $blue-dark;
+//   &::after {
+//     color: $blue-dark;
+//   }
+// }
 
-.card-back-42195 {
-  background: $orange-dark;
-  &::after {
-    color: $orange-dark;
-  }
-}
+// .card-back-21100, .card-back-21097 {
+//   background: $green-dark;
+//   &::after {
+//     color: $green-dark;
+//   }
+// }
+
+// .card-back-42195 {
+//   background: $orange-dark;
+//   &::after {
+//     color: $orange-dark;
+//   }
+// }
 
 .card-date {
   height: 230px;
@@ -157,7 +157,7 @@
   text-align:center;
   padding: 8px 8px 50px 8px;
   border-radius:8px;
-  color: $grey;
+  color: $green;
   background: white;
   position: relative;
 
@@ -178,21 +178,22 @@
 
 //Cards pour resultats de recherche
 .card-race-results, .card-race-results-1, .card-race-results-2, .card-race-results-3 {
-  height: 200px;
-  width: 100%;
+  height: 270px;
+  width: 200px;
   margin: 40px 10px;
   text-align:center;
   padding: 5px 5px 90px 5px;
   border-radius:8px;
-  background: $grey;
+  background: $blue-dark;
   color: white;
   position: relative;
-  box-shadow: 1px 1px 2px $grey;
+  box-shadow: 1px 1px 2px $blue-dark;
   p {
     margin: 12.5px 0 12.5px;
     font-size: 24px;
     color: white;
     font-family: $font-family;
+    letter-spacing: 5px;
   }
 
   h5 {
@@ -228,30 +229,27 @@
   bottom: 4px;
   opacity: 0;
   transition: .5s ease;
-  background-color: $grey;
+  background-color: $green;
   border-radius: 8px;
 }
 
-.overlay-10000 {
-  background-color: $green;
-}
+// .overlay-10000 {
+//   background-color: $green;
+// }
 
-.overlay-21100, .overlay-21097 {
-  background-color: $green;
-}
+// .overlay-21100, .overlay-21097 {
+//   background-color: $green;
+// }
 
-.overlay-42195 {
-  background-color: $green;
-}
+// .overlay-42195 {
+//   background-color: $green;
+// }
 
 
 .overlay:hover {
   opacity: 1;
 }
-.text {
-  color: white;
-  font-size: 10px;
-  font-family: $body-font;
+.card-hover-text {
   position: absolute;
   top: 60%;
   left: 50%;
@@ -259,25 +257,24 @@
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   text-align: center;
-  padding-top: 10px;
   p {
-    font-family: $body-font;
-    font-size: 15px;
-   
+    font-family: 'Raleway';
+    color: $blue-dark;
+    font-size: 18px;
   }
   p:last-child {
+    color: $blue-dark;
     font-size: 14px;
     text-align: center;
     text-decoration: underline;
     bottom: 10px;
     font-weight: bold;
-    font-family: $body-font;
     padding-bottom: 30px;
    }
 }
 
 .card-race-results-detail {
-  padding: 10px 30px 0 30px;
+  padding: 5px 2px;
   display:flex;
   flex-direction:column;
   height: 100%;
@@ -286,7 +283,7 @@
   justify-content:space-around;
   align-items:center;
   border-radius:8px;
-  color: $grey;
+  color: $blue-dark;
   h3 {
     text-align: center;
     padding: 5px 5px;
@@ -294,29 +291,29 @@
     margin-top: 0;
   }
 }
-.card-race-results-10000 {
-  background: $blue-dark;
-}
+// .card-race-results-10000 {
+//   background: $blue-dark;
+// }
 
-.card-race-results-detail-10000 {
-  color: $blue-dark;
-}
+// .card-race-results-detail-10000 {
+//   color: $blue-dark;
+// }
 
-.card-race-results-21100, .card-race-results-21097{
-  background: $green-dark;
-}
+// .card-race-results-21100, .card-race-results-21097{
+//   background: $green-dark;
+// }
 
-.card-race-results-detail-21100, .card-race-results-detail-21097 {
-  color: $green-dark;
-}
+// .card-race-results-detail-21100, .card-race-results-detail-21097 {
+//   color: $green-dark;
+// }
 
-.card-race-results-42195 {
-  background: $blue-dark;
-}
+// .card-race-results-42195 {
+//   background: $blue-dark;
+// }
 
-.card-race-results-detail-42195 {
-  color: $blue-dark;
-}
+// .card-race-results-detail-42195 {
+//   color: $blue-dark;
+// }
 
 
 .card-date-result {
@@ -324,8 +321,7 @@
   top: 22px;
   left: 55card-px;
   border: 1px solid rgba(0, 0, 255, .2);
-  box-shadow: 1px 1px 1px 1px rgba(0, 0, 255, .2);
-  background: $grey;
+  background: $green;
   border-radius: 5px;
   height: 35px;
   width: 130px;
@@ -335,17 +331,17 @@
   justify-content: center;
 }
 
-.card-date-results-10000 {
-  background: $blue-dark;
-}
+// .card-date-results-10000 {
+//   background: $blue-dark;
+// }
 
-.card-date-results-21100, .card-date-results-21097{
-  background: $green-dark;
-}
+// .card-date-results-21100, .card-date-results-21097{
+//   background: $green-dark;
+// }
 
-.card-date-results-42195 {
-  background: $green;
-}
+// .card-date-results-42195 {
+//   background: $green;
+// }
 
 
 .date-details {

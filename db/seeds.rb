@@ -79,10 +79,10 @@ objective1 = Objective.create!(user: user1, race: Race.first, kind: 'Marathon' ,
 puts "Objectives Created"
 
 #Runs
-run1 = Run.create!(objective: objective1, race: Race.all.sample, targeted_time: 3300, status: 'pending')
-run2 = Run.create!(objective: objective1, race: Race.all.sample, targeted_time: 3000, status: 'pending')
-run3 = Run.create!(objective: objective1, race: Race.all.sample, targeted_time: 7620, status: 'pending')
-run4 = Run.create!(objective: objective1, race: Race.all.sample, targeted_time: 14400, status: 'pending')
+run1 = Run.create!(objective: objective1, race: Race.all.sample, targeted_time: 3300, status: 'pending_subscription')
+run2 = Run.create!(objective: objective1, race: Race.all.sample, targeted_time: 3000, status: 'pending_subscription')
+run3 = Run.create!(objective: objective1, race: Race.all.sample, targeted_time: 7620, status: 'pending_subscription')
+run4 = Run.create!(objective: objective1, race: Race.all.sample, targeted_time: 14400, status: 'pending_subscription')
 
 puts "Runs Created"
 

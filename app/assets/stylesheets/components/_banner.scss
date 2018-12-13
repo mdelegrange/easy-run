@@ -18,7 +18,7 @@
 }
 
 .banner_index_races {
-  height: calc(50vh - 50px);
+  height: calc(100vh - 70px);
   /* if you have a 70px navbar => height: calc(100vh - 70px); */
   background-size: cover !important;
   display: flex;
@@ -165,3 +165,4 @@ rgba(0, 0, 255, .2);
   -moz-animation: ani-mouse 2.5s linear infinite;
   animation: ani-mouse 2.5s linear infinite;
 }
+

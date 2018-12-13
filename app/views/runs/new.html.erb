@@ -10,46 +10,52 @@
               <h2 style="color: white">Choisissez une distance</h2>
               <%= select_tag "distance", options_for_select(@distances_options), class: "form-control", prompt: '-'%>
             </div>
-          <%= submit_tag "TROUVER UNE COURSE", :class => "btn btn-primary btn-padding" %>
+          <%= submit_tag "TROUVER UNE COURSE", :class => "btn btn-primary btn-primary-er" %>
         </div>
         <%end%>
   </div>
 </div>
 <div class="container race-results">
   <div class="row">
+    <% unless params[:department].nil? && params[:distance].nil? %>
 
-    <% races_to_display = @races.where(department: params[:department].to_i).where(distance: params[:distance].to_i) %>
+      <% races_to_display = @races.where(department: params[:department].to_i).where(distance: params[:distance].to_i) %>
 
-    <% if races_to_display.count.zero? %>
-      <h3 style="color: #376996; margin-bottom: 400px" class="text-center">Il n'y a pas de course correspondant à votre recherche</h3>
-    <% else %>
-      <% races_to_display.each do |race| %>
-        <%= link_to race_runs_path(race), method: :post  do %>
-          <div class="col-xs-12 col-sm-3">
-            <div class="flexbox-center">
-              <div class="card-race-results card-race-results-<%=race.distance%>">
-                <div class="card-race-results-detail card-race-results-detail-<%=race.distance%>">
-                  <h3><%=race.event_name %></h3>
-                  <h4><%=race.price%></h4>
+      <% if races_to_display.count.zero? %>
+        <h3 style="color: #376996; margin-bottom: 400px" class="text-center">Il n'y a pas de course correspondant à votre recherche</h3>
+      <% else %>
+        <% races_to_display.each do |race| %>
+          <%= link_to race_runs_path(race), method: :post  do %>
+            <div class="col-xs-12 col-sm-3">
+              <div class="flexbox-center">
+                <div class="card-race-results card-race-results-<%=race.distance%>">
+                  <div class="card-race-results-detail card-race-results-detail-<%=race.distance%>">
+                    <h3><%=race.event_name %></h3>
+                  </div>
+                  <p><%=Race::DISTANCES[race.distance.to_s]%></p>
+                  <% if Race::DEPARTMENTS.key(race.department).nil? %>
+                  <h5><i class="fas fa-map-marker-alt"></i> -- </h5>
+                  <% else %>
+                  <h5><i class="fas fa-map-marker-alt"></i> <%= Race::DEPARTMENTS.key(race.department)[5..Race::DEPARTMENTS.key(race.department).length] %></h5>
+                  <% end %>
+                  <div class="overlay overlay-<%=race.distance%>">
+                    <div class="card-hover-text">
+                      <p>Choisir cette course</p>
+                      <p><i class="far fa-hand-point-up"></i></p>
+                      <p> + de details</p>
+                    </div>
+                  </div>
                 </div>
-                <p><%=Race::DISTANCES[race.distance.to_s]%></p>
-                <div class="overlay overlay-<%=race.distance%>">
-                  <div class="text">
-                    <p style="font-weight: bold">Choisir cette course</p>
-                    <p style="font-size: 40px"><i class="far fa-hand-point-up"></i></p>
-                    <p> + de details</p>
+                <div class="card-date-result card-date-results-<%=race.distance%>">
+                  <div>
+                    <h4 class="date-details"><%=race.date.strftime('%d/%m/%Y')%></h4>
                   </div>
                 </div>
               </div>
-              <div class="card-date-result card-date-results-<%=race.distance%>">
-                <div>
-                  <h4 class="date-details"><%=race.date.strftime('%d/%m/%Y')%></h4>
-                </div>
-              </div>
             </div>
-          </div>
+          <% end %>
         <% end %>
-   <% end %>
+      <% end %>
     <% end %>
   </div>
 </div>
