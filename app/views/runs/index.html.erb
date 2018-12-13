@@ -1,7 +1,7 @@
 <div class="dash-flexbox">
   <div class="dash-flexbox dash-races dash-flex-column">
     <div class="dash-title">
-      <h1><span class="dash-percent">25%</span> de vos <span class="dash-span">COURSES</span></h1>
+      <h1><span class="dash-percent">Vos courses</span></h1>
       <div class="add-race">
       <%= link_to "+ Ajouter une course", new_objective_run_path(@objective), class: "btn btn-primary btn-primary-er" %>
       </div>
@@ -102,7 +102,7 @@
   <div class="dash-flexbox dash-trainings dash-flex-column">
     <% if @training_plan.nil? %>
       <div class="dash-title">
-        <h1><span class="dash-percent">ICI</span> les <span class="dash-span">ENTRAINEMENTS</span> de la <span class="dash-span">SEMAINE</span></h1>
+        <h1><span class="dash-percent">Vos entrainements</span></h1>
       </div>
         <%= link_to training_path, method: :post  do %>
       <div class="dash-training-card dash-flexbox add_training_plan">
@@ -118,7 +118,7 @@
     <% else %>
 
       <div class="dash-title">
-        <h1><span class="dash-percent">3</span> <span class="dash-span">ENTRAINEMENTS</span> de la <span class="dash-span">SEMAINE</span></h1>
+        <h1><span class="dash-percent">Vos entrainements</span></h1>
       </div>
       <div>
           <div class="load-bar-back-hor">

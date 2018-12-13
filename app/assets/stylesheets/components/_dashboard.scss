@@ -87,6 +87,7 @@
 }
 
 .dash-percent {
+  text-transform: uppercase;
   font-family: 'Fredoka One';
   color : $blue-dark;
   font-size: 46px;
@@ -139,14 +140,15 @@
 }
 
 .add-race {
-  margin-top:20px;
-  margin-bottom: 20px;
-  text-align: right;
-
+  margin-top:10px;
+  margin-bottom: 10px;
+  text-align: left;
+  margin-left: 38px;
+  font-weight: bolder;
   a {
-    text-decoration: none;
     font-size: 14px;
   }
+
 }
 
 .add_training_plan a:hover {
