@@ -20,6 +20,8 @@ class ObjectivesController < ApplicationController
       # Created Run
       create_run(@objective.id, @race3_semi.id, @race3_semi)
       @user = current_user
+
+
       if @user.level == 'DEBUTANT'
 
         # Suggested Races (distance: 10 km)
