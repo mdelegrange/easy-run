@@ -5,15 +5,15 @@
       <hr></hr>
       <div class="wrapper">
         <!-- <div class="flex"> -->
-        <%= image_tag "run-fast.jpg", alt: "first picture", height: 300, width: 300 %>
+        <%= image_tag "run-fast.jpg", alt: "first picture", height: 320, width: 320 %>
       <div class="training_session_show">
         <h3><%= @session.kind%></h3>
         <p><%= @session.description %></p>
       </div>
         <!-- </div> -->
         <hr>
-        <%= link_to "Retour au plan d'entrainement",  training_path %>
       </div>
+        <a><%= link_to "Retour au plan d'entrainement",  training_path %></a>
     </div>
   </div>
 </div>
