@@ -124,7 +124,7 @@
             <% if @week_diff > 18  %>
               <div id="load-bar-hor" class="load-bar-front-hor" style="width:  0%;"></div>
             <% elsif  @week_diff <= 18 && @week_diff >= 0 %>
-              <div id="load-bar-hor" class="load-bar-front-hor" style="width: <%= @week_diff * 5.5%>%;"></div>
+              <div id="load-bar-hor" class="load-bar-front-hor" style="width: <%= 18 - @week_diff * 5.5%>%;"></div>
             <% else%>
               <div id="load-bar-hor" class="load-bar-front-hor" style="width: 0%;"></div>
             <% end %>
