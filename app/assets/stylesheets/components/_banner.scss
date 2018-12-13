@@ -18,13 +18,20 @@
 }
 
 .banner_index_races {
-  height: calc(100vh - 70px);
+  min-height: 800px;
+  height: 100vh;
+
   /* if you have a 70px navbar => height: calc(100vh - 70px); */
   background-size: cover !important;
   display: flex;
   justify-content: space-around;
   background-attachment: fixed;
   align-items: center;
+}
+
+.race-results {
+  height: 100vh;
+
 }
 
 .banner_index_switch {
