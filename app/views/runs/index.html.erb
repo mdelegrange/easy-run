@@ -131,29 +131,68 @@
           </div>
         </div>
         <% if @week_diff > 18  %>
+        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
           <% @training_plan.training_sessions.order(:position).each_slice(3).to_a.last.each do |training_session| %>
-            <div class="dash-training-card dash-flexbox">
-              <div class="dash-training-image" style="background-image: linear-gradient(to right, rgba(10, 207, 254, 0.7) 0%, rgba(73, 90, 255, 0.7) 100%), url(<%= image_path 'run-fast.jpg'%>);">
+        
+              <div class="dash-training-card dash-flexbox">
+                <% if training_session.kind.include? "Vitesse"  %>
+                  <div class="dash-training-image" style="background-image: linear-gradient(to right, rgba(10, 207, 254, 0.7) 0%, rgba(73, 90, 255, 0.7) 100%), url(<%= image_path 'run-fast.jpg'%>);">
+                  </div>
+                <% else%>
+                  <div class="dash-training-image" style="background-image: linear-gradient(to right, rgba(10, 207, 254, 0.7) 0%, rgba(73, 90, 255, 0.7) 100%), url(<%= image_path 'run-far.jpg'%>);">
+                  </div>
+                <% end %>
+                <div class="dash-training-desc">
+                  <h2 class="training-title"><%= training_session.kind %> - <strong><%= training_session.subkind %></strong></h2>
+                  
+                               
+                  <a role="button" data-toggle="collapse" data-parent="#accordion" aria-expanded="false" aria-controls="session-<%= training_session.id%>" class="btn btn-primary btn-primary-er" href="#session-<%= training_session.id%>">
+                    <i class="fas fa-plus"></i> de details
+                  </a>
+                  
+                </div>
               </div>
-              <div class="dash-training-desc">
-                <h2 class="training-title"><%= training_session.kind %> - <strong><%= training_session.subkind %></strong></h2>
-                <hr>
-                <p class="training-desc"><%= training_session.description %></p>
-              </div>
-            </div>
+               
+            <div id="session-<%= training_session.id%>" class="panel-collapse collapse out" role="tabpanel" aria-labelledby="headingOne">
+                <div class="dash-training-desc" id="session-<%= training_session.id%>">
+                  <p><%= simple_format training_session.description %></p>
+                </div>
+           </div>
+        
           <% end %>
+        </div>
+
         <% elsif @week_diff <= 18 && @week_diff >= 0 %>
-          <% @training_plan.training_sessions.order(:position).each_slice(3).to_a[1 - @week_diff].each do |training_session| %>
-            <div class="dash-training-card dash-flexbox">
-              <div class="dash-training-image" style="background-image: linear-gradient(to right, rgba(10, 207, 254, 0.7) 0%, rgba(73, 90, 255, 0.7) 100%), url(<%= image_path 'run-fast.jpg'%>);">
-              </div>
-              <div class="dash-training-desc">
-                <h2 class="training-title"><%= training_session.kind %> - <strong><%= training_session.subkind %></strong></h2>
-                <hr>
-                <p class="training-desc"><%= training_session.description %></p>
-              </div>
-            </div>
-          <% end %>
+          <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+            <% @training_plan.training_sessions.order(:position).each_slice(3).to_a[1 - @week_diff].each do |training_session| %>
+          
+                <div class="dash-training-card dash-flexbox">
+                  <% if training_session.kind.include? "Vitesse"  %>
+                    <div class="dash-training-image" style="background-image: linear-gradient(to right, rgba(10, 207, 254, 0.7) 0%, rgba(73, 90, 255, 0.7) 100%), url(<%= image_path 'run-fast.jpg'%>);">
+                    </div>
+                  <% else%>
+                    <div class="dash-training-image" style="background-image: linear-gradient(to right, rgba(10, 207, 254, 0.7) 0%, rgba(73, 90, 255, 0.7) 100%), url(<%= image_path 'run-far.jpg'%>);">
+                    </div>
+                  <% end %>
+                  <div class="dash-training-desc">
+                    <h2 class="training-title"><%= training_session.kind %> - <strong><%= training_session.subkind %></strong></h2>
+                    
+                                 
+                    <a role="button" data-toggle="collapse" data-parent="#accordion" aria-expanded="false" aria-controls="session-<%= training_session.id%>" class="btn btn-primary btn-primary-er" href="#session-<%= training_session.id%>">
+                      <i class="fas fa-plus"></i> de details
+                    </a>
+                    
+                  </div>
+                </div>
+                 
+              <div id="session-<%= training_session.id%>" class="panel-collapse collapse out" role="tabpanel" aria-labelledby="headingOne">
+                  <div class="dash-training-desc" id="session-<%= training_session.id%>">
+                    <p><%= simple_format training_session.description %></p>
+                  </div>
+             </div>
+          
+            <% end %>
+          </div>
         <% else %>
           <h2>Félicitations vous avez rempli votre objectif avec succès!</h2>
         <% end %>
