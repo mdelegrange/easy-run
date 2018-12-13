@@ -723,4 +723,10 @@ class TrainingSession
      Course de récupération de 1,5 km"
    }
    ]
+
+SESSIONS.each_slice(3).to_a.each_with_index do |training_week, index|
+    training_week.each do |training|
+      training.update(week: index + 1)
+    end
+  end
  end

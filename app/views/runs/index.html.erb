@@ -102,16 +102,23 @@
   <div class="dash-flexbox dash-trainings dash-flex-column">
     <% if @training_plan.nil? %>
       <div class="dash-title dash-title-training">
+
         <h1><span class="dash-percent">Vos entrainements</span></h1>
       </div>
         <%= link_to training_path, method: :post  do %>
-      <div class="dash-training-card dash-flexbox add_training_plan">
-        <div class="dash-training-image add"><%= image_tag 'add.svg', height: '85px', width: '85px' %></div>
-        <div class="dash-training-desc dash-training-desc-add">
-
-          <h2>PLAN D'ENTRAINEMENT</h1>
-          <hr>
-          <p>En ajoutant un plan d'entrainement à votre profil vous profiterez d'un accompagnement complet dans la réalisation de vos objectifs.</p>
+          <div class="dash-training-card dash-flexbox add_training_plan">
+            <div class="dash-training-image add"><%= image_tag 'add.svg', height: '100px', width: '100px' %>
+            </div>
+            <div class="dash-training-desc">
+              <h2>PLAN D'ENTRAINEMENT</h2>
+              <hr>
+              <p>En ajoutant un plan d'entrainement à votre profil vous profiterez d'un accompagnement complet dans la réalisation de vos objectifs.</p>
+            </div>
+          </div>
+        <% end %>
+      <% else %>
+        <div class="dash-title">
+          <h1><span class="dash-percent">Vos entrainements</span></h1>
         </div>
       </div>
       <% end %>
@@ -122,54 +129,43 @@
       </div>
 
       <div>
+
           <div class="load-bar-back-hor">
-            <div id="load-bar-hor" class="load-bar-front-hor"></div>
+            <% if @week_diff > 18  %>
+              <div id="load-bar-hor" class="load-bar-front-hor" style="width:  0%;"></div>
+            <% elsif  @week_diff <= 18 && @week_diff >= 0 %>
+              <div id="load-bar-hor" class="load-bar-front-hor" style="width: <%= 18 - (@week_diff * 5.5)%>%;"></div>
+            <% else%>
+              <div id="load-bar-hor" class="load-bar-front-hor" style="width: 0%;"></div>
+            <% end %>
           </div>
         </div>
-         <% if @week_diff > 18  %>
-
-
-        <% @training_plan.training_sessions.order(:position).each_slice(3).to_a.last.each do |training_session| %>
-
-      <div class="dash-training-card dash-flexbox">
-        <% if training_session.kind == "Vitesse" %>
-            <div class="dash-training-image" style="background-image: linear-gradient(to right, rgba(10, 207, 254, 0.7) 0%, rgba(73, 90, 255, 0.7) 100%), url(<%= image_path 'run-fast.jpg'%>);"></div>
-          <% else %>
-         <div class="dash-training-image" style="background-image: linear-gradient(to right, rgba(10, 207, 254, 0.7) 0%, rgba(73, 90, 255, 0.7) 100%), url(<%= image_path 'run-far.jpg'%>);"></div>
-         <% end %>
-        <div class="dash-training-desc">
-          <h2 class="training-title"><%= training_session.kind %> - <strong><%= training_session.subkind %></strong></h1>
-          <hr>
-          <p class="training-desc"><%= training_session.description %></p>
-        </div>
-      </div>
+        <% if @week_diff > 18  %>
+          <% @training_plan.training_sessions.order(:position).each_slice(3).to_a.last.each do |training_session| %>
+            <div class="dash-training-card dash-flexbox">
+              <div class="dash-training-image" style="background-image: linear-gradient(to right, rgba(10, 207, 254, 0.7) 0%, rgba(73, 90, 255, 0.7) 100%), url(<%= image_path 'run-fast.jpg'%>);">
+              </div>
+              <div class="dash-training-desc">
+                <h2 class="training-title"><%= training_session.kind %> - <strong><%= training_session.subkind %></strong></h2>
+                <hr>
+                <p class="training-desc"><%= training_session.description %></p>
+              </div>
+            </div>
+          <% end %>
+        <% elsif @week_diff <= 18 && @week_diff >= 0 %>
+          <% @training_plan.training_sessions.order(:position).each_slice(3).to_a[1 - @week_diff].each do |training_session| %>
+            <div class="dash-training-card dash-flexbox">
+              <div class="dash-training-image" style="background-image: linear-gradient(to right, rgba(10, 207, 254, 0.7) 0%, rgba(73, 90, 255, 0.7) 100%), url(<%= image_path 'run-fast.jpg'%>);">
+              </div>
+              <div class="dash-training-desc">
+                <h2 class="training-title"><%= training_session.kind %> - <strong><%= training_session.subkind %></strong></h2>
+                <hr>
+                <p class="training-desc"><%= training_session.description %></p>
+              </div>
+            </div>
+          <% end %>
+        <% else %>
+          <h2>Félicitations vous avez rempli votre objectif avec succès!</h2>
         <% end %>
-
-  </div>
-
-  <% elsif @week_diff <= 18 && @week_diff >= 0 %>
-
-
- <% @training_plan.training_sessions.order(:position).each_slice(3).to_a[1 - @week_diff].each do |training_session| %>
-       <div class="dash-training-card dash-flexbox">
-          <% if training_session.kind == "Vitesse" %>
-            <div class="dash-training-image" style="background-image: linear-gradient(to right, rgba(10, 207, 254, 0.7) 0%, rgba(73, 90, 255, 0.7) 100%), url(<%= image_path 'run-fast.jpg'%>);"></div>
-          <% else %>
-         <div class="dash-training-image" style="background-image: linear-gradient(to right, rgba(10, 207, 254, 0.7) 0%, rgba(73, 90, 255, 0.7) 100%), url(<%= image_path 'run-far.jpg'%>);"></div>
-         <% end %>
-         <div class="dash-training-desc">
-           <h2 class="training-title"><%= training_session.kind %> - <strong><%= training_session.subkind %></strong></h1>
-           <hr>
-           <p class="training-desc"><%= training_session.description %></p>
-         </div>
-       </div>
-
-         <% end %>
-
-
- <% else %>
-
- <h2>Féllicitation vous avez rempli votre objectif avec succès!</h2>
-   <% end %>
+  <% end %>
 </div>
-    <% end %>

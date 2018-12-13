@@ -27,7 +27,17 @@
   align-items: center;
 }
 
-.banner_index_races {
+.banner_index_switch {
+  height: 30vh;
+  /* if you have a 70px navbar => height: calc(100vh - 70px); */
+  background-size: cover !important;
+  display: flex;
+  justify-content: space-around;
+  background-attachment: fixed;
+  align-items: center;
+}
+
+.banner_index_switch {
   .text-center {
     h2 {
     margin-top: 0;

@@ -98,9 +98,6 @@ training = Training.create!(user: user1, training_plan: training_plan1, begin_da
 
 puts "Training Created"
 
-
-
-
 #Training Sessions
 training_sessions_all = TrainingSession::SESSIONS.each do |training_session_data|
    training_session               = TrainingSession.new(training_session_data)
