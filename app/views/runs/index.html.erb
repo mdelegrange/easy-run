@@ -1,7 +1,7 @@
 <div class="dash-flexbox">
   <div class="dash-flexbox dash-races dash-flex-column">
     <div class="dash-title">
-      <h1><span class="dash-percent">Vos courses</span></h1>
+      <h1><span class="dash-percent">Mes courses</span></h1>
       <div class="add-race">
       <%= link_to "+ Ajouter une course", new_objective_run_path(@objective), class: "btn btn-primary btn-primary-er" %>
       </div>
@@ -101,23 +101,22 @@
   </div>
   <div class="dash-flexbox dash-trainings dash-flex-column">
     <% if current_user.trainings.last.nil? %>
+    <div class="training-nil">
       <div class="dash-title">
-        <h1><span class="dash-percent">Vos entrainements</span></h1>
+        <h1><span class="dash-percent">Mes entrainements</span></h1>
+        <div class="training-nil-text text text-center">
+        <p>Pour une accéder à votre planning d'entrainement vous pouvez valider vos courses.</p>
+        </div>
       </div>
         <%= link_to training_path, method: :post  do %>
-          <div class="dash-training-card dash-flexbox add_training_plan">
-            <div class="dash-training-image add"><%= image_tag 'add.svg', height: '100px', width: '100px' %>
-            </div>
-            <div class="dash-training-desc">
-              <h2>PLAN D'ENTRAINEMENT</h2>
-              <hr>
-              <p>En ajoutant un plan d'entrainement à votre profil vous profiterez d'un accompagnement complet dans la réalisation de vos objectifs.</p>
-            </div>
+            <div class="btn btn-primary btn-primary-er btn-runs-valid">
+              VALIDER MES COURSES
           </div>
         <% end %>
+      </div>
       <% else %>
         <div class="dash-title">
-          <h1><span class="dash-percent">Vos entrainements</span></h1>
+          <h1><span class="dash-percent">Mes entrainements</span></h1>
         </div>
         <div>
           <div class="load-bar-back-hor">
