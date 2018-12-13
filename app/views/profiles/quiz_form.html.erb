@@ -1,5 +1,5 @@
 <%= simple_form_for @user, url: quiz_profile_path, method: :patch do |f| %>
-<div class="banner-quiz overflow" id="quiz-form"  style="background-image: linear-gradient(to right, rgba(10, 207, 254, 0.7) 0%, rgba(73, 90, 255, 0.7) 100%), url(<%= image_path 'home-run.jpg'%>);">
+<div class="banner-quiz overflow" id="quiz-form"  style="background-image: linear-gradient(to right, rgba(10, 207, 254, 0.7) 0%, rgba(73, 90, 255, 0.7) 100%), url(<%= image_path 'quiz-run.jpg'%>);">
   <div class="container">
     <div class="row">
       <h2 class="quiz_title">QUEL COUREUR ÊTES-VOUS ?</h2>
@@ -67,10 +67,10 @@
             <% ['NON', 'OUI'].each do |choice| %>
               <label class="category-choice_3" for="user_has_already_run_<%= choice.downcase %>">
                 <% if choice == "NON" %>
-                  <%= image_tag "not_official", alt: "level", height: 150,width: 150, class: "level_icone"%>
+                  <%= image_tag "not_official.svg", alt: "level", height: 150,width: 150, class: "level_icone"%>
                   <p class="level_text"><%= choice %></p>
                 <% else %>
-                  <%= image_tag "official", alt: "level", height: 150,width: 150, class: "level_icone"%>
+                  <%= image_tag "official.svg", alt: "level", height: 150,width: 150, class: "level_icone"%>
                   <p class="level_text"><%= choice %></p>
                 <% end %>
               </label>

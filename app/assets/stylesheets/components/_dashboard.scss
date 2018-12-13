@@ -1,6 +1,8 @@
 .dash-flexbox {
   display: flex;
+  position: relative;
 }
+
 
 .dash-flex-column {
   flex-direction: column;
@@ -24,41 +26,50 @@
 .dash-cards {
   // width: 500px;
   align-self: flex-start;
+  margin-left: 20px;
+
+
 }
 
 .dash-card {
   align-self: flex-start;
   width: 500px;
+
 }
 
 .load-bar-back{
   height:100%;
   margin: 10px 40px 10px 20px;
-  border:1px solid $grey;
+  // border:1px solid $grey;
   border-radius:25px;
   overflow:hidden;
   background: white;
+  box-shadow: inset 1px 2px 4px #e6e6e6;
 }
 
-.load-bar-front{
-  width:30px;
-  height:25%;
-  border-radius:20px;
-  background: linear-gradient(#0acffe 0%, #495aff 100%);
+.timeline-bar{
+  border: none;
+  border-right: 3px dotted $blue-dark;
+  width: 100px;
+  height:100%;
+  margin: 0;
+  // border:1px solid $grey;
+  position: absolute;
 }
+
 
 .load-bar-back-hor{
   width:100%;
   margin: 10px 20px 10px 10px;
-  border:1px solid $grey;
+  // border:1px solid $grey;
   border-radius:20px;
   overflow:hidden;
   background: white;
+  box-shadow: inset 1px 2px 4px #e6e6e6;
 }
 
 .load-bar-front-hor{
   height:25px;
-  width:25%;
   border-radius:20px;
   background: linear-gradient(#0acffe 0%, #495aff 100%);
 }
@@ -78,6 +89,7 @@
 }
 
 .dash-percent {
+  text-transform: uppercase;
   font-family: 'Fredoka One';
   color : $blue-dark;
   font-size: 46px;
@@ -90,22 +102,27 @@
 .dash-training-card {
   margin: 10px;
   width: 100%;
-  height: 180px;
+  height: 175px;
   background: white;
   border-radius: 8px;
+  box-shadow: 1px 1px 2px #e6e6e6;
+
 }
 
 .dash-training-image {
-  margin-left:30px;
   margin-right: 20px;
-  border-radius:8px;
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+  // min-height: ;
+  min-width: 215px;
   height: 100%;
-  width:30%;
+  width:100%;
   background-size: cover !important;
 }
 
 .dash-training-desc {
-  color: black;
+  color: rgba(0, 0, 0, 0.7);
+  width: 240%;
   padding: 10px 20px;
   margin-right: 20px;
   h2 {
@@ -126,11 +143,50 @@
 }
 
 .add-race {
-  margin-top:20px;
+  margin-top:10px;
+  margin-bottom: 10px;
+  font-weight: bolder;
   a {
-    text-decoration: none;
-    font-family: 'Raleway';
-    font-size: 20px;
-    color: $grey;
+    font-size: 14px;
   }
+
+}
+
+.add_training_plan a:hover {
+    text-decoration: none;
+}
+.add_training_plan {
+  box-shadow: 1px 1px 2px #e6e6e6;
+
+  &:hover {
+    opacity: 0.7;
+    transition: all 0.1s ease;
+    text-decoration: none;
+  }
+}
+
+.add {
+  display: flex;
+  align-item: center;
+  opacity: 0.75;
+  padding-top: 45px;
+  padding-left: 30px;
+}
+
+
+.dash-training-desc h2 {
+  margin-top: 2px;
+}
+
+.week {
+  text-align: end;
+}
+
+.dash-title-training {
+  display: flex;
+  align-item: center;
+}
+
+.dash-training-desc {
+  overflow: scroll;
 }

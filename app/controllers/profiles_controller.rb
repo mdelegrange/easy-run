@@ -20,8 +20,8 @@ class ProfilesController < ApplicationController
 
   def quiz_form
     @user = current_user
-    @levels_options = [["shoes", "DEBUTANT", "shoes-blue"], ["timer", "REGULIER", "timer-blue"], ["winner", "EXPERT", "winner-blue"]]
-    @targeted_distances = [["SEMI-MARATHON", 21000, "semi-marathon"], ["MARATHON", 42195, "marathon"]]
+    @levels_options = [["shoes.svg", "DEBUTANT", "shoes-blue.svg"], ["timer.svg", "REGULIER", "timer-blue.svg"], ["winner.svg", "EXPERT", "winner-blue.svg"]]
+    @targeted_distances = [["SEMI-MARATHON", 21000, "semi-marathon.svg"], ["MARATHON", 42195, "marathon.svg"]]
 
     @departments_options = Race::DEPARTMENTS.map { |label, value| [label, value] }
   end
@@ -36,8 +36,8 @@ class ProfilesController < ApplicationController
     else
       build_quiz_errors
       @user = current_user
-      @levels_options = [["shoes", "DEBUTANT"], ["timer", "REGULIER"], ["winner", "EXPERT"]]
-      @targeted_distances = [["SEMI-MARATHON", 21000, "semi-marathon"], ["MARATHON", 42195, "marathon"]]
+      @levels_options = [["shoes.svg", "DEBUTANT", "shoes-blue.svg"], ["timer.svg", "REGULIER", "timer-blue.svg"], ["winner.svg", "EXPERT", "winner-blue.svg"]]
+      @targeted_distances = [["SEMI-MARATHON", 21000, "semi-marathon.svg"], ["MARATHON", 42195, "marathon.svg"]]
 
       @departments_options = Race::DEPARTMENTS.map { |label, value| [label, value] }
 

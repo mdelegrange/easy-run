@@ -17,8 +17,9 @@
   background-attachment: fixed;
 }
 
-.banner_index_races {
-  height: calc(50vh - 50px);
+.banner_new_races {
+  height: 50vh;
+
   /* if you have a 70px navbar => height: calc(100vh - 70px); */
   background-size: cover !important;
   display: flex;
@@ -28,6 +29,33 @@
 }
 
 .banner_index_races {
+  min-height: 800px;
+  height: 100vh;
+
+  /* if you have a 70px navbar => height: calc(100vh - 70px); */
+  background-size: cover !important;
+  display: flex;
+  justify-content: space-around;
+  background-attachment: fixed;
+  align-items: center;
+}
+
+.race-results {
+  height: 100vh;
+
+}
+
+.banner_index_switch {
+  height: 30vh;
+  /* if you have a 70px navbar => height: calc(100vh - 70px); */
+  background-size: cover !important;
+  display: flex;
+  justify-content: space-around;
+  background-attachment: fixed;
+  align-items: center;
+}
+
+.banner_index_switch {
   .text-center {
     h2 {
     margin-top: 0;

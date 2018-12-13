@@ -15,6 +15,7 @@
     margin: 12.5px 0 12.5px;
     font-size: 18px;
   }
+
 }
 
 .card-race-detail {
@@ -215,12 +216,6 @@
   }
 }
 
-// .race-results {
-//   overflow: scroll;
-//   width: 100%;
-//   padding-right: 15px;
-// }
-
 .overlay {
   position: absolute;
   top: 5px;
@@ -290,6 +285,10 @@
     font-size: 20px;
     margin-top: 0;
   }
+  h5 {
+    color: $blue-dark;
+    font-size: 13px;
+  }
 }
 // .card-race-results-10000 {
 //   background: $blue-dark;
@@ -321,7 +320,6 @@
   top: 22px;
   left: 55card-px;
   border: 1px solid rgba(0, 0, 255, .2);
-  box-shadow: 1px 1px 1px 1px rgba(0, 0, 255, .2);
   background: $green;
   border-radius: 5px;
   height: 35px;

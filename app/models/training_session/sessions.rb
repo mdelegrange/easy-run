@@ -3,8 +3,8 @@ class TrainingSession
    {
      "position" => 1,
      "kind" => "Vitesse",
-     "description" => "PISTE
-      800 mètres à votre allure sur 10KM
+     "subkind" => "PISTE",
+     "description" => "800 mètres à votre allure sur 10KM
      2 fois 400 mètres à votre allure sur 5KM
      4 fois 200 mètres à votre allure sur 5KM
      2 fois 400 mètres à votre allure sur 5KM
@@ -17,7 +17,8 @@ class TrainingSession
    {
      "position" => 2,
      "kind" => "Endurance",
-     "description" => "10KM
+     "subkind" =>"10KM",
+     "description" => "
      En parcourant cette distance régulièrement, vous
      préparerez votre corps et votre esprit à aller au bout
      du marathon.
@@ -32,7 +33,8 @@ class TrainingSession
    {
      "position" => 3,
      "kind" => "Vitesse",
-     "description" => "CÔTES
+     "subkind" =>"CÔTES",
+     "description" => "
      Run rythmé de 2,5 km, récupération de 7 minutes
      Longue côte à votre allure sur 10KM
      Côte plus courte à votre allure sur 5KM
@@ -44,7 +46,8 @@ class TrainingSession
    {
    "position" => 4,
    "kind" => "Vitesse",
-   "description" => "PISTE
+   "subkind" =>"PISTE",
+   "description" => "
    600 mètres à votre allure sur 10KM
    500 mètres à votre allure sur 10KM
    400 mètres à votre allure sur 5KM
@@ -58,7 +61,8 @@ class TrainingSession
    {
    "position" => 5,
    "kind" => "Endurance",
-   "description" => "13 KM
+   "subkind" =>"13 KM",
+   "description" => "
    Préparez-vous à tenir la distance lors de l'épreuve en
    effectuant le plus long run de la semaine.
    L'objectif de ces premières semaines consiste à
@@ -73,7 +77,8 @@ class TrainingSession
    {
    "position" => 6,
    "kind" => "Vitesse",
-   "description" => "FORCE
+   "subkind" =>"FORCE",
+   "description" => "
    1,5 km à votre allure de run rythmé.
    2 fois 800 mètres à votre allure sur 10KM
     800 mètres à votre allure sur 5KM
@@ -84,7 +89,8 @@ class TrainingSession
    {
    "position" => 7,
    "kind" => "Vitesse",
-   "description" => "PISTE
+   "subkind" =>"PISTE",
+   "description" => "
    2 fois 200 mètres à votre allure sur 5KM
    4 fois 400 mètres à votre allure au km
    2 fois 200 mètres à votre allure sur 5KM
@@ -96,7 +102,8 @@ class TrainingSession
    {
    "position" => 8,
    "kind" => "Endurance",
-   "description" => "10 KM
+   "subkind" =>"10 KM",
+   "description" => "
    En parcourant cette distance régulièrement, vous
    préparerez votre corps et votre esprit à aller au bout
    du marathon.
@@ -111,7 +118,8 @@ class TrainingSession
    {
    "position" => 9,
    "kind" => "Vitesse",
-   "description" => "FORCE
+   "subkind" =>"FORCE",
+   "description" => "
    8 fois 100 mètres en foulées
    20 secondes de repos entre chaque
    série de foulées.
@@ -124,7 +132,8 @@ class TrainingSession
    {
    "position" => 10,
    "kind" => "Vitesse",
-   "description" => "PISTE
+   "subkind" =>"PISTE",
+   "description" => "
    25 fois 200 mètres à votre allure sur 5KM
    60 secondes de récupération entre deux
    phases de fractionné de 200 mètres."
@@ -132,7 +141,8 @@ class TrainingSession
    {
    "position" => 11,
    "kind" => "Endurance",
-   "description" => "16 KM
+   "subkind" =>"16 KM",
+   "description" => "
    Voici votre plus long run de la semaine. Couvrez cette
    distance de manière constante pour renforcer votre
    endurance, en vue du marathon.
@@ -147,7 +157,8 @@ class TrainingSession
    {
    "position" => 12,
    "kind" => "Vitesse",
-   "description" => "FORCE
+   "subkind" =>"FORCE",
+   "description" => "
    1,5 km à votre allure de run rythmé
    2 fois 800 mètres à votre allure sur 5KM
    1,5 km à votre allure de course rythmée
@@ -158,7 +169,8 @@ class TrainingSession
    {
    "position" => 13,
    "kind" => "Vitesse",
-   "description" => "PISTE
+   "subkind" =>"PISTE",
+   "description" => "
    800 mètres à votre allure sur 10KM
    800 mètres à votre allure de run rythmé
    800 mètres à votre allure sur 5KM
@@ -173,7 +185,8 @@ class TrainingSession
    {
    "position" => 14,
    "kind" => "Endurance",
-   "description" => "13 KM
+   "subkind" =>"13 KM",
+   "description" => "
    Voici votre plus long run de la semaine. Couvrez cette
    distance de manière constante pour renforcer votre
    endurance, en vue du marathon.
@@ -188,7 +201,8 @@ class TrainingSession
    {
    "position" => 15,
    "kind" => "Vitesse",
-   "description" => "FARTLEK
+   "subkind" =>"FARTLEK",
+   "description" => "
    Effectuez cette séquence de travail en fractionné
    chronométré, en alternant l'allure tranquille et l'allure
    soutenue sans marquer de temps darrêt.
@@ -202,7 +216,8 @@ class TrainingSession
    {
    "position" => 16,
    "kind" =>"Vitesse",
-   "description" => "PISTE
+   "subkind" =>"PISTE",
+   "description" => "
    16 fois 400 mètres en alternant votre allure sur
    10KM et votre allure sur 5KM.
    Après chaque phase de 400 mètres en fractionné,
@@ -211,7 +226,8 @@ class TrainingSession
    {
    "position" => 17,
    "kind" =>"Endurance",
-   "description" => "16 KM
+   "subkind" =>"16 KM",
+   "description" => "
    Votre plus long run. Couvrez cette distance de
    manière constante pour préparer votre esprit et votre
    corps en vue du marathon.
@@ -224,7 +240,8 @@ class TrainingSession
    {
    "position" => 18,
    "kind" =>"Vitesse",
-   "description" => "CÔTES
+   "subkind" =>"CÔTES",
+   "description" => "
    Gravissez en courant une courte côte à votre allure
    au km pendant 25 secondes. À effectuer 6 fois.
    Gravissez en courant une longue côte à votre allure
@@ -237,7 +254,8 @@ class TrainingSession
    {
    "position" => 19,
    "kind" => "Vitesse",
-   "description" => "PISTE
+   "subkind" =>"PISTE",
+   "description" => "
    1 000 mètres à votre allure sur 10 km
     500 mètres à votre allure sur 5KM
     500 mètres à votre allure sur 5KM
@@ -251,7 +269,8 @@ class TrainingSession
    {
    "position" => 20,
    "kind" =>"Endurance",
-   "description" => "19 KM
+   "subkind" =>"19 KM",
+   "description" => "
    Voici votre plus long run de la semaine. Couvrez cette
    distance de manière constante pour renforcer votre
    endurance, en vue du marathon.
@@ -264,7 +283,8 @@ class TrainingSession
    {
    "position" => 21,
    "kind" =>"Vitesse",
-   "description" => "PISTE
+   "subkind" =>"PISTE",
+   "description" => "
    8 fois 100 mètres en foulées
    2 fois 1 200 mètres à votre allure sur 10KM
    1 fois 1 200 mètres à votre allure pour le marathon
@@ -276,7 +296,8 @@ class TrainingSession
    {
    "position" => 22,
    "kind" =>"Vitesse",
-   "description" => "PISTE
+   "subkind" =>"PISTE",
+   "description" => "
     4 fois 200 mètres à votre allure au km
     400 mètres à votre allure sur 5KM
     4 fois 200 mètres à votre allure au km
@@ -290,7 +311,8 @@ class TrainingSession
    {
    "position" => 23,
    "kind" =>"Endurance",
-   "description" => "22,5 KM
+   "subkind" =>"22,5 KM",
+   "description" => "
    Votre plus long run. Couvrez cette distance de
    manière constante pour préparer votre esprit et votre
    corps en vue du marathon.
@@ -303,7 +325,8 @@ class TrainingSession
    {
    "position" => 24,
    "kind" =>"Vitesse",
-   "description" => "RYTHMÉ
+   "subkind" =>"RYTHMÉ",
+   "description" => "
    4 fois 150 mètres en foulées
    Course rythmée sur 5 km
    4 fois 150 mètres en foulées"
@@ -311,7 +334,8 @@ class TrainingSession
    {
    "position" => 25,
    "kind" =>"Vitesse",
-   "description" => "PISTE
+   "subkind" =>"PISTE",
+   "description" => "
     4 fois 100 mètres à votre allure au km
    1 000 mètres à votre allure sur 5KM
     400 mètres à votre allure sur 10KM
@@ -326,7 +350,8 @@ class TrainingSession
    {
    "position" => 26,
    "kind" =>"Endurance",
-   "description" => "25,5 KM
+   "subkind" =>"25,5 KM",
+   "description" => "
    En parcourant cette distance régulièrement, vous
    préparerez votre corps et votre esprit à aller au bout
    du marathon.
@@ -338,7 +363,8 @@ class TrainingSession
    {
    "position" => 27,
    "kind" =>"Vitesse",
-   "description" => "RYTHMÉ
+   "subkind" =>"RYTHMÉ",
+   "description" => "
    Courez 8 km à votre allure de course rythmée.
    Gravissez toutes les côtes de votre itinéraire,
    mais sur les zones de plat, forcez pendant
@@ -347,7 +373,8 @@ class TrainingSession
    {
    "position" => 28,
    "kind" =>"Vitesse",
-   "description" => "PISTE
+   "subkind" =>"PISTE",
+   "description" => "
    16 fois 200 mètres en alternant votre allure au
    km et votre allure sur 5 km.
    Après chaque phase de 200 mètres en fractionné,
@@ -356,7 +383,8 @@ class TrainingSession
    {
    "position" => 29,
    "kind" =>"Endurance",
-   "description" => "29 KM
+   "subkind" =>"29 KM",
+   "description" => "
    Préparez-vous à tenir la distance lors de l'épreuve en
    effectuant le plus long run de la semaine.
    N'oubliez pas daccorder plus d'attention à la qualité
@@ -367,7 +395,8 @@ class TrainingSession
    {
    "position" => 30,
    "kind" =>"Vitesse",
-   "description" => "CÔTES
+   "subkind" =>"CÔTES",
+   "description" => "
    Gravissez une côte et continuez après le
    sommet 9 fois.
    Ne vous arrêtez pas au sommet et continuez
@@ -376,7 +405,8 @@ class TrainingSession
    {
    "position" => 31,
    "kind" =>"Vitesse",
-   "description" => "PISTE
+   "subkind" =>"PISTE",
+   "description" => "
    2 fois 200 mètres à votre allure au km
    Écarts sur 800 => 600 mètres à votre allure sur 5 km,
    puis 200 mètres à votre allure au km
@@ -393,7 +423,8 @@ class TrainingSession
    {
    "position" => 32,
    "kind" =>"Endurance",
-   "description" => "22,5 KM
+   "subkind" =>"22,5 KM",
+   "description" => "
    Voici votre plus long run de la semaine. Couvrez cette
    distance de manière constante pour renforcer votre
    endurance, en vue du marathon.
@@ -405,7 +436,8 @@ class TrainingSession
    {
    "position" => 33,
    "kind" =>"Vitesse",
-   "description" => "PISTE
+   "subkind" =>"PISTE",
+   "description" => "
    1,5 km à votre allure sur 10 km
    400 mètres à votre allure au km
    800 mètres à votre allure sur 5KM
@@ -416,7 +448,8 @@ class TrainingSession
    {
    "position" => 34,
    "kind" =>"Vitesse",
-   "description" => "PISTE
+   "subkind" =>"PISTE",
+   "description" => "
     400 mètres à votre allure sur 10KM
     2 fois 400 mètres à votre allure sur 5KM
     400 mètres à votre allure au km
@@ -427,7 +460,8 @@ class TrainingSession
    {
    "position" => 35,
    "kind" =>"Endurance",
-   "description" => "29 KM
+   "subkind" =>"29 KM",
+   "description" => "
    Préparez-vous à tenir la distance lors de l'épreuve en
    effectuant le plus long run de la semaine.
    N'oubliez pas d'accorder plus d'attention à la qualité
@@ -438,7 +472,8 @@ class TrainingSession
    {
    "position" => 36,
    "kind" =>"Vitesse",
-   "description" => "FARTLEK
+   "subkind" =>"FARTLEK",
+   "description" => "
    1,5 km à votre allure de run rythmé
    Enchaînez par cette séance de fartlek =>
    1 minute à allure soutenue, 30 secondes à allure tranquille
@@ -452,7 +487,8 @@ class TrainingSession
    {
    "position" => 37,
    "kind" =>"Vitesse",
-   "description" => "PISTE
+   "subkind" =>"PISTE",
+   "description" => "
    200 mètres à votre allure au km 45 secondes de récupération
    800 mètres à votre allure sur 10KM 2 minutes de récupération
    200 mètres à votre allure au km 45 secondes de récupération
@@ -469,7 +505,8 @@ class TrainingSession
    {
    "position" => 38,
    "kind" =>"Endurance",
-   "description" => "22,5 K
+   "subkind" =>"22,5 KM",
+   "description" => "
    En parcourant cette distance régulièrement, vous
    préparerez votre corps et votre esprit à aller au bout
    du marathon.
@@ -482,7 +519,8 @@ class TrainingSession
    {
    "position" => 39,
    "kind" =>"Vitesse",
-   "description" => "FARTLEK
+   "subkind" =>"FARTLEK",
+   "description" => "
    1 000 mètres à votre allure sur 10KM
    1 000 mètres à votre allure de run rythmé
    1 000 mètres à votre allure sur 10KM
@@ -497,7 +535,8 @@ class TrainingSession
    {
    "position" => 40,
    "kind" =>"Vitesse",
-   "description" => "PISTE
+   "subkind" =>"PISTE",
+   "description" => "
    300 mètres à votre allure au km 45 secondes de récupération
    400 mètres à votre allure sur 5KM 2 minutes de récupération
    500 mètres à votre allure sur 5KM 2 minutes de récupération
@@ -509,7 +548,8 @@ class TrainingSession
    {
    "position" => 41,
    "kind" =>"Endurance",
-   "description" => "32 À 35 KM
+   "subkind" =>"32 À 35 KM",
+   "description" => "
    Préparez-vous à tenir la distance lors de l'épreuve en
    effectuant le plus long run de la semaine.
    Sur les cinq dernières semaines d'entraînement,
@@ -521,14 +561,16 @@ class TrainingSession
    {
    "position" => 42,
    "kind" =>"Vitesse",
-   "description" => "RYTHMÉ
+   "subkind" =>"RYTHMÉ",
+   "description" => "
    6,5 km de run progressif à votre allure rythmée.
    8 fois 100 mètres en foulées"
    },
    {
    "position" => 43,
    "kind" =>"Vitesse",
-   "description" => "PISTE
+   "subkind" =>"PISTE",
+   "description" => "
    Commencez la séance par une course
    contre la montre sur 3 km à l'allure que
    vous voulez adopter pendant l'épreuve.
@@ -546,7 +588,8 @@ class TrainingSession
    {
    "position" => 44,
    "kind" =>"Endurance",
-   "description" => "25,5 KM
+   "subkind" =>"25,5 KM",
+   "description" => "
    En parcourant cette distance régulièrement, vous
    préparerez votre corps et votre esprit à aller au bout
    du marathon.
@@ -559,7 +602,8 @@ class TrainingSession
    {
    "position" => 45,
    "kind" =>"Vitesse",
-   "description" => "PROGRESSIVITÉ
+   "subkind" =>"PROGRESSIVITÉ",
+   "description" => "
    Couvrez 15 km en course progressive. Ralentissez
    sur les 6,5 derniers kilomètres pour atteindre une
    allure de course rythmée."
@@ -567,7 +611,8 @@ class TrainingSession
    {
    "position" => 46,
    "kind" =>"Vitesse",
-   "description" => "PISTE
+   "subkind" =>"PISTE",
+   "description" => "
    Courez 1,5 km => alternez entre 200 mètres à votre
    allure rythmée et 200 mètres à votre allure au
    kilomètre. Enchaînez avec 4 minutes de récupération.
@@ -581,7 +626,8 @@ class TrainingSession
    {
    "position" => 47,
    "kind" =>"Endurance",
-   "description" => "19 KM
+   "subkind" =>"19 KM",
+   "description" => "
    Préparez-vous à tenir la distance lors de l'épreuve en
    effectuant le plus long run de la semaine.
    Sur les trois dernières semaines d'entraînement,
@@ -593,7 +639,8 @@ class TrainingSession
    {
    "position" => 48,
    "kind" =>"Vitesse",
-   "description" => "CÔTES
+   "subkind" =>"CÔTES",
+   "description" => "
    Gravissez une côte en courant pendant 2 minutes,
    de préférence en montant pendant 90 secondes,
    puis en courant pendant 30 secondes après le
@@ -607,7 +654,8 @@ class TrainingSession
    {
    "position" => 49,
    "kind" =>"Vitesse",
-   "description" => "PISTE
+   "subkind" =>"PISTE",
+   "description" => "
     4 fois 200 mètres à votre allure au km
     2 fois 400 mètres à votre allure sur 10KM
     4 fois 200 mètres à votre allure sur 5KM
@@ -619,7 +667,8 @@ class TrainingSession
    {
    "position" => 50,
    "kind" =>"Endurance",
-   "description" => "16 KM
+   "subkind" =>"16KM",
+   "description" => "
    En parcourant cette distance régulièrement, vous
    préparerez votre corps et votre esprit à aller au bout
    du marathon.
@@ -632,7 +681,8 @@ class TrainingSession
    {
    "position" => 51,
    "kind" =>"Vitesse",
-   "description" => "PISTE
+   "subkind" =>"PISTE",
+   "description" => "
    Course de récupération de 2 km
    2 fois 100 mètres en foulées
    1 000 mètres à votre allure de run rythmé
@@ -643,7 +693,8 @@ class TrainingSession
    {
    "position" => 52,
    "kind" =>"Vitesse",
-   "description" => "PISTE
+   "subkind" =>"PISTE",
+   "description" => "
     2 fois 200 mètres à votre allure au km
     2 fois 400 mètres à votre allure sur 5KM
     800 mètres à votre allure sur 10KM
@@ -655,7 +706,8 @@ class TrainingSession
    {
    "position" => 53,
    "kind" => "Course",
-   "description" => "MARATHON
+   "subkind" =>"MARATHON",
+   "description" => "
    Vous y voilà. Cette semaine, les mots dordre de
    chaque run seront force et confiance. Appliquez les
    enseignements acquis et tirez parti de vos progrès.
@@ -664,10 +716,17 @@ class TrainingSession
    {
      "position" => 54,
      "kind" =>"Vitesse",
-     "description" => "PISTE
+     "subkind" =>"PISTE",
+     "description" => "
      Course de récupération de 3 km
      8 fois 100 mètres en foulées
      Course de récupération de 1,5 km"
    }
    ]
+
+SESSIONS.each_slice(3).to_a.each_with_index do |training_week, index|
+    training_week.each do |training|
+      training.update(week: index + 1)
+    end
+  end
  end
