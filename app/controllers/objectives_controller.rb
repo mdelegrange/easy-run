@@ -14,6 +14,7 @@ class ObjectivesController < ApplicationController
       status: "current"
     )
     if @objective.save
+      create_training
       create_run(@objective.id, params[:race_id], @race)
       # Suggested Races (distance: semi)
       @race3_semi = suggest_races(1, 21_097).first
@@ -58,6 +59,15 @@ class ObjectivesController < ApplicationController
   end
 
   private
+
+  def create_training
+    Training.create(
+      user_id: current_user.id,
+      training_plan_id: TrainingPlan.first.id,
+      begin_date: @race.date - 126,
+      status: 'current'
+      )
+  end
 
   def create_run(object_id, race_id, race_selected)
     @object_id = object_id
