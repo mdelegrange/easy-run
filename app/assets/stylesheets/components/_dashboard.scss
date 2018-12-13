@@ -1,5 +1,6 @@
 .dash-flexbox {
   display: flex;
+  position: relative;
 }
 
 .dash-flex-column {
@@ -24,6 +25,7 @@
 .dash-cards {
   // width: 500px;
   align-self: flex-start;
+  margin-left: 20px;
 
 
 }
@@ -45,13 +47,13 @@
 }
 
 .timeline-bar{
-  width: 8px;
+  border: none;
+  border-right: 3px dotted $blue-dark;
+  width: 100px;
   height:100%;
-  margin: 0px 40px 10px 20px;
+  margin: 0;
   // border:1px solid $grey;
-  border-radius:25px;
-  overflow:hidden;
-  background: $grey;
+  position: absolute;
 }
 
 
