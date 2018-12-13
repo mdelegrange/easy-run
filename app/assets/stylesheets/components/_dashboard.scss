@@ -1,6 +1,8 @@
 .dash-flexbox {
   display: flex;
+  position: relative;
 }
+
 
 .dash-flex-column {
   flex-direction: column;
@@ -24,6 +26,7 @@
 .dash-cards {
   // width: 500px;
   align-self: flex-start;
+  margin-left: 20px;
 
 
 }
@@ -45,13 +48,13 @@
 }
 
 .timeline-bar{
-  width: 8px;
+  border: none;
+  border-right: 3px dotted $blue-dark;
+  width: 100px;
   height:100%;
-  margin: 0px 40px 10px 20px;
+  margin: 0;
   // border:1px solid $grey;
-  border-radius:25px;
-  overflow:hidden;
-  background: $grey;
+  position: absolute;
 }
 
 
@@ -99,7 +102,7 @@
 .dash-training-card {
   margin: 10px;
   width: 100%;
-  height: fit-content;
+  height: 175px;
   background: white;
   border-radius: 8px;
   box-shadow: 1px 1px 2px #e6e6e6;
@@ -110,7 +113,8 @@
   margin-right: 20px;
   border-top-left-radius: 8px;
   border-bottom-left-radius: 8px;
-
+  // min-height: ;
+  min-width: 215px;
   height: 100%;
   width:100%;
   background-size: cover !important;
@@ -141,8 +145,6 @@
 .add-race {
   margin-top:10px;
   margin-bottom: 10px;
-  text-align: left;
-  margin-left: 38px;
   font-weight: bolder;
   a {
     font-size: 14px;
@@ -182,4 +184,15 @@
 }
 .training-nil {
   text-align: center;
+.week {
+  text-align: end;
+}
+
+.dash-title-training {
+  display: flex;
+  align-item: center;
+}
+
+.dash-training-desc {
+  overflow: scroll;
 }
