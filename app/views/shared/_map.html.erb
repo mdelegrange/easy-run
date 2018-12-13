@@ -13,7 +13,7 @@ coords="362,292, 353,295, 351,297, 352,302, 351,305, 342,306, 338,312, 339,316, 
 </div>
 <div id="ara-hover" class="hidden" >
   <a href="/races?utf8=✓&region=ara#race-result">
-    <img src="<%=image_path "ara.png"  %>" alt="ara">
+    <%= image_tag "ara.png" %>
   </a>
 </div>
 
@@ -31,7 +31,7 @@ coords="370,189, 370,195, 366,201, 373,208, 373,214, 369,219, 370,222, 368,225, 
 </div>
 <div id="bfc-hover" class="hidden" >
   <a href="/races?utf8=✓&region=bfc#race-result">
-    <img src="<%=image_path "bfc.png"  %>" alt="bfc">
+    <%= image_tag "bfc.png" %>
   </a>
 </div>
 
@@ -49,7 +49,7 @@ coords="175,167, 175,167, 164,167, 164,161, 161,162, 157,166, 159,172, 157,170, 
 </div>
 <div id="b-hover" class="hidden" >
   <a href="/races?utf8=✓&region=b#race-result">
-    <img src="<%=image_path "b.png"  %>" alt="b">
+    <%= image_tag "b.png" %>
   </a>
 </div>
 
@@ -67,7 +67,7 @@ coords="344,194, 343,191, 339,190, 337,192, 335,189, 333,192, 326,193, 323,182, 
 </div>
 <div id="cvdl-hover" class="hidden" >
   <a href="/races?utf8=✓&region=cvdl#race-result">
-    <img src="<%=image_path "cvdl.png"  %>" alt="cvdl">
+    <%= image_tag "cvdl.png" %>
   </a>
 </div>
 
@@ -82,7 +82,7 @@ coords="558,527, 556,529, 557,547, 548,546, 544,551, 533,555, 532,558, 529,558, 
 
 <div id="c-hover" class="hidden" >
   <a href="/races?utf8=✓&region=c#race-result">
-    <img src="<%=image_path "c.png"  %>" alt="c">
+    <%= image_tag "c.png" %>
   </a>
   <div class="text-block-c">
     <h4><%= @races.where(department: Race::REGIONS['c']).count %></h4>
@@ -100,7 +100,7 @@ coords="536,129, 533,128, 530,129, 529,132, 527,131, 518,122, 517,116, 513,114, 
 
 <div id="ge-hover" class="hidden" >
   <a href="/races?utf8=✓&region=ge#race-result">
-    <img src="<%=image_path "ge.png"  %>" alt="ge">
+    <%= image_tag "ge.png" %>
   </a>
   <div class="text-block-ge">
     <h4><%= @races.where(department: Race::REGIONS['ge']).count %></h4>
@@ -118,7 +118,7 @@ coords="418,65, 415,66, 410,61, 404,62, 399,61, 396,63, 394,53, 388,52, 387,49, 
 
 <div id="hdf-hover" class="hidden" >
   <a href="/races?utf8=✓&region=hdf#race-result">
-    <img src="<%=image_path "hdf.png"  %>" alt="hdf">
+    <%= image_tag "hdf.png" %>
   </a>
   <div class="text-block-hdf">
     <h4><%= @races.where(department: Race::REGIONS['hdf']).count %></h4>
@@ -136,7 +136,7 @@ COORDS="375,146, 376,143, 374,140, 371,140, 363,143, 360,141, 358,143, 351,142, 
 
 <div id="idf-hover" class="hidden" >
   <a href="/races?utf8=✓&region=idf#race-result">
-    <img src="<%=image_path "idf.png"  %>" alt="idf">
+    <%= image_tag "idf.png" %>
   </a>
   <div class="text-block-idf">
     <h4><%= @races.where(department: Race::REGIONS['idf']).count %></h4>
@@ -154,7 +154,7 @@ COORDS="301,79, 301,79, 301,79, 290,87, 267,93, 253,101, 247,114, 248,116, 258,1
 
 <div id="n-hover" class="hidden" >
   <a href="/races?utf8=✓&region=n#race-result">
-    <img src="<%=image_path "n.png"  %>" alt="n">
+    <%= image_tag "n.png" %>
   </a>
   <div class="text-block-n">
     <h4><%= @races.where(department: Race::REGIONS['n']).count %></h4>
@@ -172,7 +172,7 @@ COORDS="339,316, 338,312, 333,312, 330,312, 316,310, 315,312, 303,313, 300,316, 
 
 <div id="na-hover" class="hidden" >
   <a href="/races?utf8=✓&region=na#race-result">
-    <img src="<%=image_path "na.png"  %>" alt="na">
+    <%= image_tag "na.png" %>
   </a>
   <div class="text-block-na">
     <h4><%= @races.where(department: Race::REGIONS['na']).count %></h4>
@@ -190,7 +190,7 @@ COORDS="321,404, 316,407, 309,400, 300,401, 298,412, 293,415, 294,419, 288,422, 
 
 <div id="o-hover" class="hidden" >
   <a href="/races?utf8=✓&region=o#race-result">
-    <img src="<%=image_path "o.png"  %>" alt="o">
+    <%= image_tag "o.png" %>
   </a>
   <div class="text-block-o">
     <h4><%= @races.where(department: Race::REGIONS['o']).count %></h4>
@@ -206,13 +206,13 @@ ALT="Pays de la Loire"
 TITLE="<%= @races.where(department: Race::REGIONS['pdll']).count %>"
 COORDS="196,176, 196,188, 194,190, 196,208, 191,211, 187,220, 186,222, 179,218, 170,222, 168,225, 155,226, 149,229, 149,235, 133,240, 134,240, 129,245, 131,251, 138,252, 140,254, 145,250, 152,250, 145,252, 145,259, 142,261, 148,263, 153,268, 145,277, 145,281, 156,294, 158,301, 166,308, 171,309, 173,313, 179,314, 184,318, 185,315, 187,316, 188,315, 196,312, 195,315, 202,315, 204,317, 213,312, 211,310, 211,302, 206,284, 202,279, 200,274, 212,273, 216,268, 222,267, 232,267, 234,269, 241,263, 241,263, 247,247, 249,237, 250,235, 256,238, 255,234, 258,234, 266,230, 267,226, 270,225, 277,214, 276,208, 274,206, 277,204, 277,202, 275,198, 271,197, 268,194, 265,195, 258,190, 256,181, 253,179, 242,185, 239,185, 239,182, 235,181, 233,174, 230,174, 230,177, 220,177, 213,180, 211,179, 208,180, 205,176, 196,176" />
 
+<div class="text-block-pdll">
+  <h4><%= @races.where(department: Race::REGIONS['pdll']).count %></h4>
+</div>
 <div id="pdll-hover" class="hidden" >
   <a href="/races?utf8=✓&region=pdll#race-result">
-    <img src="<%=image_path "pdll.png"  %>" alt="pdll">
+    <%= image_tag "pdll.png" %>
   </a>
-  <div class="text-block-pdll">
-    <h4><%= @races.where(department: Race::REGIONS['pdll']).count %></h4>
-  </div>
 </div>
 
 <area
@@ -226,7 +226,7 @@ COORDS="518,390, 516,394, 518,398, 522,402, 522,408, 519,406, 506,410, 505,413, 
 
 <div id="paca-hover" class="hidden" >
   <a href="/races?utf8=✓&region=paca#race-result">
-    <img src="<%=image_path "paca.png"  %>" alt="paca">
+    <%= image_tag "paca.png" %>
   </a>
   <div class="text-block-paca">
     <h4><%= @races.where(department: Race::REGIONS['paca']).count %></h4>

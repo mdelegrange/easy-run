@@ -128,17 +128,17 @@ cvdlImage.addEventListener('mouseleave', (event) => {
 //   oImage.classList.add("hidden");
 // })
 
-// //pdll-hover
-// const pdll = document.getElementById("pdll");
-// const pdllImage = document.getElementById("pdll-hover")
+//pdll-hover
+const pdll = document.getElementById("pdll");
+const pdllImage = document.getElementById("pdll-hover")
 
-// pdll.addEventListener('mouseenter', (event) => {
-//   pdllImage.classList.remove("hidden");
-// })
+pdll.addEventListener('mouseenter', (event) => {
+  pdllImage.classList.remove("hidden");
+})
 
-// pdllImage.addEventListener('mouseleave', (event) => {
-//   pdllImage.classList.add("hidden");
-// })
+pdllImage.addEventListener('mouseleave', (event) => {
+  pdllImage.classList.add("hidden");
+})
 
 // //paca-hover
 // const paca = document.getElementById("paca");
