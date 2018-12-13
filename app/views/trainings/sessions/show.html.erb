@@ -4,8 +4,10 @@
       <h2 class="text-center">Détails de la session <%= @session.position%></h2>
       <hr></hr>
       <div class="training_session_show">
-        <h3><%= @session.kind%></h3>
+        <h3><%= @session.kind%> - <%= @session.subkind %></h3>
         <p><%= @session.description %></p>
+        <p><%= @session.week %></p>
+
         <hr>
         <%= link_to "Retour au plan d'entrainement",  training_path %>
         </div>
