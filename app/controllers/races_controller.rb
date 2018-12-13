@@ -55,11 +55,10 @@ class RacesController < ApplicationController
     @distance    = distance
     @begin_date  = @race.date.beginning_of_month.next_month(- @month_before_marathon).strftime('%F')
     @end_date    = @race.date.end_of_month.next_month(- @month_before_marathon).strftime('%F')
-    if @distance == 10_000
-      Race.where("date BETWEEN ? AND ? AND distance = ?", @begin_date, @end_date, @distance)
-    elsif @distance == 21_100 || @distance == 21_097
-      Race.where("date BETWEEN ? AND ? AND distance = ? OR distance = ?", @begin_date, @end_date, 21_000, 21_097)
-    end
+    @region      = Race::REGIONS.find { |key, values| values.include?(@race.department)}.first
+    @departments = Race::REGIONS[@region]
+    Race.where("date BETWEEN ? AND ? AND distance = ? AND department = ?", @begin_date, @end_date, @distance, @departments)
+
   end
 
   def suggest_races_marathon(distance, month_before_marathon)
