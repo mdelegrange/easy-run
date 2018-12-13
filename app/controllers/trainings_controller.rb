@@ -9,7 +9,8 @@ class TrainingsController < ApplicationController
     @training = Training.new(
       user_id: current_user.id,
       training_plan_id: TrainingPlan.first.id,
-      begin_date: Race.find(current_user.objectives.first.race_id).date - 126
+      begin_date: Race.find(current_user.objectives.first.race_id).date - 126,
+      status: 'current'
       )
     if @training.save
 
