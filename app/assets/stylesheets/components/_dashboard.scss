@@ -24,11 +24,14 @@
 .dash-cards {
   // width: 500px;
   align-self: flex-start;
+
+
 }
 
 .dash-card {
   align-self: flex-start;
   width: 500px;
+
 }
 
 .load-bar-back{
@@ -41,13 +44,16 @@
   box-shadow: inset 1px 2px 4px #e6e6e6;
 }
 
-.load-bar-front{
-  width:30px;
-  height:25%;
-  border-radius:20px;
-  background: linear-gradient(#0acffe 0%, #495aff 100%);
-
+.timeline-bar{
+  width: 8px;
+  height:100%;
+  margin: 0px 40px 10px 20px;
+  // border:1px solid $grey;
+  border-radius:25px;
+  overflow:hidden;
+  background: $grey;
 }
+
 
 .load-bar-back-hor{
   width:100%;
@@ -134,11 +140,12 @@
 
 .add-race {
   margin-top:20px;
+  margin-bottom: 20px;
+  text-align: right;
+
   a {
     text-decoration: none;
-    font-family: 'Raleway';
-    font-size: 20px;
-    color: $grey;
+    font-size: 14px;
   }
 }
 
