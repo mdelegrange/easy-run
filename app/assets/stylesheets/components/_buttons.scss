@@ -30,28 +30,20 @@
   }
 }
 
-.btn-suivant {
-  position: absolute;
-  bottom: 120px;
-  right: 10px;
+.btn-bar-one {
+  width: 100%;
+  justify-content: end;
+  margin-top: 60px;
+  text-align: right;
+
+
 }
 
-.btn-precedent {
-  position: absolute;
-  bottom: 120px;
-  left: 10px;
-}
-
-.btn-precedent-deux {
-  position: absolute;
-  bottom: -60px;
-  left: 10px;
-}
-
-.btn-valider {
-  position: absolute;
-  bottom: -60px;
-  right: 10px;
+.btn-bar {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
 }
 
 .btn-runs-valid {
