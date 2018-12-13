@@ -19,6 +19,7 @@
     margin: 0 0 5px 0;
     font-family: 'Raleway';
   }
+
 }
 
 .dash-card-race-detail {
@@ -82,12 +83,21 @@
 }
 
 .dash-date-card {
+  position: relative;
   width: 160px;
   height: 160px;
   background: white;
   border: 1.5px solid $green;
   margin-top: 10px;
   border-radius:8px;
+  &::after {
+    content: '–';
+    font-size: 70px;
+    position: absolute;
+    bottom: 80px;
+    left: -50px;
+    color: $grey;
+  }
 }
 
 .dash-date {

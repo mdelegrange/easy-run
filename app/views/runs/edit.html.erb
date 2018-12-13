@@ -1,4 +1,4 @@
-<div class = "banner_index_races" style="background-image: linear-gradient(to right, rgba(10, 207, 254, 0.7) 0%, rgba(73, 90, 255, 0.7) 100%), url(<%= image_path 'home-run.jpg'%>);">
+<div class = "banner_index_switch" style="background-image: linear-gradient(to right, rgba(10, 207, 254, 0.7) 0%, rgba(73, 90, 255, 0.7) 100%), url(<%= image_path 'home-run.jpg'%>);">
   <div class="dash-flexbox dash-flex-column text-center">
       <h1 style="color: white">Changez de course</h1>
      <!--  <%#= form_tag races_path, class: "form-inline", method: :get do %>
@@ -26,7 +26,12 @@
                   <h3><%=race.event_name %></h3>
 
                 </div>
-                <p><%=Race::DISTANCES[race.distance.to_s]%></p>
+                <p>
+                  <% if Race::DISTANCES[race.distance.to_s].nil?  %>
+                    <%= race.distance.to_s %> m
+                  <% end %>
+                    <%=Race::DISTANCES[race.distance.to_s]%>
+                </p>
                 <% if Race::DEPARTMENTS.key(race.department).nil? %>
                   <h5><i class="fas fa-map-marker-alt"></i> -- </h5>
                 <% else %>
