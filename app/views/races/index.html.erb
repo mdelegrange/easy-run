@@ -27,6 +27,7 @@
               <div class="card-race-results card-race-results-<%=race.distance%>">
                 <div class="card-race-results-detail card-race-results-detail-<%=race.distance%>">
                   <h3><%=race.event_name %></h3>
+                  <h5><em><%=race.name %></em> </h5>
                 </div>
                 <p><%=Race::DISTANCES[race.distance.to_s]%></p>
                 <% if Race::DEPARTMENTS.key(race.department).nil? %>
@@ -61,6 +62,7 @@
                       <div class="card-race-results card-race-results-<%=race.distance%>">
                         <div class="card-race-results-detail card-race-results-detail-<%=race.distance%>">
                           <h3><%=race.event_name %></h3>
+                          <h5><em><%=race.name %></em> </h5>
                         </div>
                         <p><%=Race::DISTANCES[race.distance.to_s]%></p>
                         <% if Race::DEPARTMENTS.key(race.department).nil? %>
@@ -76,6 +78,9 @@
                       </div>
                     </div>
                   </div>
+                  <%= link_to race.url, target: "_blank" do  %>
+                        <p><i class="fas fa-eye"></i> Plus d'infos sur la course</p>
+                      <% end %>
                   <h5> Nous allons vous proposer d'autres courses qui vous permettront d'atteindre cet objectif </h5s>
                 </div>
               <div class="modal-footer">

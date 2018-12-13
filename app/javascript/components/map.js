@@ -1,49 +1,50 @@
-// const ara = document.getElementById("ara");
-// const araImage = document.getElementById("ara-hover")
+const ara = document.getElementById("ara");
+if (ara) {
 
-// ara.addEventListener('mouseenter', (event) => {
-//   araImage.classList.remove("hidden");
-// })
+const araImage = document.getElementById("ara-hover")
 
-// araImage.addEventListener('mouseleave', (event) => {
-//   araImage.classList.add("hidden");
-// })
+ara.addEventListener('mouseenter', (event) => {
+  araImage.classList.remove("hidden");
+})
 
-// const bfc = document.getElementById("bfc");
-// const bfcImage = document.getElementById("bfc-hover")
+araImage.addEventListener('mouseleave', (event) => {
+ araImage.classList.add("hidden");
+})
 
-// bfc.addEventListener('mouseenter', (event) => {
-//   bfcImage.classList.remove("hidden");
-// })
+const bfc = document.getElementById("bfc");
+const bfcImage = document.getElementById("bfc-hover")
 
-// bfcImage.addEventListener('mouseleave', (event) => {
-//   bfcImage.classList.add("hidden");
-// })
+bfc.addEventListener('mouseenter', (event) => {
+  bfcImage.classList.remove("hidden");
+})
+
+bfcImage.addEventListener('mouseleave', (event) => {
+  bfcImage.classList.add("hidden");
+})
 
 
-// //b-hover
-// const b = document.getElementById("b");
-// const bImage = document.getElementById("b-hover")
+const b = document.getElementById("b");
+const bImage = document.getElementById("b-hover")
 
-// b.addEventListener('mouseenter', (event) => {
-//   bImage.classList.remove("hidden");
-// })
+b.addEventListener('mouseenter', (event) => {
+  bImage.classList.remove("hidden");
+})
 
-// bImage.addEventListener('mouseleave', (event) => {
-//   bImage.classList.add("hidden");
-// })
+bImage.addEventListener('mouseleave', (event) => {
+  bImage.classList.add("hidden");
+})
 
-// //cvdl-hover
-// const cvdl = document.getElementById("cvdl");
-// const cvdlImage = document.getElementById("cvdl-hover")
+//cvdl-hover
+const cvdl = document.getElementById("cvdl");
+const cvdlImage = document.getElementById("cvdl-hover")
 
-// cvdl.addEventListener('mouseenter', (event) => {
-//   cvdlImage.classList.remove("hidden");
-// })
+cvdl.addEventListener('mouseenter', (event) => {
+  cvdlImage.classList.remove("hidden");
+})
 
-// cvdlImage.addEventListener('mouseleave', (event) => {
-//   cvdlImage.classList.add("hidden");
-// })
+cvdlImage.addEventListener('mouseleave', (event) => {
+  cvdlImage.classList.add("hidden");
+})
 
 // //c-hover
 // const c = document.getElementById("c");
@@ -129,17 +130,17 @@
 //   oImage.classList.add("hidden");
 // })
 
-// //pdll-hover
-// const pdll = document.getElementById("pdll");
-// const pdllImage = document.getElementById("pdll-hover")
+//pdll-hover
+const pdll = document.getElementById("pdll");
+const pdllImage = document.getElementById("pdll-hover")
 
-// pdll.addEventListener('mouseenter', (event) => {
-//   pdllImage.classList.remove("hidden");
-// })
+pdll.addEventListener('mouseenter', (event) => {
+  pdllImage.classList.remove("hidden");
+})
 
-// pdllImage.addEventListener('mouseleave', (event) => {
-//   pdllImage.classList.add("hidden");
-// })
+pdllImage.addEventListener('mouseleave', (event) => {
+  pdllImage.classList.add("hidden");
+})
 
 // //paca-hover
 // const paca = document.getElementById("paca");
@@ -152,3 +153,6 @@
 // pacaImage.addEventListener('mouseleave', (event) => {
 //   pacaImage.classList.add("hidden");
 // })
+}
+
+
