@@ -1,49 +1,48 @@
-// const ara = document.getElementById("ara");
-// const araImage = document.getElementById("ara-hover")
+const ara = document.getElementById("ara");
+const araImage = document.getElementById("ara-hover")
 
-// ara.addEventListener('mouseenter', (event) => {
-//   araImage.classList.remove("hidden");
-// })
+ara.addEventListener('mouseenter', (event) => {
+  araImage.classList.remove("hidden");
+})
 
-// araImage.addEventListener('mouseleave', (event) => {
-//   araImage.classList.add("hidden");
-// })
+araImage.addEventListener('mouseleave', (event) => {
+ araImage.classList.add("hidden");
+})
 
-// const bfc = document.getElementById("bfc");
-// const bfcImage = document.getElementById("bfc-hover")
+const bfc = document.getElementById("bfc");
+const bfcImage = document.getElementById("bfc-hover")
 
-// bfc.addEventListener('mouseenter', (event) => {
-//   bfcImage.classList.remove("hidden");
-// })
+bfc.addEventListener('mouseenter', (event) => {
+  bfcImage.classList.remove("hidden");
+})
 
-// bfcImage.addEventListener('mouseleave', (event) => {
-//   bfcImage.classList.add("hidden");
-// })
+bfcImage.addEventListener('mouseleave', (event) => {
+  bfcImage.classList.add("hidden");
+})
 
 
-// //b-hover
-// const b = document.getElementById("b");
-// const bImage = document.getElementById("b-hover")
+const b = document.getElementById("b");
+const bImage = document.getElementById("b-hover")
 
-// b.addEventListener('mouseenter', (event) => {
-//   bImage.classList.remove("hidden");
-// })
+b.addEventListener('mouseenter', (event) => {
+  bImage.classList.remove("hidden");
+})
 
-// bImage.addEventListener('mouseleave', (event) => {
-//   bImage.classList.add("hidden");
-// })
+bImage.addEventListener('mouseleave', (event) => {
+  bImage.classList.add("hidden");
+})
 
-// //cvdl-hover
-// const cvdl = document.getElementById("cvdl");
-// const cvdlImage = document.getElementById("cvdl-hover")
+//cvdl-hover
+const cvdl = document.getElementById("cvdl");
+const cvdlImage = document.getElementById("cvdl-hover")
 
-// cvdl.addEventListener('mouseenter', (event) => {
-//   cvdlImage.classList.remove("hidden");
-// })
+cvdl.addEventListener('mouseenter', (event) => {
+  cvdlImage.classList.remove("hidden");
+})
 
-// cvdlImage.addEventListener('mouseleave', (event) => {
-//   cvdlImage.classList.add("hidden");
-// })
+cvdlImage.addEventListener('mouseleave', (event) => {
+  cvdlImage.classList.add("hidden");
+})
 
 // //c-hover
 // const c = document.getElementById("c");
