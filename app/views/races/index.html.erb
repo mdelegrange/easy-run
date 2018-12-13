@@ -10,18 +10,18 @@
   <div class="row">
     <% if params[:region].nil? %>
       <% races_to_display = @races %>
-        <% if races_to_display.count.zero? %>
-          <h3 style="color: #376996; margin-bottom: 400px" class="text-center">Il n'y a pas de course correspondant à votre niveau prochainement</h3>
-        <% end %>
     <% else %>
-      <h3 style="color: #376996; margin-bottom: 400px" class="text-center">Il n'y a pas de course correspondant à votre objectif prochainement <%= @regions_full_name[params[:region]] %></h3>
       <% races_to_display = @races.where(department: Race::REGIONS[params[:region]]) %>
     <% end %>
 
     <% if races_to_display.count.zero? %>
-      <h3 style="color: #376996; margin-bottom: 400px" class="text-center">Il n'y a pas de course correspondant à votre objectif prochainement <%= @regions_full_name[params[:region]] %></h3>
+      <% if params[:region].nil? %>
+        <h3 class="text-center">Il n'y a pas de course correspondant à votre objectif prochainement. %></h3>
+      <% else %>
+        <h3 class="text-center">Il n'y a pas de course correspondant à votre objectif prochainement <%= @regions_full_name[params[:region]] %>.</h3>
+      <% end %>
     <% else %>
-      <h3 style="color: #376996; margin-bottom: 400px" class="text-center"><%= pluralize(races_to_display.count, 'course') %> correspondant à votre objectif prochainement <%= @regions_full_name[params[:region]] %></h3>
+      <h3 class="text-center"><%= pluralize(races_to_display.count, 'course') %> correspondant à votre objectif prochainement <%= @regions_full_name[params[:region]] %>.</h3>
       <% races_to_display.each do |race| %>
         <%= link_to race_objectives_path(race), "data-toggle" => "modal", 'data-target' => "#raceModal-#{race.id}"  do %>
           <div class="col-xs-12 col-sm-3">
