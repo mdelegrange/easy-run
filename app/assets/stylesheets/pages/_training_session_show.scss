@@ -1,65 +1,8 @@
 .training_session_show {
   padding: 10px 30px 30px 30px;
-  // background-color: white;
-  // margin: 10px;
-  // // width: px;
-  // border-radius: 4px;
-  // box-shadow: 1px 1px 4px #E6E6E6;
-  hr {
-  margin-top: 10px;
-  margin-bottom: 10px;
-  border: 0;
-  border-top: 1px solid #150808;
-  color:  black;
-  }
-  h3 {
-    color: black;
-  }
-  p{
-    color: black;
-    // width: 70%;
-    }
-  }
-
-a {
-  color: black;
-  margin-top: 10px;
-  margin-bottom: 10px;
-
-}
-
-a:hover {
-  color:black;
-}
-
-
-
-.wrapper {
-  padding: -1px 30px 0px 0px;
   background-color: white;
-  margin: 0px;
+  margin: 10px;
   // width: px;
-  border-radius: 8px;
+  border-radius: 4px;
   box-shadow: 1px 1px 4px #E6E6E6;
-  display: flex;
-  position: relative;
-  justify-content: center;
-  width: 800px;
 }
-  .img {
-    border-radius: 1%;
-    margin-top: 0px;
-    margin-bottom: 0px;
-    min-width: 320px;
-    min-height: 320px;
-    height: 100%;
-    width: 100%;
-    background-size: cover !important;
-    // background-image: linear-gradient(rgb(10, 207, 254) 0%, rgb(73, 90, 255) 100%);
-  }
-
-.text-center {
-  color: black;
-  //simple format to align the text
-}
-
