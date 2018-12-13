@@ -98,8 +98,6 @@ training = Training.create!(user: user1, training_plan: training_plan1, begin_da
 
 puts "Training Created"
 
-TrainingSession::SESSIONS.each_slice(3).to_a.each_with_index{|training_week, index| training_week.each{|training| training.update(week: index + 1)}}
-
 #Training Sessions
 training_sessions_all = TrainingSession::SESSIONS.each do |training_session_data|
    training_session               = TrainingSession.new(training_session_data)
