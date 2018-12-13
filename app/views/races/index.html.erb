@@ -2,7 +2,7 @@
 <div class = "banner_index_races" style="background-image: linear-gradient(to right, rgba(10, 207, 254, 0.7) 0%, rgba(73, 90, 255, 0.7) 100%), url(<%= image_path 'home-run.jpg'%>);">
   <div class="text-center">
     <h1 style="color: white; font-family: 'Fredoka One';"><%= @races.count %> courses correspondent à votre objectif</h1>
-    <h2 style="color: white; font-family: 'Raleway'; font-weight: 'light';">Choisissez une région</h2>
+    <h2 style="color: white; font-family: 'Raleway'; font-weight: 'light'; font-size: 35px;">Choisissez une région</h2>
     <%= render 'shared/map' %>
   </div>
 </div>
@@ -14,12 +14,14 @@
           <h3 style="color: #376996; margin-bottom: 400px" class="text-center">Il n'y a pas de course correspondant à votre niveau prochainement</h3>
         <% end %>
     <% else %>
+      <h3 style="color: #376996; margin-bottom: 400px" class="text-center">Il n'y a pas de course correspondant à votre objectif prochainement <%= @regions_full_name[params[:region]] %></h3>
       <% races_to_display = @races.where(department: Race::REGIONS[params[:region]]) %>
     <% end %>
 
     <% if races_to_display.count.zero? %>
-      <h3 style="color: #376996; margin-bottom: 400px" class="text-center">Il n'y a pas de course correspondant à votre recherche</h3>
+      <h3 style="color: #376996; margin-bottom: 400px" class="text-center">Il n'y a pas de course correspondant à votre objectif prochainement <%= @regions_full_name[params[:region]] %></h3>
     <% else %>
+      <h3 style="color: #376996; margin-bottom: 400px" class="text-center"><%= pluralize(races_to_display.count, 'course') %> correspondant à votre objectif prochainement <%= @regions_full_name[params[:region]] %></h3>
       <% races_to_display.each do |race| %>
         <%= link_to race_objectives_path(race), "data-toggle" => "modal", 'data-target' => "#raceModal-#{race.id}"  do %>
           <div class="col-xs-12 col-sm-3">
