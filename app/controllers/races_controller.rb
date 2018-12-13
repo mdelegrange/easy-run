@@ -5,6 +5,21 @@ class RacesController < ApplicationController
   def index
     @objective = current_user.objectives.last
     @departments_options = Race::DEPARTMENTS.map { |label, value| [label, value] }
+    @regions_full_name = {
+      "ara" => "en Auvergne Rhône-Alpes",
+      "bfc"=> "en Bourgogne Franche-Comté",
+      "b"=> "en Bretagne",
+      "cvdl"=> "dans le Centre Val de Loire",
+      "c"=> "en Corse",
+      "ge"=> "dans le Grand Est",
+      "hdf"=> "dans les Hauts de France",
+      "idf"=> "en Ile de France",
+      "n"=> "en Normandie",
+      "na"=> "en Nouvelle Aquitaine",
+      "o"=> "en Occitanie",
+      "pdll"=> "dans les Pays de la Loire",
+      "paca"=> "en Provence Alpes Côte d'Azur"
+    }
 
     if @user.level == "DEBUTANT"
       @races = suggest_races_marathon(@user.targeted_distance, 12)

@@ -1,24 +1,15 @@
 // @import url(font-awesome.min.css);
-@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic,800,800italic");
 
 
-.home-main-container h1, h2, h3, h4, p {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline;}
 
 .home-main-container {
-    color: #fff;
-    font-family: "Open Sans", Helvetica, sans-serif;
+  width: 100%;
+    color: $blue-dark;
     font-size: 15pt;
     font-weight: 400;
-    letter-spacing: 0.075em;
-    line-height: 1.65em;
+
     h1, h2 {
-    color: #fff;
+    color: $blue-dark;
     font-weight: 800;
     letter-spacing: 0.225em;
     line-height: 1em;
@@ -83,7 +74,7 @@
     }
 
     .label_color {
-      color: #0041c5;
+      color: $blue-dark;
       font-weight: bold;
     }
 
@@ -187,11 +178,11 @@
     }
 
       .wrapper.style1 h2 {
-        color: #004ada;
+        color: $blue-dark;
       }
 
      .wrapper.style1 header.major p {
-        color: #00065d;
+        color: $blue-dark;
       }
 
      .wrapper.style2 {
