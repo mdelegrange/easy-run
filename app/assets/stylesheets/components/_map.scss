@@ -7,7 +7,7 @@
 
 .text-block-ara {
   position: absolute;
-  top: 345px;
+  top: 355px;
   left: 439px;
   h4 {
     font-family: 'Fredoka One';
@@ -25,7 +25,7 @@
 
 .text-block-bfc {
   position: absolute;
-  top: 240px;
+  top: 249px;
   left: 439px;
   color: $blue-dark;
   h4 {
@@ -44,8 +44,8 @@
 
 .text-block-b {
   position: absolute;
-  top: 168px;
-  left: 109px;
+  top: 175px;
+  left: 115px;
   color: $blue-dark;
   h4 {
     font-family: 'Fredoka One';
@@ -63,7 +63,7 @@
 
 .text-block-cvdl {
   position: absolute;
-  top: 212px;
+  top: 221px;
   left: 302px;
   color: $blue-dark;
   h4 {
@@ -73,70 +73,112 @@
     }
 }
 
+#c-hover {
+  position:relative;
+  top:528px;
+  left:525px;
+  opacity: 0.7;
+}
+
 .text-block-c {
   position: absolute;
-  top: 330px;
-  right: 150px;
+  top: 560px;
+  left: 542px;
   color: $blue-dark;
   h4 {
     font-family: 'Fredoka One';
     font-size: 25px;
     color: $blue-dark;
     }
+}
+
+#ge-hover {
+  position:relative;
+  top:74px;
+  left:387px;
+  opacity: 0.7;
 }
 
 .text-block-ge {
   position: absolute;
-  top: 330px;
-  right: 150px;
+  top: 147px;
+  left: 469px;
   color: $blue-dark;
   h4 {
     font-family: 'Fredoka One';
     font-size: 25px;
     color: $blue-dark;
     }
+}
+
+#hdf-hover {
+  position:relative;
+  top:16px;
+  left:304px;
+  opacity: 0.7;
 }
 
 .text-block-hdf {
   position: absolute;
-  top: 330px;
-  right: 150px;
+  top: 69px;
+  left: 352px;
   color: $blue-dark;
   h4 {
     font-family: 'Fredoka One';
     font-size: 25px;
     color: $blue-dark;
     }
+}
+
+#idf-hover {
+  position:relative;
+  top:135px;
+  left:306px;
+  opacity: 0.7;
 }
 
 .text-block-idf {
   position: absolute;
-  top: 330px;
-  right: 150px;
+  top: 148px;
+  left: 342px;
   color: $blue-dark;
   h4 {
     font-family: 'Fredoka One';
     font-size: 25px;
     color: $blue-dark;
     }
+}
+
+#n-hover {
+  position:relative;
+  top:81px;
+  left:167px;
+  opacity: 0.7;
 }
 
 .text-block-n {
   position: absolute;
-  top: 330px;
-  right: 150px;
+  top: 131px;
+  left: 239px;
   color: $blue-dark;
   h4 {
     font-family: 'Fredoka One';
     font-size: 25px;
     color: $blue-dark;
     }
+}
+
+#na-hover {
+  position:relative;
+  top:265px;
+  left:153px;
+  opacity: 0.7;
 }
 
 .text-block-na {
   position: absolute;
-  top: 330px;
-  right: 150px;
+  top: 358px;
+  left: 246px;
   color: $blue-dark;
   h4 {
     font-family: 'Fredoka One';
@@ -145,10 +187,17 @@
     }
 }
 
+#o-hover {
+  position:relative;
+  top:402px;
+  left:218px;
+  opacity: 0.7;
+}
+
 .text-block-o {
   position: absolute;
-  top: 330px;
-  right: 150px;
+  top:468px;
+  left:325px;
   color: $blue-dark;
   h4 {
     font-family: 'Fredoka One';
@@ -176,10 +225,17 @@
     }
 }
 
+#paca-hover {
+  position:relative;
+  top:392px;
+  left:431px;
+  opacity: 0.7;
+}
+
 .text-block-paca {
   position: absolute;
-  top: 330px;
-  right: 150px;
+  top: 449px;
+  left: 506px;
   color: $blue-dark;
   h4 {
     font-family: 'Fredoka One';
