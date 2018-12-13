@@ -5,13 +5,13 @@ class RunsController < ApplicationController
   def index
     @objective = current_user.objectives.last
     @runs = current_user.objectives.last.runs.sort_by { |run| run.race.date }
-    @race = @objective.race.date
+    @race = @objective.race
 
     if current_user.trainings.last.nil?
       @training_plan = nil
     else
       @training_plan = TrainingPlan.find(Training.find(current_user.training_ids).first.training_plan_id)
-       @end_training = current_user.trainings.last.training_plan.end_date
+       @end_training = @race.date
        @today = DateTime.now
        @week_diff = ((@end_training - @today).to_i) / 7
     end
