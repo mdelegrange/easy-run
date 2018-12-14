@@ -100,7 +100,7 @@
 
   </div>
   <div class="dash-flexbox dash-trainings dash-flex-column">
-    <% if current_user.trainings.last.nil? %>
+    <% if current_user.trainings.last.nil? || current_user.trainings.last.status == 'finished'%>
     <div class="training-nil">
       <div class="dash-title">
         <h1><span class="dash-percent">Mes entrainements</span></h1>
@@ -145,7 +145,9 @@
                   <h2 class="training-title"><%= training_session.kind %> - <strong><%= training_session.subkind %></strong></h2>
 
                   <p class="training_session_week_index"><strong><%= index + 1 %></strong> /3</p>
-                  <h5 class="training_session_position"><strong>SESSION <%= training_session.position %></strong></h5>                  <a role="button" data-toggle="collapse" data-parent="#accordion" aria-expanded="false" aria-controls="session-<%= training_session.id%>" class="btn btn-primary btn-secondary-er btn-details-dash" href="#session-<%= training_session.id%>">
+                  <h5 class="training_session_position"><strong>SESSION <%= training_session.position %></strong></h5>                  
+                <a role="button" data-toggle="collapse" data-parent="#accordion" aria-expanded="false" aria-controls="session-<%= training_session.id%>" class="btn btn-primary btn-secondary-er btn-details-dash" href="#session-<%= training_session.id%>">
+
                     <i class="fas fa-plus"></i> de details
                   </a>
 
@@ -164,7 +166,6 @@
         <% elsif @week_diff <= 18 && @week_diff >= 0 %>
           <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
             <% @training_plan.training_sessions.order(:position).each_slice(3).to_a[@week_diff - 1].each_with_index do |training_session, index| %>
-
                 <div class="dash-training-card dash-flexbox">
                   <% if training_session.kind.include? "Vitesse"  %>
                     <div class="dash-training-image" style="background-image: linear-gradient(to right, rgba(10, 207, 254, 0.7) 0%, rgba(73, 90, 255, 0.7) 100%), url(<%= image_path 'run-fast.jpg'%>);">
@@ -182,6 +183,7 @@
                     <a role="button" data-toggle="collapse" data-parent="#accordion" aria-expanded="false" aria-controls="session-<%= training_session.id%>" class="btn btn-primary btn-secondary-er btn-details-dash" href="#session-<%= training_session.id%>">
                       <i class="fas fa-plus"></i> de details
                     </a>
+
                   </div>
                 </div>
 

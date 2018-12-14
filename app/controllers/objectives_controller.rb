@@ -14,6 +14,9 @@ class ObjectivesController < ApplicationController
       status: "current"
     )
     if @objective.save
+      unless current_user.trainings.last.nil?
+        current_user.trainings.last.update(status: 'finished')
+      end
       #create_training
       create_run(@objective.id, params[:race_id], @race)
       # Suggested Races (distance: semi)
