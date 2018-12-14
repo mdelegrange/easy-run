@@ -12,7 +12,8 @@ class RunsController < ApplicationController
       @prev_week = @week - 1 if @week > 1
       @next_week = @week + 1 if @week < 18
     else
-      @week = 1 + (Date.parse('monday')- current_user.trainings.last.begin_date).to_i/7
+      begin_date = (Date.parse('monday') - current_user.trainings.last.begin_date).to_i / 7
+      @week = params[:week] ? params[:week].to_i : begin_date
       @prev_week = @week - 1 if @week > 1
       @next_week = @week + 1 if @week < 18
     end

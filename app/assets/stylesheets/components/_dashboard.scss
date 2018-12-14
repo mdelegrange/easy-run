@@ -12,6 +12,14 @@
   font-family: 'Raleway';
   font-weight: light;
   text-decoration: none;
+  i:first-child {
+    margin-right: 35px;
+
+  }
+  i:last-child {
+    margin-left: 35px;
+
+  }
 }
 
 .week-navigator {
@@ -208,7 +216,7 @@
 .training_session_position {
   position: absolute;
   opacity: 0.2;
-  font-size: 82px;
+  font-size: 80px;
   font-family: $font-family;
   bottom: 50px;
   left: 5px;
