@@ -5,6 +5,20 @@
 
 }
 
+.week-number {
+  color: $blue-dark;
+  font-size: 20px;
+  margin-left: 15px;
+  font-family: 'Raleway';
+  font-weight: light;
+  text-decoration: none;
+}
+
+.week-navigator {
+  color: $blue-dark;
+  font-size: 20px;
+  text-decoration: none;
+}
 
 .dash-flex-column {
   flex-direction: column;
@@ -193,7 +207,7 @@
 
 .training_session_position {
   position: absolute;
-  opacity: 0.05;
+  opacity: 0.2;
   font-size: 95px;
   font-family: $font-family;
   bottom: 45px;
@@ -221,4 +235,8 @@
 
 .dash-training-card-container {
   position: relative;
+}
+
+.training-nil {
+  text-align: center;
 }
