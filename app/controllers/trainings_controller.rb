@@ -29,4 +29,5 @@ class TrainingsController < ApplicationController
     delta = date > Date.today ? 0 : 7
     date + delta
   end
+
 end
