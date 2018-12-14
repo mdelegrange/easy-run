@@ -1,12 +1,18 @@
 <div class="container">
   <div class="row">
-    <div class="col-xs-12 col-md-6 col-md-offset-3">
+    <div class="col-xs-12">
       <h2 class="text-center">Détails de la session <%= @session.position%></h2>
       <div class="wrapper">
         <!-- <div class="flex"> -->
-        <div class="img" style="
+        <% if @session.kind.include?"Vitesse" %>
+        <div class="img-session" style="
         background-image: linear-gradient(to right, rgba(10, 207, 254, 0.7) 0%, rgba(73, 90, 255, 0.7) 100%), url(<%= image_path 'run-fast.jpg'%>);
         "></div>
+        <% else %>
+        <div class="img-session" style="
+        background-image: linear-gradient(to right, rgba(10, 207, 254, 0.7) 0%, rgba(73, 90, 255, 0.7) 100%), url(<%= image_path 'run-far.jpg'%>);
+        "></div>
+        <% end %>
       <div class="training_session_show">
         <h3><%= @session.kind%> - <%= @session.subkind %></h3>
         <hr></hr>
