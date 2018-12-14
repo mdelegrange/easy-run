@@ -217,15 +217,24 @@
 
 .dash-training-desc-text {
   background: white;
-    margin-left: 253px;
-    padding-left: 30px;
-    padding-top: 15px;
-    margin-top: -8px;
+    bottom: 0px;
+    left: 225px;
+    // margin-left: 253px;
+    // padding-left: 30px;
+    // padding-top: 15px;
+    // margin-top: -8px;
     padding-bottom: 15px;
-    width: 520px;
+    width: 584px;
     border-radius: 5px;
     letter-spacing: 1px;
     opacity: 0.8;
+    p {
+      font-size: 15px;
+    }
+}
+
+.dash-training-card-container {
+  position: relative;
 }
 
 .training-nil {
