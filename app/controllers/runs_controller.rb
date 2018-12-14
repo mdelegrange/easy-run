@@ -7,16 +7,6 @@ class RunsController < ApplicationController
     @runs = current_user.objectives.last.runs.sort_by { |run| run.race.date }
     race = @objective.race
 
-    if current_user.trainings.last.begin_date > Date.today
-      @week = params[:week] ? params[:week].to_i : 1
-      @prev_week = @week - 1 if @week > 1
-      @next_week = @week + 1 if @week < 18
-    else
-      begin_date = (Date.parse('monday') - current_user.trainings.last.begin_date).to_i / 7
-      @week = params[:week] ? params[:week].to_i : begin_date
-      @prev_week = @week - 1 if @week > 1
-      @next_week = @week + 1 if @week < 18
-    end
 
     if current_user.trainings.last.nil?
       @training_plan = nil
@@ -24,7 +14,16 @@ class RunsController < ApplicationController
       @training_plan = TrainingPlan.find(Training.find(current_user.training_ids).first.training_plan_id)
       @end_training = current_user.trainings.last.begin_date + (7 * 18)
       @today = DateTime.now
-      @week_diff = (((@end_training - @today).to_i) / 7)-17 + 1
+      if current_user.trainings.last.begin_date > Date.today
+        @week = params[:week] ? params[:week].to_i : 1
+        @prev_week = @week - 1 if @week > 1
+        @next_week = @week + 1 if @week < 18
+      else
+        begin_date = (Date.parse('monday') - current_user.trainings.last.begin_date).to_i / 7
+        @week = params[:week] ? params[:week].to_i : begin_date
+        @prev_week = @week - 1 if @week > 1
+        @next_week = @week + 1 if @week < 18
+      end
     end
 
   end
