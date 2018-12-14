@@ -9,7 +9,7 @@ class TrainingsController < ApplicationController
     @training = Training.new(
       user_id: current_user.id,
       training_plan_id: TrainingPlan.first.id,
-      begin_date: Race.find(current_user.objectives.first.race_id).date - 126,
+      begin_date: next_monday,
       status: 'current'
       )
     if @training.save
@@ -20,5 +20,13 @@ class TrainingsController < ApplicationController
 
       redirect_to objective_runs_path(current_user.objectives.last)
     end
+  end
+
+  private
+
+  def next_monday
+    date  = Date.parse('monday')
+    delta = date > Date.today ? 0 : 7
+    date + delta
   end
 end
