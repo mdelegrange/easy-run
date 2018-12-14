@@ -25,7 +25,6 @@
 }
 
 .dash-races {
-  width: 500px;
   margin: 20px 10px 20px 40px;
   padding: 10px 20px;
 }
@@ -208,9 +207,9 @@
 .training_session_position {
   position: absolute;
   opacity: 0.2;
-  font-size: 95px;
+  font-size: 82px;
   font-family: $font-family;
-  bottom: 45px;
+  bottom: 50px;
   left: 5px;
   color: $blue-dark;
 }
