@@ -108,28 +108,29 @@
         <p>Pour une accéder à votre planning d'entrainement vous pouvez valider vos courses.</p>
         </div>
       </div>
-        <%= link_to training_path, method: :post  do %>
-            <div class="btn btn-primary btn-primary-er btn-runs-valid">
-              VALIDER MES COURSES
-          </div>
-        <% end %>
+      <%= link_to training_path, method: :post  do %>
+        <div class="btn btn-primary btn-primary-er btn-runs-valid">
+          VALIDER MES COURSES
+        </div>
+      <% end %>
+    </div>
+    <% else %>
+      <div class="dash-title">
+        <h1><span class="dash-percent">Mes entrainements</span></h1>
       </div>
-      <% else %>
-        <div class="dash-title">
-          <h1><span class="dash-percent">Mes entrainements</span></h1>
+      <div>
+        <div class="load-bar-back-hor">
+          <% if @week_diff > 18  %>
+            <div id="load-bar-hor" class="load-bar-front-hor" style="width:  0%;"></div>
+          <% elsif  @week_diff <= 18 && @week_diff >= 0 %>
+            <div id="load-bar-hor" class="load-bar-front-hor" style="width: <%= 18 - @week_diff * 5.5%>%;"></div>
+          <% else%>
+            <div id="load-bar-hor" class="load-bar-front-hor" style="width: 0%;"></div>
+          <% end %>
         </div>
-        <div>
-          <div class="load-bar-back-hor">
-            <% if @week_diff > 18  %>
-              <div id="load-bar-hor" class="load-bar-front-hor" style="width:  0%;"></div>
-            <% elsif  @week_diff <= 18 && @week_diff >= 0 %>
-              <div id="load-bar-hor" class="load-bar-front-hor" style="width: <%= 18 - @week_diff * 5.5%>%;"></div>
-            <% else%>
-              <div id="load-bar-hor" class="load-bar-front-hor" style="width: 0%;"></div>
-            <% end %>
-          </div>
-        </div>
-        <% if @week_diff > 18  %>
+      </div>
+      <h3 class="week-number">Semaine <%= @week_diff %> / 18 - Du <%= (current_user.trainings.last.begin_date + 7 * (@week_diff - 1)).strftime('%d/%m/%Y') %> au <%= (current_user.trainings.last.begin_date + 7 * (@week_diff-1) + 6).strftime('%d/%m/%Y') %></h3>
+      <% if @week_diff > 18  %>
         <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
           <% @training_plan.training_sessions.order(:position).each_slice(3).to_a.last.each_with_index do |training_session, index| %>
 
@@ -145,7 +146,7 @@
                   <h2 class="training-title"><%= training_session.kind %> - <strong><%= training_session.subkind %></strong></h2>
 
                   <p class="training_session_week_index"><strong><%= index + 1 %></strong> /3</p>
-                  <h5 class="training_session_position"><strong>SESSION <%= training_session.position %></strong></h5>                  
+                  <h5 class="training_session_position"><strong>SESSION <%= training_session.position %></strong></h5>
                 <a role="button" data-toggle="collapse" data-parent="#accordion" aria-expanded="false" aria-controls="session-<%= training_session.id%>" class="btn btn-primary btn-secondary-er btn-details-dash" href="#session-<%= training_session.id%>">
 
                     <i class="fas fa-plus"></i> de details

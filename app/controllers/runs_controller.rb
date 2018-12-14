@@ -11,9 +11,9 @@ class RunsController < ApplicationController
       @training_plan = nil
     else
       @training_plan = TrainingPlan.find(Training.find(current_user.training_ids).first.training_plan_id)
-      @end_training = race.date
+      @end_training = current_user.trainings.last.begin_date + (7 * 18)
       @today = DateTime.now
-      @week_diff = (((@end_training - @today).to_i) / 7)- 18
+      @week_diff = (((@end_training - @today).to_i) / 7)-17 + 2
     end
   end
 
