@@ -35,9 +35,6 @@ class RunsController < ApplicationController
     @distances_options = Race::DISTANCES.map { |label, value| [value, label] }
   end
 
-  def show
-  end
-
   def create
     @objective = current_user.objectives.last
     @race = Race.find(params[:race_id])
@@ -76,10 +73,7 @@ class RunsController < ApplicationController
     region      = Race::REGIONS.find { |key, values| values.include?(@run.race.department) }.first
     departments = Race::REGIONS[region]
 
-
     @switch_runs = Race.where("date BETWEEN ? AND ? AND distance BETWEEN ? AND ?", begin_date, end_date, 0.75*@run.race.distance, 1.25*@run.race.distance).where(department: departments).where.not(id: @run.race.id)
-
-
   end
 
   def update

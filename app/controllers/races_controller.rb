@@ -31,33 +31,6 @@ class RacesController < ApplicationController
 
   end
 
-  def show
-    @race = Race.find(params[:id])
-    @objective = current_user.objectives.last
-    @departments_options = Race::DEPARTMENTS.map { |label, value| [label, value] }
-    @races = Race.all
-
-    # Race before 1 month of marathon (distance: 21 km) ==> DEBUTANT, REGULIER and EXPERT
-    @race3_semi = suggest_races(@race, 1, 21_097).first
-
-    if @user.level == 'DEBUTANT'
-      # Race before 6 months of marathon (distance: 10 km)
-      @race1_10km = suggest_races(@race, 6, 10_000).first
-      # Race before 3 months of marathon (distance: 10km)
-      @race2_10km = suggest_races(@race, 3, 10_000).first
-    elsif @user.level == 'REGULIER'
-      # Race before 4 months of marathon (distance: 10 km)
-      @race1_10km = suggest_races(@race, 4, 10_000).last
-      # Race before 3 months of marathon (distance: 10km)
-      @race2_10km = suggest_races(@race, 3, 10_000).first
-    elsif @user.level == 'EXPERT'
-      # Race before 3 months of marathon (distance: 10 km)
-      @race1_10km = suggest_races(@race, 3, 10_000).first
-      # Race before 2 months of marathon (distance: 10km)
-      @race2_10km = suggest_races(@race, 2, 10_000).last
-    end
-  end
-
   private
 
   def set_user

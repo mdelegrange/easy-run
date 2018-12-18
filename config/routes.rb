@@ -3,18 +3,17 @@ Rails.application.routes.draw do
   root to: 'pages#home'
 
   # Objective creation
-
-  resources :races, only: [:index, :show] do
+  resources :races, only: [:index] do
     resources :runs, only: [:create]
     resources :objectives, only: [:create]
   end
 
   # Dashboard
-  resources :objectives, only: [:index, :show] do
+  resources :objectives, only: [:index] do
     resources :runs, only: [:index, :new]
   end
 
-  resources :runs, only: [:show, :edit, :update, :destroy] do
+  resources :runs, only: [:edit, :update, :destroy] do
     member do
       patch :subscribe
       patch :skip
