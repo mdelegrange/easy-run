@@ -9,7 +9,7 @@
   <div class="row">
     <% if @races_to_display.count.zero? %>
       <% if params[:region].nil? %>
-        <h3 class="text-center">Il n'y a pas de course correspondant à votre objectif. %></h3>
+        <h3 class="text-center">Il n'y a pas de course correspondant à votre objectif.</h3>
       <% else %>
         <h3 class="text-center">Il n'y a pas de course correspondant à votre objectif <%= @regions_full_name[params[:region]] %>.</h3>
       <% end %>
