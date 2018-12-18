@@ -1,95 +1,27 @@
-
-<div class = "banner_index_races" style="background-image: linear-gradient(to right, rgba(10, 207, 254, 0.7) 0%, rgba(73, 90, 255, 0.7) 100%), url(<%= image_path 'home-run.jpg'%>);">
+<div class = "banner-index-races">
   <div class="text-center">
-    <h1 style="color: white; font-family: 'Fredoka One';"><%= @races.count %> courses correspondent à votre objectif</h1>
-    <h2 style="color: white; font-family: 'Raleway'; font-weight: 'light'; font-size: 35px;">Choisissez une région</h2>
+    <h1><%= @races_to_display.count %> courses correspondent à votre objectif</h1>
+    <h2>Choisissez une région</h2>
     <%= render 'shared/map' %>
   </div>
 </div>
 <div class="container race-results" id="race-result" >
   <div class="row">
-    <% if params[:region].nil? %>
-      <% races_to_display = @races %>
-    <% else %>
-      <% races_to_display = @races.where(department: Race::REGIONS[params[:region]]) %>
-    <% end %>
-
-    <% if races_to_display.count.zero? %>
+    <% if @races_to_display.count.zero? %>
       <% if params[:region].nil? %>
         <h3 class="text-center">Il n'y a pas de course correspondant à votre objectif. %></h3>
       <% else %>
         <h3 class="text-center">Il n'y a pas de course correspondant à votre objectif <%= @regions_full_name[params[:region]] %>.</h3>
       <% end %>
     <% else %>
-      <h3 class="text-center"><%= pluralize(races_to_display.count, 'course') %> correspondant à votre objectif <%= @regions_full_name[params[:region]] %>.</h3>
-      <% races_to_display.each do |race| %>
+      <h3 class="text-center"><%= pluralize(@races_to_display.count, 'course') %> correspondant à votre objectif <%= @regions_full_name[params[:region]] %>.</h3>
+      <% @races_to_display.each do |race| %>
         <%= link_to race_objectives_path(race), "data-toggle" => "modal", 'data-target' => "#raceModal-#{race.id}"  do %>
           <div class="col-xs-12 col-sm-3">
-            <div class="flexbox-center">
-              <div class="card-race-results card-race-results-<%=race.distance%>">
-                <div class="card-race-results-detail card-race-results-detail-<%=race.distance%>">
-                  <h3><%=race.event_name %></h3>
-                  <h5><em><%=race.name %></em> </h5>
-                </div>
-                <p><%=Race::DISTANCES[race.distance.to_s]%></p>
-                <% if Race::DEPARTMENTS.key(race.department).nil? %>
-                <h5><i class="fas fa-map-marker-alt"></i> -- </h5>
-                <% else %>
-                <h5><i class="fas fa-map-marker-alt"></i> <%= Race::DEPARTMENTS.key(race.department)[5..Race::DEPARTMENTS.key(race.department).length] %></h5>
-                <% end %>
-                <div class="overlay overlay-<%=race.distance%>">
-                  <div class="card-hover-text">
-                    <p>Choisir cette course</p>
-                    <p><i class="far fa-hand-point-up"></i></p>
-                  </div>
-                </div>
-              </div>
-              <div class="card-date-result card-date-results-<%=race.distance%>">
-                <div>
-                  <h4 class="date-details"><%=race.date.strftime('%d/%m/%Y')%></h4>
-                </div>
-              </div>
-            </div>
+            <%= render partial: "shared/cards", locals: {race: race} %>
           </div>
         <% end %>
-        <!-- Modal -->
-        <div class="modal fade" id="raceModal-<%= race.id %>">
-          <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content modal-content-er">
-              <div class="modal-body modal-body-er text-center">
-                <h5 class="modal-title">Vous avez sélectionné la course suivante :</h5>
-                  <div class="flexbox-center">
-                    <div class="flexbox-center">
-                      <div class="card-race-results card-race-results-<%=race.distance%>">
-                        <div class="card-race-results-detail card-race-results-detail-<%=race.distance%>">
-                          <h3><%=race.event_name %></h3>
-                          <h5><em><%=race.name %></em> </h5>
-                        </div>
-                        <p><%=Race::DISTANCES[race.distance.to_s]%></p>
-                        <% if Race::DEPARTMENTS.key(race.department).nil? %>
-                          <h5><i class="fas fa-map-marker-alt"></i> -- </h5>
-                        <% else %>
-                          <h5><i class="fas fa-map-marker-alt"></i> <%= Race::DEPARTMENTS.key(race.department)[5..Race::DEPARTMENTS.key(race.department).length] %></h5>
-                        <% end %>
-                      </div>
-                      <div class="card-date-result card-date-result-modal">
-                        <div>
-                          <h4 class="date-details"><%=race.date.strftime('%d/%m/%Y')%></h4>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <%= link_to race.url, target: "_blank" do  %>
-                        <p><i class="fas fa-eye"></i> Plus d'infos sur la course</p>
-                      <% end %>
-                  <h5> Nous allons vous proposer d'autres courses qui vous permettront d'atteindre cet objectif </h5s>
-                </div>
-              <div class="modal-footer">
-                <%= link_to 'Go !', race_objectives_path(race), method: :post, class: "btn btn-primary btn-primary-er" %>
-              </div>
-            </div>
-          </div>
-        </div>
+        <%= render partial: "shared/modal", locals: {race: race} %>
       <% end %>
     <% end %>
   </div>

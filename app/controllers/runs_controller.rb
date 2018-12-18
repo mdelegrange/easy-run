@@ -30,9 +30,15 @@ class RunsController < ApplicationController
 
   def new
     @objective = current_user.objectives.last
-    @races = Race.all
+    races = Race.all
     @departments_options = Race::DEPARTMENTS.map { |label, value| [label, value] }
     @distances_options = Race::DISTANCES.map { |label, value| [value, label] }
+
+    if params[:department].nil? && params[:distance].nil?
+      @races_to_display = []
+    else
+      @races_to_display = races.where(department: params[:department].to_i).where(distance: params[:distance].to_i)
+    end
   end
 
   def create

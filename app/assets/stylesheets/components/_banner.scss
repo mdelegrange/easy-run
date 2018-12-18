@@ -17,29 +17,44 @@
   background-attachment: fixed;
 }
 
-.banner_new_races {
-  height: 50vh;
-
-  /* if you have a 70px navbar => height: calc(100vh - 70px); */
+.banner-new-races {
+  background-image: linear-gradient(to right, rgba(10, 207, 254, 0.7) 0%, rgba(73, 90, 255, 0.7) 100%), url('home-run.jpg');
   background-size: cover !important;
+  height: 50vh;
   display: flex;
   justify-content: space-around;
   background-attachment: fixed;
   align-items: center;
+  color: white;
 }
 
-.banner_index_races {
+.banner-index-races {
+  background-image: linear-gradient(to right, rgba(10, 207, 254, 0.7) 0%, rgba(73, 90, 255, 0.7) 100%), url('home-run.jpg');
+  background-size: cover !important;
+  background-attachment: fixed;
   min-height: 800px;
   height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  h2 {
+    font-family: 'Raleway';
+    font-weight: 'light';
+    font-size: 35px;
+  }
+}
 
-  /* if you have a 70px navbar => height: calc(100vh - 70px); */
+.banner-index-switch {
+  background-image: linear-gradient(to right, rgba(10, 207, 254, 0.7) 0%, rgba(73, 90, 255, 0.7) 100%), url('home-run.jpg');
   background-size: cover !important;
+  height: 30vh;
   display: flex;
   justify-content: space-around;
   background-attachment: fixed;
   align-items: center;
+  color: white;
 }
-
 .race-results {
   height: 100vh;
   h3 {
@@ -48,15 +63,6 @@
 
 }
 
-.banner_index_switch {
-  height: 30vh;
-  /* if you have a 70px navbar => height: calc(100vh - 70px); */
-  background-size: cover !important;
-  display: flex;
-  justify-content: space-around;
-  background-attachment: fixed;
-  align-items: center;
-}
 
 .banner_index_switch {
   .text-center {

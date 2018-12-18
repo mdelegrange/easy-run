@@ -22,11 +22,17 @@ class RacesController < ApplicationController
     }
 
     if @user.level == "DEBUTANT"
-      @races = suggest_races_marathon(@user.targeted_distance, 12)
+      races = suggest_races_marathon(@user.targeted_distance, 12)
     elsif @user.level == "REGULIER"
-      @races = suggest_races_marathon(@user.targeted_distance, 6)
+      races = suggest_races_marathon(@user.targeted_distance, 6)
     elsif @user.level == "EXPERT"
-      @races = suggest_races_marathon(@user.targeted_distance, 4)
+      races = suggest_races_marathon(@user.targeted_distance, 4)
+    end
+
+    if params[:region].nil?
+      @races_to_display = races
+    else
+      @races_to_display = races.where(department: Race::REGIONS[params[:region]])
     end
 
   end
