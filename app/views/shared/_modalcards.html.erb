@@ -1,0 +1,19 @@
+<div class="flexbox-center">
+  <div class="card-race-results card-race-results-<%=race.distance%>">
+    <div class="card-race-results-detail card-race-results-detail-<%=race.distance%>">
+      <h3><%=race.event_name %></h3>
+      <h5><em><%=race.name %></em> </h5>
+    </div>
+    <p><%=Race::DISTANCES[race.distance.to_s]%></p>
+    <% if Race::DEPARTMENTS.key(race.department).nil? %>
+      <h5><i class="fas fa-map-marker-alt"></i> -- </h5>
+    <% else %>
+      <h5><i class="fas fa-map-marker-alt"></i> <%= Race::DEPARTMENTS.key(race.department)[5..Race::DEPARTMENTS.key(race.department).length] %></h5>
+    <% end %>
+  </div>
+  <div class="card-date-result card-date-result-modal">
+    <div>
+      <h4 class="date-details"><%=race.date.strftime('%d/%m/%Y')%></h4>
+    </div>
+  </div>
+</div>

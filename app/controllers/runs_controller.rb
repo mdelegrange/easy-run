@@ -7,32 +7,34 @@ class RunsController < ApplicationController
     @runs = current_user.objectives.last.runs.sort_by { |run| run.race.date }
     race = @objective.race
 
-
     if current_user.trainings.last.nil?
       @training_plan = nil
     else
       @training_plan = TrainingPlan.find(Training.find(current_user.training_ids).first.training_plan_id)
-      @end_training = current_user.trainings.last.begin_date + (7 * 18)
       @today = DateTime.now
       if current_user.trainings.last.begin_date > Date.today
         @week = params[:week] ? params[:week].to_i : 1
-        @prev_week = @week - 1 if @week > 1
-        @next_week = @week + 1 if @week < 18
       else
         begin_date = (Date.parse('monday') - current_user.trainings.last.begin_date).to_i / 7
         @week = params[:week] ? params[:week].to_i : begin_date
-        @prev_week = @week - 1 if @week > 1
-        @next_week = @week + 1 if @week < 18
       end
+      @prev_week = @week - 1 if @week > 1
+      @next_week = @week + 1 if @week < 18
     end
 
   end
 
   def new
     @objective = current_user.objectives.last
-    @races = Race.all
+    races = Race.all
     @departments_options = Race::DEPARTMENTS.map { |label, value| [label, value] }
     @distances_options = Race::DISTANCES.map { |label, value| [value, label] }
+
+    if params[:department].nil? && params[:distance].nil?
+      @races_to_display = []
+    else
+      @races_to_display = races.where(department: params[:department].to_i).where(distance: params[:distance].to_i)
+    end
   end
 
   def create
