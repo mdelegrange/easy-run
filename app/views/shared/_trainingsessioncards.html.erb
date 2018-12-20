@@ -1,0 +1,28 @@
+<div class="dash-training-card-container">
+  <div class="dash-training-card dash-flexbox">
+    <% if training_session.kind.include? "Vitesse"  %>
+      <div class="dash-training-image" style="background-image: linear-gradient(to right, rgba(10, 207, 254, 0.7) 0%, rgba(73, 90, 255, 0.7) 100%), url(<%= image_path 'run-fast.jpg'%>);">
+      </div>
+    <% else%>
+      <div class="dash-training-image" style="background-image: linear-gradient(to right, rgba(10, 207, 254, 0.7) 0%, rgba(73, 90, 255, 0.7) 100%), url(<%= image_path 'run-far.jpg'%>);">
+      </div>
+    <% end %>
+    <div class="dash-training-desc">
+      <h2 class="training-title"><%= training_session.kind %> - <strong><%= training_session.subkind %></strong></h2>
+
+      <p class="training_session_week_index"><strong><%= index + 1 %></strong> /3</p>
+      <h5 class="training_session_position"><strong>SESSION <%= training_session.position %></strong></h5>
+    <a role="button" data-toggle="collapse" data-parent="#accordion" aria-expanded="false" aria-controls="session-<%= training_session.id%>" class="btn btn-primary btn-secondary-er btn-details-dash" href="#session-<%= training_session.id%>">
+
+        <i class="fas fa-plus"></i> de details
+      </a>
+
+    </div>
+  </div>
+
+  <div id="session-<%= training_session.id%>" class="panel-collapse collapse out" role="tabpanel" aria-labelledby="headingOne">
+    <div class="dash-training-desc dash-training-desc-text" id="session-<%= training_session.id%>">
+      <p><%= simple_format training_session.description %></p>
+    </div>
+  </div>
+</div>

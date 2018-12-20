@@ -6,9 +6,11 @@
           <div class="flexbox-center">
             <%= render partial: 'shared/modalcards', locals: {race: race} %>
           </div>
-          <%= link_to race.url, target: "_blank" do  %>
-                <p><i class="fas fa-eye"></i> Plus d'infos sur la course</p>
-              <% end %>
+          <% if race.url %>
+            <%= link_to race.url, target: "_blank" do  %>
+              <p><i class="fas fa-eye"></i> Plus d'infos sur la course</p>
+            <% end %>
+          <% end %>
           <h5> Nous allons vous proposer d'autres courses qui vous permettront d'atteindre cet objectif </h5s>
         </div>
       <div class="modal-footer">
